@@ -1,0 +1,49 @@
+{
+  "id": "csb-bloodlust-classique",
+  "title": "CSB Bloodlust classique",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "custom-system-builder",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "authors": [
+    {
+      "name": "Los Brutos",
+      "discord": "LosBrutos",
+      "flags": {}
+    }
+  ],
+  "packs": [
+    {
+      "name": "systeme-et-templates",
+      "label": "Système et templates",
+      "path": "packs/systeme-et-templates",
+      "type": "Adventure",
+      "system": "custom-system-builder",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "scenarios",
+      "label": "Scénarios",
+      "path": "packs/scenarios",
+      "type": "Adventure",
+      "system": "custom-system-builder",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ]
+}
