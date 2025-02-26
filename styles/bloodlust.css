@@ -1,0 +1,23 @@
+.result {
+  padding: 2px;
+  text-align: center;
+  font-weight: bold;
+  border: solid 1px black;
+}
+
+.roll-success {
+  color: var(--color-level-success);
+  border: solid 1px var(--color-level-success);
+}
+.roll-critical-success {
+  color: var(--color-level-success);
+  border: solid 1px var(--color-level-success);
+}
+.roll-fail {
+  color: var(--color-level-error);
+  border: solid 1px var(--color-level-error);
+}
+.roll-critical-fail {
+  color: var(--color-level-error);
+  border: solid 1px var(--color-level-error);
+}

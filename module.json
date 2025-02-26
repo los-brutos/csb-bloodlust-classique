@@ -2,6 +2,7 @@
   "id": "csb-bloodlust-classique",
   "title": "CSB Bloodlust classique",
   "version": "1.0.0",
+  "description": "Implémentation du système Bloddlust classique avec Custom System Builder (CSB)",
   "compatibility": {
     "minimum": "12",
     "verified": "12"
@@ -11,6 +12,7 @@
       {
         "id": "custom-system-builder",
         "type": "system",
+        "manifest": "https://gitlab.com/custom-system-builder/custom-system-builder/-/raw/main/system.json",
         "compatibility": {}
       }
     ]
@@ -18,11 +20,86 @@
   "authors": [
     {
       "name": "Los Brutos",
-      "discord": "LosBrutos",
+      "discord": "@losbrutos",
       "flags": {}
     }
   ],
+  "styles": [
+    "styles/bloodlust.css"
+  ],
   "packs": [
+    {
+      "name": "templates-actors",
+      "label": "_Templates acteurs (Bloodlust)",
+      "path": "packs/templates-actors",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder",
+      "flags": {}
+    },
+    {
+      "name": "templates-items",
+      "label": "_Templates objets (Bloodlust)",
+      "path": "packs/templates-items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "NONE",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder",
+      "flags": {}
+    },
+    {
+      "name": "armes",
+      "label": "Armes (Bloodlust)",
+      "path": "packs/armes",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder",
+      "flags": {}
+    },
+    {
+      "name": "armures-et-protections",
+      "label": "Armures et protections (Scales)",
+      "path": "packs/armures-et-protections",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder",
+      "flags": {}
+    },
+    {
+      "name": "peuples",
+      "label": "Peuples (Bloodlust)",
+      "path": "packs/peuples",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder",
+      "flags": {}
+    },
+    {
+      "name": "pouvoirs",
+      "label": "Pouvoirs (Bloodlust)",
+      "path": "packs/pouvoirs",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder",
+      "flags": {}
+    },
     {
       "name": "systeme-et-templates",
       "label": "Système et templates",
@@ -30,7 +107,7 @@
       "type": "Adventure",
       "system": "custom-system-builder",
       "ownership": {
-        "PLAYER": "OBSERVER",
+        "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       }
     },
@@ -41,9 +118,29 @@
       "type": "Adventure",
       "system": "custom-system-builder",
       "ownership": {
-        "PLAYER": "OBSERVER",
+        "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       }
     }
-  ]
+  ],
+  "packFolders": [
+  {
+    "name": "Bloodlust",
+    "sorting": "a",
+    "sorting": "m",
+    "folders": [
+      {
+        "name": "Templates et scénarios pour Bloodlust",
+        "sorting": "m",
+        "color": "#000000",
+        "packs": ["templates-actors", "templates-items", "systeme-et-templates", "scenarios"]
+      },
+      {
+        "name": "Ressources pour Bloodlust",
+        "sorting": "a",
+        "color": "#000000",
+        "packs": ["armes", "armures-et-protections", "peuples", "pouvoirs"]
+      }
+    ]
+  }]
 }

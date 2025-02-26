@@ -1,0 +1,55 @@
+<!--
+  Jet de caractéritiques
+
+Pour adapter le jet, modifier les valeurs des variables suivantes
+  * seuil
+  * nom
+
+valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] 
+
+-->
+
+
+<!-- saisie de la difficulté -->
+${#concat(
+  ?{diff:"Difficulté"|"0","Normal"|"50","Très facile"|"25","Facile"|"-25","Difficile"|"-50","Très difficile"},
+  ?{modificateur:"Modificateur"[number]|0}
+)}$
+<!-- définition du seuil et du nom du jet-->
+${#seuil:= max(totalFO*5 + diff, 5)}$
+${#nom:= "Jet de Force"}$
+<!-- jet -->
+${#roll:= [1d100]}$
+${ru:= roll%10}$
+${result:= 0}$ 
+${result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$
+${result:=(and(result==0, ru==1) ? -1 : result)}$
+${result:=(and(result==1, ru==0) ? 2 : result)}$
+${switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$
+<!-- affichage -->
+<h3><strong>${!nom}$</strong> (${!switchCase(diff,"0","Normal","50","Très facile","25","Facile","-25","Difficile","-50","Très difficile")}$)</h3>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <h4>Jet du dé</h4>
+      </td>
+      <td>
+        <strong>${!roll}$</strong> / ${!seuil}$
+      </td>
+    </tr>
+    <tr>
+      <td>
+        RU
+      </td>
+      <td>
+        <strong>${!ru}$</strong>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <p class="result ${!result==1 ? "roll-success\">Réussite" : result==2 ? "roll-critical-success\">Réussite critique" : result==-1 ? "roll-critical-fail\">Echec critique" : "roll-fail\">Echec"}$</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
