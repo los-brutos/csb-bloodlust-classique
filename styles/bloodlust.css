@@ -1,3 +1,15 @@
+.dropdown:hover .dropdown-content {
+display: block;
+}
+.dropdown .dropdown-content {
+position: absolute;
+transform: translateX(-50%);
+background: white;
+z-index: 9999;
+padding: 8px;
+display: none;
+}
+
 .result {
   padding: 2px;
   text-align: center;

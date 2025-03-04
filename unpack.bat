@@ -15,6 +15,21 @@ echo.
 echo /// configure environment
 call fvtt package workon csb-bloodlust-classique --type=Module
 echo.
+echo /// unpack compendium "templates-actors"
+call fvtt package unpack -c templates-actors
+echo.
+echo /// unpack compendium "templates-items"
+call fvtt package unpack -c templates-items
+echo.
+echo /// unpack compendium "armes"
+call fvtt package unpack -c armes
+echo.
+echo /// unpack compendium "peuples"
+call fvtt package unpack -c peuples
+echo.
+echo /// unpack compendium "pouvoirs"
+call fvtt package unpack -c pouvoirs
+echo.
 echo /// unpack compendium "scenarios"
 call fvtt package unpack -c scenarios
 echo.

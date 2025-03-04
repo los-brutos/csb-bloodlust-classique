@@ -1,0 +1,48 @@
+{
+  "folder": null,
+  "name": "_Condition",
+  "type": "_equippableItemTemplate",
+  "_id": "zVjlZdbSvmor2QOu",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "hidden": [],
+    "header": {
+      "contents": [],
+      "key": "custom_header"
+    },
+    "body": {
+      "contents": [],
+      "key": "custom_body"
+    },
+    "display": {
+      "width": "600",
+      "height": "600",
+      "fix_size": false,
+      "pp_width": "64",
+      "pp_height": "64"
+    },
+    "uniqueId": "zVjlZdbSvmor2QOu"
+  },
+  "effects": [],
+  "flags": {
+    "custom-system-builder": {
+      "version": "4.3.2"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1740663414442,
+    "modifiedTime": 1741102251237,
+    "lastModifiedBy": "SE7p50xHGU00x4cA"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "R7aN2sFWpDB1djYu": 3
+  },
+  "_key": "!items!zVjlZdbSvmor2QOu"
+}

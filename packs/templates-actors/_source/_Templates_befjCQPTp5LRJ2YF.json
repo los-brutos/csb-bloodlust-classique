@@ -1,0 +1,22 @@
+{
+  "name": "_Templates",
+  "sorting": "a",
+  "folder": null,
+  "type": "Actor",
+  "_id": "befjCQPTp5LRJ2YF",
+  "description": "",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": "Folder.befjCQPTp5LRJ2YF",
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1740611539353,
+    "modifiedTime": 1741102240174,
+    "lastModifiedBy": "SE7p50xHGU00x4cA"
+  },
+  "_key": "!folders!befjCQPTp5LRJ2YF"
+}

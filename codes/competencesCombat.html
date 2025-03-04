@@ -1,0 +1,73 @@
+<!--
+  Jet de compétences de combat
+Pour adapter le jet, modifier les valeurs des variables suivantes
+  * nom        : label de la compétence de combat
+  * competence : clé de la compétence de combat
+  * xpAttr     : clé du champ de l'xp de l'attribut lié à la compétence de combat
+  * xpComp     : clé du champ de l'xp de la compétence de combat
+  * tactMod    : traitement du modificateur de la tactique adverse
+    * AB => switchCase(tactiqueAdverse,'AN',10,'FE',10,'PA',20,'ES',-10) 
+    * AN => switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10)
+    * AR => switchCase(tactiqueAdverse,'AB',10,'AN',10)
+    * FE => switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10)
+    * PA => switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10)
+    * ES => switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10)
+
+Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] 
+-->
+<!-- saisie de la difficulté -->
+${#?{diff:"Difficulté"|"0","Normal"|"50","Très facile"|"25","Facile"|"-25","Difficile"|"-50","Très difficile"}
+}$
+<!-- définition du seuil et du nom du jet-->
+${#nom:= "Attaque brutale"}$
+${#competence:= totalAB}$
+${#xpAttr:= "xpFO"}$
+${#xpComp:= "xpAB"}$
+${#seuil:= max(competence + diff, 5)}$
+<!-- tactique -->
+${#tactiqueAdverse:= fetchFromActor('target', 'tactique')}$
+${#tactMod:= switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10)}$
+${#seuil:= seuil + tactMod}$
+<!-- jet -->
+${#roll:= [1d100]}$
+${#ru:= roll%10}$
+${#result:= 0}$ 
+${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$
+${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->
+${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->
+${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$
+<!-- expérience -->
+${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$
+${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$
+<!-- localisation -->
+${#dizaine:= floor(roll/10)}$
+${#dizaine:= dizaine == 10 ? 0 : dizaine}$
+${#loc:= ru*10+dizaine}$
+${#loc:= loc>90 ? "Jambe gauche" : loc>80 ? "Jambe droite" : loc>65 ? "Abdomen" : loc>50 ? "Bras gauche" : loc>35 ? "Bras droit" : loc>10 ? "Torse" : "Tête"}$
+<!-- affichage -->
+<h3><strong>${!nom}$</strong> (${!switchCase(diff,"0","Normal","50","Très facile","25","Facile","-25","Difficile","-50","Très difficile")}$)</h3>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <h4>d100</h4>
+      </td>
+      <td>
+        <strong>${!roll}$</strong> / <span class="dropdown">
+          <p>${!seuil}$</p>
+            <div class="dropdown-content">
+              <p>Compétence : ${!competence}$</p>
+              <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>
+              <p>Difficulté : ${!diff}$</p>
+          </div>
+        </span>
+      </td>
+    </tr>
+${!result>0 ? concat("<tr><td>Localisation</td><td><strong>",loc,"</strong></td></tr><tr><td>RU</td><td><strong>",ru,"</strong></td></tr>") : ''}$
+    <tr>
+      <td colspan="2">
+        <p class="result ${!result==1 ? "roll-success\">Réussite" : result==2 ? "roll-critical-success\">Réussite critique" : result==-1 ? "roll-critical-fail\">Echec critique" : "roll-fail\">Echec"}$</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
