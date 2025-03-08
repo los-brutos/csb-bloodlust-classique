@@ -1,25 +1,25 @@
 <!--
   Jet de compétences
 
-Pour adapter le jet, modifier les valeurs des variables suivantes
-  * seuil
-  * nom
-  * xpAttr
-  * xpComp
+  Pour adapter le jet, modifier les valeurs des variables suivantes
+    * seuil
+    * nom
+    * xpAttr
+    * xpComp
 
-valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] 
-
+  valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] 
 -->
 
-
 <!-- saisie de la difficulté -->
-${#?{diff:"Difficulté"|"0","Normal"|"50","Très facile"|"25","Facile"|"-25","Difficile"|"-50","Très difficile"}
-}$
+${#concat(
+	?{diff:"Difficulté"|"0","Normal"|"50","Très facile"|"25","Facile"|"-25","Difficile"|"-50","Très difficile"},
+	?{mod:"Modificateur"[number]|0}
+)}$
 <!-- définition du seuil et du nom du jet-->
-${#seuil:= max(totalAB + diff, 5)}$
-${#nom:= "Jet d'Attaque brutale"}$
-${#xpAttr:= "xpFO"}$
-${#xpComp:= "xpAB"}$
+${#seuil:= max(totalAcrobatie + diff + mod, 5)}$
+${#nom:= "Acrobatie"}$
+${#xpComp:= "xpAcrobatie"}$
+${#xpAttr:= "xpAG"}$
 <!-- jet -->
 ${#roll:= [1d100]}$
 ${#ru:= roll%10}$
@@ -32,28 +32,26 @@ ${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite cr
 ${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$
 ${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$
 <!-- affichage -->
-<h3><strong>${!nom}$</strong> (${!switchCase(diff,"0","Normal","50","Très facile","25","Facile","-25","Difficile","-50","Très difficile")}$)</h3>
+<h3>${!nom}$</h3>
 <table>
   <tbody>
     <tr>
-      <td>
+      <td style="width:50%;">
         <h4>d100</h4>
       </td>
       <td>
-        <strong>${!roll}$</strong> / ${!seuil}$
-      </td>
-    </tr>
-    <tr>
-      <td>
-        RU
-      </td>
-      <td>
-        <strong>${!ru}$</strong>
+        <div class="bl-dropdown">
+          <p><strong>${!roll}$</strong> / ${!seuil}$</p>
+          <div class="bl-dropdown-content">
+            <p>Difficulté : ${!switchCase(diff,"0","normale","50","très facile","25","facile","-25","difficile","-50","très difficile")}$ (${!diff}$)</p>
+            <p>Modificateur : ${!mod}$</p>
+          </div>
+        </div>
       </td>
     </tr>
     <tr>
       <td colspan="2">
-        <p class="result ${!result==1 ? "roll-success\">Réussite" : result==2 ? "roll-critical-success\">Réussite critique" : result==-1 ? "roll-critical-fail\">Echec critique" : "roll-fail\">Echec"}$</p>
+        <p class="bl-result ${!result==1 ? "bl-roll-success\">Réussite" : result==2 ? "bl-roll-critical-success\">Réussite critique" : result==-1 ? "bl-roll-critical-fail\">Echec critique" : "bl-roll-fail\">Echec"}$</p>
       </td>
     </tr>
   </tbody>

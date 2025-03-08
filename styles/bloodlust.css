@@ -1,35 +1,72 @@
-.dropdown:hover .dropdown-content {
-display: block;
+/**
+ * Feuille de style du module
+ * Les classes préfixées par 'bl-'
+ */
+
+/**
+ * popin
+ */
+.bl-dropdown .bl-dropdown-content {
+  position: absolute;
+  /**/
+  transform: translate(-50px);
+  /**/
+  background: white;
+  z-index: 9999;
+  padding: 8px;
+  display: none;
+  width: 250px;
+  border-radius: 6px;
+  padding: 5px 0;
+
 }
-.dropdown .dropdown-content {
-position: absolute;
-transform: translateX(-50%);
-background: white;
-z-index: 9999;
-padding: 8px;
-display: none;
+.bl-dropdown:hover .bl-dropdown-content {
+  display: block;
 }
 
-.result {
+/**
+ * Résultats
+ */
+.bl-result {
   padding: 2px;
   text-align: center;
   font-weight: bold;
   border: solid 1px black;
 }
 
-.roll-success {
+.bl-roll-success {
   color: var(--color-level-success);
   border: solid 1px var(--color-level-success);
 }
-.roll-critical-success {
+.bl-roll-success::before, .bl-roll-success::after {
+  font: var(--fa-font-solid);
+  content: '\f00c';
+  padding: 0.5em;
+}
+.bl-roll-critical-success {
   color: var(--color-level-success);
   border: solid 1px var(--color-level-success);
 }
-.roll-fail {
+.bl-roll-critical-success::before, .bl-roll-critical-success::after {
+  font: var(--fa-font-solid);
+  content: '\f560';
+  padding: 0.5em;
+}
+.bl-roll-fail {
   color: var(--color-level-error);
   border: solid 1px var(--color-level-error);
 }
-.roll-critical-fail {
+.bl-roll-fail::before, .bl-roll-fail::after {
+  font: var(--fa-font-solid);
+  content: '\21';
+  padding: 0.5em;
+}
+.bl-roll-critical-fail {
   color: var(--color-level-error);
   border: solid 1px var(--color-level-error);
+}
+.bl-roll-critical-fail::before, .bl-roll-critical-fail::after {
+  font: var(--fa-font-solid);
+  content: '\f071';
+  padding: 0.5em;
 }
