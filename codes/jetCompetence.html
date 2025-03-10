@@ -31,14 +31,14 @@ ${#augmentComp:= and(sameRow('total') >= 75, newXp == 5) ? true : augmentComp}$
 ${#augmentComp ? setPropertyInEntity('self', sameRowRef('bonus'), sameRow('bonus')+5) : "pas d'augmentation de la compétence"}$
 ${#augmentComp ? setPropertyInEntity('self', sameRowRef('xp'), 0) : "pas de remise à zéro de l'xp de la compétence"}$
   <!-- attribut lié -->
-${xpCar:=    concat("xp", sameRow('car'))}$
-${bonusCar:= concat("bonus", sameRow('car'))}$
-${totalCar:= concat("total", sameRow('car'))}$
-${newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : xpCar)}$
-${augmentCar:= false}$
-${augmentCar:= newXp == recalculate(concat("$", "{", totalCar, "}", "$")) ? true : augmentCar}$
-${augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : "pas d'augmentation de la caractéristique"}$
-${augmentCar ? setPropertyInEntity('self', xpCar, 0) : "pas de remise à zéro de l'xp de la caractéristique"}$
+${#xpCar:=    concat("xp", sameRow('car'))}$
+${#bonusCar:= concat("bonus", sameRow('car'))}$
+${#totalCar:=  recalculate(concat("$", "{total", sameRow('car'), "}", "$"))}$
+
+${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$
+${#augmentCar:= newXp == totalCar ? true : false}$
+${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : "pas d'augmentation de la caractéristique"}$
+${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : "pas de remise à zéro de l'xp de la caractéristique"}$
 
 <!-- affichage -->
 <h3>${!nom}$</h3>
@@ -63,6 +63,7 @@ ${augmentCar ? setPropertyInEntity('self', xpCar, 0) : "pas de remise à zéro d
         <p class="bl-result ${!result==1 ? "bl-roll-success\">Réussite" : result==2 ? "bl-roll-critical-success\">Réussite critique" : result==-1 ? "bl-roll-critical-fail\">Echec critique" : "bl-roll-fail\">Echec"}$</p>
       </td>
     </tr>
-    ${!augmentComp ? "<tr><td colspan=\"2\"><p class=\"bl-result bl-roll-success\">Augmentation de la compétence</p></td></tr>" : ''}$
+    ${!augmentComp ? "<tr><td colspan=\"2\"><p class=\"bl-result bl-roll-info\">Augmentation de la compétence</p></td></tr>" : ''}$
+    ${!augmentCar  ? concat("<tr><td colspan=\"2\"><p class=\"bl-result bl-roll-critical-info\">Augmentation de la<br />caractéristique ", sameRow('car'),"</p></td></tr>") : ''}$
   </tbody>
 </table>

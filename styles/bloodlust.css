@@ -30,43 +30,50 @@
 .bl-result {
   padding: 2px;
   text-align: center;
-  font-weight: bold;
+  /* font-weight: bold; */
   border: solid 1px black;
 }
 
-.bl-roll-success {
+.bl-roll-info, .bl-roll-critical-info {
+  color: var(--color-level-info);
+  /* background-color: var(--color-level-info-bg); */
+  border: solid 1px var(--color-level-info-border);
+}
+.bl-roll-critical-info::before, .bl-roll-critical-info::after {
+  font: var(--fa-font-solid);
+  content: '\f30f';
+  padding: 0.5em;
+}
+.bl-roll-success, .bl-roll-critical-success {
   color: var(--color-level-success);
-  border: solid 1px var(--color-level-success);
+  /* background-color: var(--color-level-success-bg); */
+  border: solid 1px var(--color-level-success-border);
 }
 .bl-roll-success::before, .bl-roll-success::after {
   font: var(--fa-font-solid);
   content: '\f00c';
   padding: 0.5em;
 }
-.bl-roll-critical-success {
-  color: var(--color-level-success);
-  border: solid 1px var(--color-level-success);
-}
 .bl-roll-critical-success::before, .bl-roll-critical-success::after {
   font: var(--fa-font-solid);
   content: '\f560';
   padding: 0.5em;
 }
-.bl-roll-fail {
+.bl-roll-fail, .bl-roll-critical-fail {
   color: var(--color-level-error);
-  border: solid 1px var(--color-level-error);
+  /* background-color: var(--color-level-error-bg); */
+  border: solid 1px var(--color-level-error-border);
 }
 .bl-roll-fail::before, .bl-roll-fail::after {
   font: var(--fa-font-solid);
   content: '\21';
   padding: 0.5em;
 }
-.bl-roll-critical-fail {
-  color: var(--color-level-error);
-  border: solid 1px var(--color-level-error);
-}
 .bl-roll-critical-fail::before, .bl-roll-critical-fail::after {
   font: var(--fa-font-solid);
   content: '\f071';
   padding: 0.5em;
+}
+.bl-roll-critical-info, .bl-roll-critical-success, .bl-roll-critical-fail {
+  font-weight: bold;
 }
