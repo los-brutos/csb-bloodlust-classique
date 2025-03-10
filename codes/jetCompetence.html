@@ -1,5 +1,7 @@
 <!--
   Jet de compétences
+  
+  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] 
 -->
 <!-- saisie de la difficulté -->
 ${#concat(
@@ -7,9 +9,9 @@ ${#concat(
 	?{mod:"Modificateur"[number]|0}
 )}$
 <!-- définition du seuil et du nom du jet-->
-${#seuil:= max(sameRow('total') + diff + mod, 5)}$
-${#nom:= sameRow('nom')}$
-${#xpAttr:= concat("xp", sameRow('car'))}$
+${#seuil:=    max(sameRow('total') + diff + mod, 5)}$
+${#nom:=      sameRow('nom')}$
+
 <!-- jet -->
 ${#roll:= [1d100]}$
 
@@ -20,14 +22,23 @@ ${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->
 ${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->
 ${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$
 <!-- expérience -->
-${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$
+  <!-- caractéristique -->
 ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', sameRowRef('xp'), sameRow('xp')+1) : sameRow('xp')}$
 ${#augmentComp:= false}$
 ${#augmentComp:= and(sameRow('total') < 50,  newXp == 1) ? true : augmentComp}$
 ${#augmentComp:= and(sameRow('total') < 75,  newXp == 2) ? true : augmentComp}$
 ${#augmentComp:= and(sameRow('total') >= 75, newXp == 5) ? true : augmentComp}$ 
-${#augmentComp ? setPropertyInEntity('self', sameRowRef('bonus'), sameRow('bonus')+5) : "pas d'augmentation"}$
-${#augmentComp ? setPropertyInEntity('self', sameRowRef('xp'), 0) : "pas de remise à zéro de l'xp"}$
+${#augmentComp ? setPropertyInEntity('self', sameRowRef('bonus'), sameRow('bonus')+5) : "pas d'augmentation de la compétence"}$
+${#augmentComp ? setPropertyInEntity('self', sameRowRef('xp'), 0) : "pas de remise à zéro de l'xp de la compétence"}$
+  <!-- attribut lié -->
+${xpCar:=    concat("xp", sameRow('car'))}$
+${bonusCar:= concat("bonus", sameRow('car'))}$
+${totalCar:= concat("total", sameRow('car'))}$
+${newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : xpCar)}$
+${augmentCar:= false}$
+${augmentCar:= newXp == recalculate(concat("$", "{", totalCar, "}", "$")) ? true : augmentCar}$
+${augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : "pas d'augmentation de la caractéristique"}$
+${augmentCar ? setPropertyInEntity('self', xpCar, 0) : "pas de remise à zéro de l'xp de la caractéristique"}$
 
 <!-- affichage -->
 <h3>${!nom}$</h3>
