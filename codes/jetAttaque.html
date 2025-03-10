@@ -6,7 +6,8 @@
 <!-- saisie de la difficulté -->
 ${#concat(
 	?{diff:"Difficulté"|"0","Normal"|"50","Très facile"|"25","Facile"|"-25","Difficile"|"-50","Très difficile"},
-	?{mod:"Modificateur"[number]|0}
+	?{mod:"Modificateur"[number]|0},
+  item.charge ? (?{charge:"Charge"[check]}) : ''
 )}$
 
 <!-- définition du seuil et du nom du jet-->
@@ -41,6 +42,10 @@ ${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xp
 ${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$
 
 <!-- dommage et blessures subies -->
+<!-- lecture de la table des dommages 
+A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q 
+1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
+-->
 <!-- en fonction des dégâts de l'arme -->
 ${#dommage:= item.dommages}$
 <!-- en fonction de la réussite critique (ou pas) et de la tactique -->
@@ -48,6 +53,8 @@ ${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$
 ${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$
 ${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$
 ${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$	
+<!-- gestion de la charge -->
+${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$
 
 <!-- en fonction de la force -->
 ${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$
@@ -55,10 +62,7 @@ ${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 
 ${#dommage:= dommage<1 ? 1 : dommage}$
 ${#dommage:= dommage>17 ? 17 : dommage}$
 
-<!-- lecture de la table des dommages 
-A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q 
-1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
--->
+
 ${#blessures:= 0 }$
 ${#blessures:= ru==1 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,1,  6,2,  7,2,  8,3,  9,3,  10,4,  11,4,  12,5,  13,5,  14,6,  15,6,  16,7,  17,7)  : blessures}$
 ${#blessures:= ru==2 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,2,  6,3,  7,4,  8,5,  9,6,  10,7,  11,8,  12,9,  13,10, 14,11, 15,12, 16,13, 17,14) : blessures}$
@@ -79,6 +83,7 @@ ${#dizaine:= floor(roll/10)}$
 ${#dizaine:= dizaine == 10 ? 0 : dizaine}$
 ${#loc:= ru*10+dizaine}$
 ${#loc:= loc>90 ? "Jambe gauche" : loc>80 ? "Jambe droite" : loc>65 ? "Abdomen" : loc>50 ? "Bras gauche" : loc>35 ? "Bras droit" : loc>10 ? "Torse" : "Tête"}$
+
 <!-- affichage -->
 <h3>${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$</h3>
 <table>
@@ -105,6 +110,6 @@ ${!result>0 ? concat("<tr><td>Localisation</td><td><strong>",loc,"</strong></td>
         <p class="bl-result ${!result==1 ? "bl-roll-success\">Réussite" : result==2 ? "bl-roll-critical-success\">Réussite critique" : result==-1 ? "bl-roll-critical-fail\">Echec critique" : "bl-roll-fail\">Echec"}$</p>
       </td>
     </tr>
-${!result>0 ? concat("<tr><td><h4>Blessures infligées</h4></td><td><strong>",blessures,"</strong></td></tr>") : ''}$
+${!result>0 ? concat("<tr><td><h4>Blessures infligées</h4>",(charge ? " (charge)" : ''),"</td><td><strong>",blessures,"</strong></td></tr>") : ''}$
   </tbody>
 </table>

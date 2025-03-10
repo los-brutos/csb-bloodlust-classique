@@ -65,6 +65,18 @@
       "flags": {}
     },
     {
+      "name": "pnj",
+      "label": "PNJ (Bloodlust)",
+      "path": "packs/pnj",
+      "type": "Actor",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "custom-system-builder",
+      "flags": {}
+    },
+    {
       "name": "armures-et-protections",
       "label": "Armures et protections (Scales)",
       "path": "packs/armures-et-protections",
@@ -139,7 +151,7 @@
         "name": "Ressources pour Bloodlust",
         "sorting": "a",
         "color": "#000000",
-        "packs": ["armes", "armures-et-protections", "peuples", "pouvoirs"]
+        "packs": ["armes", "armures-et-protections", "peuples", "pnj", "pouvoirs"]
       }
     ]
   }]

@@ -1,27 +1,18 @@
 <!--
   Jet de compétences
-
-  Pour adapter le jet, modifier les valeurs des variables suivantes
-    * seuil
-    * nom
-    * xpAttr
-    * xpComp
-
-  valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] 
 -->
-
 <!-- saisie de la difficulté -->
 ${#concat(
 	?{diff:"Difficulté"|"0","Normal"|"50","Très facile"|"25","Facile"|"-25","Difficile"|"-50","Très difficile"},
 	?{mod:"Modificateur"[number]|0}
 )}$
 <!-- définition du seuil et du nom du jet-->
-${#seuil:= max(totalAcrobatie + diff + mod, 5)}$
-${#nom:= "Acrobatie"}$
-${#xpComp:= "xpAcrobatie"}$
-${#xpAttr:= "xpAG"}$
+${#seuil:= max(sameRow('total') + diff + mod, 5)}$
+${#nom:= sameRow('nom')}$
+${#xpAttr:= concat("xp", sameRow('car'))}$
 <!-- jet -->
 ${#roll:= [1d100]}$
+
 ${#ru:= roll%10}$
 ${#result:= 0}$ 
 ${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$
@@ -30,7 +21,14 @@ ${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->
 ${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$
 <!-- expérience -->
 ${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$
-${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$
+${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', sameRowRef('xp'), sameRow('xp')+1) : sameRow('xp')}$
+${#augmentComp:= false}$
+${#augmentComp:= and(sameRow('total') < 50,  newXp == 1) ? true : augmentComp}$
+${#augmentComp:= and(sameRow('total') < 75,  newXp == 2) ? true : augmentComp}$
+${#augmentComp:= and(sameRow('total') >= 75, newXp == 5) ? true : augmentComp}$ 
+${#augmentComp ? setPropertyInEntity('self', sameRowRef('bonus'), sameRow('bonus')+5) : "pas d'augmentation"}$
+${#augmentComp ? setPropertyInEntity('self', sameRowRef('xp'), 0) : "pas de remise à zéro de l'xp"}$
+
 <!-- affichage -->
 <h3>${!nom}$</h3>
 <table>
@@ -54,5 +52,6 @@ ${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xp
         <p class="bl-result ${!result==1 ? "bl-roll-success\">Réussite" : result==2 ? "bl-roll-critical-success\">Réussite critique" : result==-1 ? "bl-roll-critical-fail\">Echec critique" : "bl-roll-fail\">Echec"}$</p>
       </td>
     </tr>
+    ${!augmentComp ? "<tr><td colspan=\"2\"><p class=\"bl-result bl-roll-success\">Augmentation de la compétence</p></td></tr>" : ''}$
   </tbody>
 </table>

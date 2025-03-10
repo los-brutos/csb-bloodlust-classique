@@ -30,6 +30,9 @@ echo.
 echo /// unpack compendium "pouvoirs"
 call fvtt package unpack -c pouvoirs
 echo.
+echo /// unpack compendium "pnj"
+call fvtt package unpack -c pnj
+echo.
 echo /// unpack compendium "scenarios"
 call fvtt package unpack -c scenarios
 echo.

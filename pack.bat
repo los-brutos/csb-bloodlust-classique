@@ -29,7 +29,10 @@ call fvtt package pack peuples
 echo.
 echo /// unpack compendium "pouvoirs"
 call fvtt package pack pouvoirs
-echo .
+echo.
+echo /// unpack compendium "pnj"
+call fvtt package pack pnj
+echo.
 rem echo /// create compendium "scenarios"
 rem call fvtt package pack scenarios
 rem echo.
