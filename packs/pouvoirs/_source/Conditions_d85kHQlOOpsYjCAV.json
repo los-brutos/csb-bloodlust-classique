@@ -1,0 +1,22 @@
+{
+  "name": "Conditions",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "d85kHQlOOpsYjCAV",
+  "description": "",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1743337781589,
+    "modifiedTime": 1743337874337,
+    "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
+  },
+  "_key": "!folders!d85kHQlOOpsYjCAV"
+}

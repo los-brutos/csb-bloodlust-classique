@@ -1,0 +1,341 @@
+{
+  "folder": "d85kHQlOOpsYjCAV",
+  "name": "Ne fonctionne pas la nuit",
+  "type": "equippableItem",
+  "_id": "4r1nw6cLmW1kBK2U",
+  "img": "icons/svg/bones.svg",
+  "system": {
+    "hidden": [],
+    "header": {
+      "contents": [],
+      "key": "custom_header",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "body": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "table",
+          "contents": [
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Coût",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "bold"
+              },
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "cout",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "m-small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "0",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": false,
+                "title": "",
+                "titleStyle": "default"
+              }
+            ],
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "m-small",
+                "icon": "",
+                "value": "Manifestation",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "bold"
+              },
+              {
+                "key": "manifestation",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "textArea",
+                "label": "",
+                "defaultValue": "",
+                "size": "full-size",
+                "style": "sheet"
+              }
+            ],
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Fréquence d'utilisation",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "bold"
+              },
+              {
+                "key": "frequenceUtilisation",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Chaque fois que le pouvoir souhaite être utilisé.",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              }
+            ],
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "m-small",
+                "icon": "",
+                "value": "Effet(s)",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "bold"
+              },
+              {
+                "key": "effets",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "textArea",
+                "label": "",
+                "defaultValue": "",
+                "size": "full-size",
+                "style": "sheet"
+              }
+            ],
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "m-small",
+                "icon": "",
+                "value": "Portée",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "bold"
+              },
+              {
+                "key": "portee",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Sur le pouvoir auquel il est associé",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              }
+            ],
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Durée",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "bold"
+              },
+              {
+                "key": "duree",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "textField",
+                "label": "",
+                "defaultValue": "",
+                "size": "full-size",
+                "charList": "",
+                "autocomplete": ""
+              }
+            ]
+          ],
+          "cols": 2,
+          "rows": 6,
+          "layout": "ll"
+        }
+      ],
+      "key": "custom_body",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "display": {
+      "width": "600",
+      "height": "600",
+      "fix_size": false,
+      "pp_width": "64",
+      "pp_height": "64"
+    },
+    "template": "RbSpUTvKeuimPaGg",
+    "props": {
+      "name": "Ne fonctionne pas la nuit",
+      "cout": "-10",
+      "frequenceUtilisation": "Chaque fois que le pouvoir souhaite être utilisé.",
+      "portee": "Sur le pouvoir auquel il est associé",
+      "manifestation": "<p>La lame de l'arme brille légèrement lorsque le pouvoir ainsi conditionné est utilisé.</p>",
+      "duree": "Toutes les nuits",
+      "effets": "<p>Le pouvoir auquel est associé cette condition ne peut en aucun cas être utilisé entre le crépuscule et l'aube.</p>"
+    },
+    "modifiers": [],
+    "unique": true,
+    "container": null,
+    "uniqueId": "4r1nw6cLmW1kBK2U",
+    "templateSystemUniqueVersion": 3235413290
+  },
+  "effects": [],
+  "flags": {
+    "custom-system-builder": {
+      "version": "4.4.2"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1743337874487,
+    "modifiedTime": 1743337874487,
+    "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "AjcbJ5lKJDk3HKUe": 3
+  },
+  "_key": "!items!4r1nw6cLmW1kBK2U"
+}

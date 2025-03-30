@@ -40,59 +40,180 @@
       },
       {
         "name": "magieAB",
-        "value": "${0}$"
+        "value": "${fetchFromUuid(armeDieuUuid, 'magieAB', 0)}$"
       },
       {
         "name": "magieAN",
-        "value": "${0}$"
+        "value": "${fetchFromUuid(armeDieuUuid, 'magieAN', 0)}$"
       },
       {
         "name": "magieAR",
-        "value": "${0}$"
+        "value": "${fetchFromUuid(armeDieuUuid, 'magieAR', 0)}$"
       },
       {
         "name": "magieFE",
-        "value": "${0}$"
+        "value": "${fetchFromUuid(armeDieuUuid, 'magieFE', 0)}$"
       },
       {
         "name": "magiePA",
-        "value": "${0}$"
+        "value": "${fetchFromUuid(armeDieuUuid, 'magiePA', 0)}$"
       },
       {
         "name": "magieES",
-        "value": "${0}$"
+        "value": "${fetchFromUuid(armeDieuUuid, 'magieES', 0)}$"
       },
       {
-        "name": "magiePrestige",
-        "value": "${0}$"
+        "name": "magieDesirPrestige",
+        "value": "${fetchFromUuid(armeDieuUuid, 'prestige', 0)}$"
       },
       {
-        "name": "magieRichesse",
-        "value": "${0}$"
+        "name": "magieDesirRichesse",
+        "value": "${fetchFromUuid(armeDieuUuid, 'richesse', 0)}$"
       },
       {
-        "name": "magieSexe",
-        "value": "${0}$"
+        "name": "magieDesirSexe",
+        "value": "${fetchFromUuid(armeDieuUuid, 'sexe', 0)}$"
       },
       {
-        "name": "magieViolence",
-        "value": "${0}$"
+        "name": "magieDesirViolence",
+        "value": "${fetchFromUuid(armeDieuUuid, 'violence', 0)}$"
       },
       {
-        "name": "magieReputation",
-        "value": "${0}$"
+        "name": "magieDesirReputation",
+        "value": "${fetchFromUuid(armeDieuUuid, 'reputation', 0)}$"
       },
       {
         "name": "magieControle",
         "value": "${0}$"
-      },
-      {
-        "name": "magiePrestige",
-        "value": "${0}$"
       }
     ],
     "header": {
-      "contents": [],
+      "contents": [
+        {
+          "key": "armeDieuUuid",
+          "cssClass": "",
+          "role": "3",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "textField",
+          "label": "Uuid Arme dieu",
+          "defaultValue": "",
+          "size": "full-size",
+          "charList": "",
+          "autocomplete": ""
+        },
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "Information sur l'arme dieu",
+          "visibilityFormula": "not(equalText(armeDieuUuid, ''))",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "label",
+              "size": "full-size",
+              "icon": "",
+              "value": "<a class=\"content-link\" draggable=\"true\" data-link=\"\" data-uuid=\"${armeDieuUuid}$\" data-id=\"${armeDieuUuid}$\" data-type=\"Actor\" data-tooltip=\"Lien vers l'arme dieu\"><i class=\"fas fa-swords\"></i>${fetchFromUuid(armeDieuUuid, 'name', 'Pas de nom')}$</a>\n",
+              "prefix": "",
+              "suffix": "",
+              "rollMessage": "",
+              "altRollMessage": "",
+              "rollMessageToChat": true,
+              "altRollMessageToChat": true,
+              "style": "label"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "label",
+              "size": "full-size",
+              "icon": "",
+              "value": "<h2>${fetchFromUuid(armeDieuUuid, 'name', 'Pas de nom')}$</h2>",
+              "prefix": "",
+              "suffix": "",
+              "rollMessage": "",
+              "altRollMessage": "",
+              "rollMessageToChat": true,
+              "altRollMessageToChat": true,
+              "style": "label"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "label",
+              "size": "full-size",
+              "icon": "",
+              "value": "${fetchFromUuid(armeDieuUuid, 'type', 'Pas de type')}$",
+              "prefix": "",
+              "suffix": "",
+              "rollMessage": "",
+              "altRollMessage": "",
+              "rollMessageToChat": true,
+              "altRollMessageToChat": true,
+              "style": "label"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "label",
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "${competenceNumero > 0 ? concat(competence, (modCompetence > 0 ? '+' : ''), modCompetence, '%') : ''}$",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "rollMessageToChat": true,
+                  "altRollMessageToChat": true,
+                  "style": "label"
+                }
+              ],
+              "flow": "grid-2",
+              "align": "center",
+              "collapsible": false,
+              "defaultCollapsed": false,
+              "title": "",
+              "titleStyle": "default"
+            }
+          ],
+          "flow": "vertical",
+          "align": "left",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        }
+      ],
       "key": "custom_header",
       "cssClass": "",
       "role": 0,
@@ -279,7 +400,7 @@
               "value": "${tactique}$\n",
               "prefix": "",
               "suffix": "",
-              "rollMessage": "",
+              "rollMessage": "${dommage:= 1}$\n${switchCase(dommage,1,2,2,2,3,3,4,5,5,10,6,15,7,20,8,25,9,30,10,35,11,40,12,45,13,50,14,55,15,60,16,65,17,70)}$",
               "altRollMessage": "",
               "rollMessageToChat": true,
               "altRollMessageToChat": true,
@@ -300,7 +421,7 @@
               "value": "",
               "prefix": "",
               "suffix": "",
-              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0}\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= item.dommages}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${#dommage:= dommage>17 ? 17 : dommage}$\n\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n${#blessures:= 0 }$\n${#blessures:= ru==1 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,1,  6,2,  7,2,  8,3,  9,3,  10,4,  11,4,  12,5,  13,5,  14,6,  15,6,  16,7,  17,7)  : blessures}$\n${#blessures:= ru==2 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,2,  6,3,  7,4,  8,5,  9,6,  10,7,  11,8,  12,9,  13,10, 14,11, 15,12, 16,13, 17,14) : blessures}$\n${#blessures:= ru==3 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,2, 5,3,  6,5,  7,6,  8,8,  9,9,  10,11, 11,12, 12,14, 13,15, 14,17, 15,18, 16,20, 17,21) : blessures}$\n${#blessures:= ru==4 ? switchCase(dommage, 1,1, 2,1, 3,2, 4,2, 5,4,  6,6,  7,8,  8,10, 9,12, 10,14, 11,16, 12,18, 13,20, 14,22, 15,24, 16,26, 17,28) : blessures}$\n${#blessures:= ru==5 ? switchCase(dommage, 1,1, 2,1, 3,2, 4,3, 5,5,  6,8,  7,10, 8,13, 9,15, 10,18, 11,20, 12,23, 13,25, 14,28, 15,30, 16,33, 17,35) : blessures}$\n${#blessures:= ru==6 ? switchCase(dommage, 1,1, 2,2, 3,2, 4,3, 5,6,  6,9,  7,12, 8,15, 9,18, 10,21, 11,24, 12,27, 13,30, 14,33, 15,36, 16,39, 17,42) : blessures}$\n${#blessures:= ru==7 ? switchCase(dommage, 1,1, 2,2, 3,3, 4,4, 5,7,  6,11, 7,14, 8,18, 9,21, 10,25, 11,28, 12,32, 13,35, 14,39, 15,42, 16,46, 17,49) : blessures}$\n${#blessures:= ru==8 ? switchCase(dommage, 1,1, 2,2, 3,3, 4,4, 5,8,  6,12, 7,16, 8,20, 9,24, 10,28, 11,32, 12,36, 13,40, 14,44, 15,18, 16,52, 17,56) : blessures}$\n${#blessures:= ru==9 ? switchCase(dommage, 1,2, 2,2, 3,3, 4,5, 5,9,  6,14, 7,18, 8,23, 9,27, 10,32, 11,36, 12,41, 13,45, 14,50, 15,54, 16,59, 17,63) : blessures}$\n${#blessures:= ru==0 ? switchCase(dommage, 1,2, 2,2, 3,3, 4,5, 5,10, 6,15, 7,20, 8,25, 9,30, 10,35, 11,40, 12,45, 13,50, 14,55, 15,60, 16,65, 17,70) : blessures}$\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n<!-- affichage -->\n<h3>${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$</h3>\n<table>\n  <tbody>\n    <tr>\n      <td style=\"width:50%;\">\n        <h4>d100</h4>\n      </td>\n      <td>\n        <div class=\"bl-dropdown\">\n          <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n          <div class=\"bl-dropdown-content\">\n            <p>Compétence : ${!competence}$</p>\n            <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n            <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n            <p>Modificateur : ${!mod}$</p>\n          </div>\n        </div>\n      </td>\n    </tr>\n${!result>0 ? concat(\"<tr><td>Localisation</td><td><strong>\",loc,\"</strong></td></tr><tr><td>RU</td><td><strong>\",ru,\"</strong></td></tr>\") : ''}$\n    <tr>\n      <td colspan=\"2\">\n        <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n      </td>\n    </tr>\n${!result>0 ? concat(\"<tr><td><h4>Blessures infligées</h4></td><td><strong>\",blessures,\"</strong></td></tr>\") : ''}$\n  </tbody>\n</table>",
+              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0},\n  item.charge ? (?{charge:\"Charge\"[check]}) : ''\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= item.dommages}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n<!-- gestion de la charge -->\n${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${dommage:= dommage>17 ? 17 : dommage}$\n\n\n${blessures:= 0 }$\n${blessures:= ru==0 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,10,6,15,7,20,8,25,9,30,10,35,11,40,12,45,13,50,14,55,15,60,16,65,17,70) : blessures}$\n${blessures:= ru==1 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,1,6,2,7,2,8,3,9,3,10,4,11,4,12,5,13,5,14,6,15,6,16,7,17,7) : blessures}$\n${blessures:= ru==2 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,2,6,3,7,4,8,5,9,6,10,7,11,8,12,9,13,10,14,11,15,12,16,13,17,14) : blessures}$\n${blessures:= ru==3 ? switchCase(dommage,1,1,2,1,3,1,4,2,5,3,6,5,7,6,8,8,9,9,10,11,11,12,12,14,13,15,14,17,15,18,16,20,17,21) : blessures}$\n${blessures:= ru==4 ? switchCase(dommage,1,1,2,1,3,2,4,2,5,4,6,6,7,8,8,10,9,12,10,14,11,16,12,18,13,20,14,22,15,24,16,26,17,28) : blessures}$\n${blessures:= ru==5 ? switchCase(dommage,1,1,2,1,3,2,4,3,5,5,6,8,7,10,8,13,9,15,10,18,11,20,12,23,13,25,14,28,15,30,16,33,17,35) : blessures}$\n${blessures:= ru==6 ? switchCase(dommage,1,1,2,2,3,2,4,3,5,6,6,9,7,12,8,15,9,18,10,21,11,24,12,27,13,30,14,33,15,36,16,39,17,42) : blessures}$\n${blessures:= ru==7 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,7,6,11,7,14,8,18,9,21,10,25,11,28,12,32,13,35,14,39,15,42,16,46,17,49) : blessures}$\n${blessures:= ru==8 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,8,6,12,7,16,8,20,9,24,10,28,11,32,12,36,13,40,14,44,15,18,16,52,17,56) : blessures}$\n${blessures:= ru==9 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,9,6,14,7,18,8,23,9,27,10,32,11,36,12,41,13,45,14,50,15,54,16,59,17,63) : blessures}$\n\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n\n<!-- expérience -->\n  <!-- compétence -->\n  ${#xpComp:=  concat('xp', tactique)}$\n  ${#bonusComp:= concat('bonus', tactique)}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n  ${#augmentComp:= false}$\n  ${#augmentComp:= and(competence < 25,  newXp == 1) ? true : augmentComp}$\n  ${#augmentComp:= and(competence < 50,  newXp == 2) ? true : augmentComp}$\n  ${#augmentComp:= and(competence >= 50, newXp == 5) ? true : augmentComp}$ \n  ${#augmentComp ? setPropertyInEntity('self', bonusComp, concat(bonusComp, '+5')) : \"pas d'augmentation de la compétence\"}$\n  ${#augmentComp ? setPropertyInEntity('self', xpComp, 0) : \"pas de remise à zéro de l'xp de la compétence\"}$\n\n  <!-- caractéristique liée -->\n  ${#xpCar:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA','xpRA','ES','xpRA')}$\n  ${#bonusCar:= replace(xpCar, 'xp', 'bonus')}$\n  ${#totalCar:= replace(xpCar, 'xp', 'total')}$\n  ${#totalCar:= recalculate(concat(\"$\", \"{\", totalCar, \"}\", \"$\"))}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : ''}$\n\n  ${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$\n  ${#augmentCar:= newXp == totalCar ? true : false}$\n  ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : \"pas d'augmentation de la caractéristique\"}$\n  ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : \"pas de remise à zéro de l'xp de la caractéristique\"}$\n\n\n<!-- affichage -->\n<div>\n  <table>\n    <tbody>\n      <tr>\n        <td rowspan=\"2\">\n            <div><img class=\"bl-roll-image\" src=\"${!%{return linkedEntity.img}%}$\"></img></div>\n        </td>\n        <th>\n          <h3>${!item.name}$</h3>\n        </th>\n      </tr>\n      <tr>\n        <td>\n          ${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  \n  <table>\n    <tbody>\n      <tr>\n        <th style=\"width:50%;\">\n          d100\n        </th>\n        <td>\n          <div class=\"bl-dropdown\">\n            <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n            <div class=\"bl-dropdown-content\">\n              <p>Compétence : ${!competence}$</p>\n              <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n              <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n              <p>Modificateur : ${!mod}$</p>\n            </div>\n          </div>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Localisation</th><td>\",loc, \"</td></tr><tr><th>RU</th><td>\",ru,\"</td></tr>\") : ''}$\n      <tr>\n        <td colspan=\"2\">\n          <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Blessures infligées\",(charge ? \" (charge)\" : ''),\"</th><td>\",blessures,\"</td></tr>\") : ''}$\n    </tbody>\n  </table>\n</div>",
               "altRollMessage": "",
               "rollMessageToChat": true,
               "altRollMessageToChat": true,
@@ -495,7 +616,7 @@
               "value": "",
               "prefix": "",
               "suffix": "",
-              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0},\n  item.charge ? ?{charge:\"Charge\"[check]} : ''\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= item.dommages}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n<!-- gestion de la charge -->\n${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${#dommage:= dommage>17 ? 17 : dommage}$\n\n\n${#blessures:= 0 }$\n${#blessures:= ru==1 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,1,  6,2,  7,2,  8,3,  9,3,  10,4,  11,4,  12,5,  13,5,  14,6,  15,6,  16,7,  17,7)  : blessures}$\n${#blessures:= ru==2 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,2,  6,3,  7,4,  8,5,  9,6,  10,7,  11,8,  12,9,  13,10, 14,11, 15,12, 16,13, 17,14) : blessures}$\n${#blessures:= ru==3 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,2, 5,3,  6,5,  7,6,  8,8,  9,9,  10,11, 11,12, 12,14, 13,15, 14,17, 15,18, 16,20, 17,21) : blessures}$\n${#blessures:= ru==4 ? switchCase(dommage, 1,1, 2,1, 3,2, 4,2, 5,4,  6,6,  7,8,  8,10, 9,12, 10,14, 11,16, 12,18, 13,20, 14,22, 15,24, 16,26, 17,28) : blessures}$\n${#blessures:= ru==5 ? switchCase(dommage, 1,1, 2,1, 3,2, 4,3, 5,5,  6,8,  7,10, 8,13, 9,15, 10,18, 11,20, 12,23, 13,25, 14,28, 15,30, 16,33, 17,35) : blessures}$\n${#blessures:= ru==6 ? switchCase(dommage, 1,1, 2,2, 3,2, 4,3, 5,6,  6,9,  7,12, 8,15, 9,18, 10,21, 11,24, 12,27, 13,30, 14,33, 15,36, 16,39, 17,42) : blessures}$\n${#blessures:= ru==7 ? switchCase(dommage, 1,1, 2,2, 3,3, 4,4, 5,7,  6,11, 7,14, 8,18, 9,21, 10,25, 11,28, 12,32, 13,35, 14,39, 15,42, 16,46, 17,49) : blessures}$\n${#blessures:= ru==8 ? switchCase(dommage, 1,1, 2,2, 3,3, 4,4, 5,8,  6,12, 7,16, 8,20, 9,24, 10,28, 11,32, 12,36, 13,40, 14,44, 15,18, 16,52, 17,56) : blessures}$\n${#blessures:= ru==9 ? switchCase(dommage, 1,2, 2,2, 3,3, 4,5, 5,9,  6,14, 7,18, 8,23, 9,27, 10,32, 11,36, 12,41, 13,45, 14,50, 15,54, 16,59, 17,63) : blessures}$\n${#blessures:= ru==0 ? switchCase(dommage, 1,2, 2,2, 3,3, 4,5, 5,10, 6,15, 7,20, 8,25, 9,30, 10,35, 11,40, 12,45, 13,50, 14,55, 15,60, 16,65, 17,70) : blessures}$\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n\n<!-- affichage -->\n<h3>${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$</h3>\n<table>\n  <tbody>\n    <tr>\n      <td style=\"width:50%;\">\n        <h4>d100</h4>\n      </td>\n      <td>\n        <div class=\"bl-dropdown\">\n          <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n          <div class=\"bl-dropdown-content\">\n            <p>Compétence : ${!competence}$</p>\n            <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n            <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n            <p>Modificateur : ${!mod}$</p>\n          </div>\n        </div>\n      </td>\n    </tr>\n${!result>0 ? concat(\"<tr><td>Localisation</td><td><strong>\",loc,\"</strong></td></tr><tr><td>RU</td><td><strong>\",ru,\"</strong></td></tr>\") : ''}$\n    <tr>\n      <td colspan=\"2\">\n        <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n      </td>\n    </tr>\n${!result>0 ? concat(\"<tr><td><h4>Blessures infligées</h4>\",(charge ? \" (charge)\" : ''),\"</td><td><strong>\",blessures,\"</strong></td></tr>\") : ''}$\n  </tbody>\n</table>",
+              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0},\n  item.charge ? (?{charge:\"Charge\"[check]}) : ''\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= item.dommages}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n<!-- gestion de la charge -->\n${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${#dommage:= dommage>17 ? 17 : dommage}$\n\n${#blessures:= 0 }$\n${#blessures:= ru==1 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,1,  6,2,  7,2,  8,3,  9,3,  10,4,  11,4,  12,5,  13,5,  14,6,  15,6,  16,7,  17,7)  : blessures}$\n${#blessures:= ru==2 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,1, 5,2,  6,3,  7,4,  8,5,  9,6,  10,7,  11,8,  12,9,  13,10, 14,11, 15,12, 16,13, 17,14) : blessures}$\n${#blessures:= ru==3 ? switchCase(dommage, 1,1, 2,1, 3,1, 4,2, 5,3,  6,5,  7,6,  8,8,  9,9,  10,11, 11,12, 12,14, 13,15, 14,17, 15,18, 16,20, 17,21) : blessures}$\n${#blessures:= ru==4 ? switchCase(dommage, 1,1, 2,1, 3,2, 4,2, 5,4,  6,6,  7,8,  8,10, 9,12, 10,14, 11,16, 12,18, 13,20, 14,22, 15,24, 16,26, 17,28) : blessures}$\n${#blessures:= ru==5 ? switchCase(dommage, 1,1, 2,1, 3,2, 4,3, 5,5,  6,8,  7,10, 8,13, 9,15, 10,18, 11,20, 12,23, 13,25, 14,28, 15,30, 16,33, 17,35) : blessures}$\n${#blessures:= ru==6 ? switchCase(dommage, 1,1, 2,2, 3,2, 4,3, 5,6,  6,9,  7,12, 8,15, 9,18, 10,21, 11,24, 12,27, 13,30, 14,33, 15,36, 16,39, 17,42) : blessures}$\n${#blessures:= ru==7 ? switchCase(dommage, 1,1, 2,2, 3,3, 4,4, 5,7,  6,11, 7,14, 8,18, 9,21, 10,25, 11,28, 12,32, 13,35, 14,39, 15,42, 16,46, 17,49) : blessures}$\n${#blessures:= ru==8 ? switchCase(dommage, 1,1, 2,2, 3,3, 4,4, 5,8,  6,12, 7,16, 8,20, 9,24, 10,28, 11,32, 12,36, 13,40, 14,44, 15,18, 16,52, 17,56) : blessures}$\n${#blessures:= ru==9 ? switchCase(dommage, 1,2, 2,2, 3,3, 4,5, 5,9,  6,14, 7,18, 8,23, 9,27, 10,32, 11,36, 12,41, 13,45, 14,50, 15,54, 16,59, 17,63) : blessures}$\n${#blessures:= ru==0 ? switchCase(dommage, 1,2, 2,2, 3,3, 4,5, 5,10, 6,15, 7,20, 8,25, 9,30, 10,35, 11,40, 12,45, 13,50, 14,55, 15,60, 16,65, 17,70) : blessures}$\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n\n<!-- expérience -->\n  <!-- compétence -->\n  ${#xpComp:=  concat('xp', tactique)}$\n  ${#bonusComp:= concat('bonus', tactique)}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n  ${#augmentComp:= false}$\n  ${#augmentComp:= and(competence < 25,  newXp == 1) ? true : augmentComp}$\n  ${#augmentComp:= and(competence < 50,  newXp == 2) ? true : augmentComp}$\n  ${#augmentComp:= and(competence >= 50, newXp == 5) ? true : augmentComp}$ \n  ${#augmentComp ? setPropertyInEntity('self', bonusComp, concat(bonusComp, '+5')) : \"pas d'augmentation de la compétence\"}$\n  ${#augmentComp ? setPropertyInEntity('self', xpComp, 0) : \"pas de remise à zéro de l'xp de la compétence\"}$\n\n  <!-- caractéristique liée -->\n  ${#xpCar:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA','xpRA','ES','xpRA')}$\n  ${#bonusCar:= replace(xpCar, 'xp', 'bonus')}$\n  ${#totalCar:= replace(xpCar, 'xp', 'total')}$\n  ${#totalCar:= recalculate(concat(\"$\", \"{\", totalCar, \"}\", \"$\"))}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : ''}$\n\n  ${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$\n  ${#augmentCar:= newXp == totalCar ? true : false}$\n  ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : \"pas d'augmentation de la caractéristique\"}$\n  ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : \"pas de remise à zéro de l'xp de la caractéristique\"}$\n\n<!-- affichage -->\n<div>\n  <table>\n    <tbody>\n      <tr>\n        <td rowspan=\"2\">\n            <div><img class=\"bl-roll-image\" src=\"${!%{return linkedEntity.img}%}$\"></img></div>\n        </td>\n        <th>\n          <h3>${!item.name}$</h3>\n        </th>\n      </tr>\n      <tr>\n        <td>\n          ${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$\n        </td>\n      </tr>\n    </tbody>\n  </table>\n\n  <table>\n    <tbody>\n      <tr>\n        <th style=\"width:50%;\">\n          d100\n        </th>\n        <td>\n          <div class=\"bl-dropdown\">\n            <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n            <div class=\"bl-dropdown-content\">\n              <p>Compétence : ${!competence}$</p>\n              <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n              <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n              <p>Modificateur : ${!mod}$</p>\n            </div>\n          </div>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Localisation</th><td>\",loc, \"</td></tr><tr><th>RU</th><td>\",ru,\"</td></tr>\") : ''}$\n      <tr>\n        <td colspan=\"2\">\n          <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Blessures infligées\",(charge ? \" (charge)\" : ''),\"</th><td>\",blessures,\"</td></tr>\") : ''}$\n    </tbody>\n  </table>\n</div>\n",
               "altRollMessage": "",
               "rollMessageToChat": true,
               "altRollMessageToChat": true,
@@ -1956,7 +2077,7 @@
                     "type": "label",
                     "size": "full-size",
                     "icon": "",
-                    "value": "Expérience",
+                    "value": "XP",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -2187,23 +2308,59 @@
                     "titleStyle": "default"
                   },
                   {
-                    "key": "xpAB",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
-                    "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": false,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "xpViewAB",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "${xpAB}$",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "xpAB",
+                        "cssClass": "",
+                        "role": "3",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": true,
+                    "title": "",
+                    "titleStyle": "default"
                   },
                   null
                 ],
@@ -2341,17 +2498,17 @@
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
+                    "type": "label",
                     "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": true,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "icon": "",
+                    "value": "${magieAN}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
                   },
                   {
                     "key": "",
@@ -2409,23 +2566,59 @@
                     "titleStyle": "default"
                   },
                   {
-                    "key": "xpAN",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
-                    "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": false,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "xpViewAN",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "${xpAN}$",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "xpAN",
+                        "cssClass": "",
+                        "role": "3",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": true,
+                    "title": "",
+                    "titleStyle": "default"
                   }
                 ],
                 [
@@ -2562,17 +2755,17 @@
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
+                    "type": "label",
                     "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": true,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "icon": "",
+                    "value": "${magieAR}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
                   },
                   {
                     "key": "",
@@ -2630,23 +2823,59 @@
                     "titleStyle": "default"
                   },
                   {
-                    "key": "xpAR",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
-                    "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": false,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "xpViewAR",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "${xpAR}$",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "xpAR",
+                        "cssClass": "",
+                        "role": "3",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": true,
+                    "title": "",
+                    "titleStyle": "default"
                   }
                 ],
                 [
@@ -2783,17 +3012,17 @@
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
+                    "type": "label",
                     "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": true,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "icon": "",
+                    "value": "${magieFE}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
                   },
                   {
                     "key": "",
@@ -2851,23 +3080,59 @@
                     "titleStyle": "default"
                   },
                   {
-                    "key": "xpFE",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
-                    "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": false,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "xpViewFE",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "${xpFE}$",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "xpFE",
+                        "cssClass": "",
+                        "role": "3",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": true,
+                    "title": "",
+                    "titleStyle": "default"
                   }
                 ],
                 [
@@ -3004,17 +3269,17 @@
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
+                    "type": "label",
                     "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": true,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "icon": "",
+                    "value": "${magiePA}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
                   },
                   {
                     "key": "",
@@ -3072,23 +3337,59 @@
                     "titleStyle": "default"
                   },
                   {
-                    "key": "xpPA",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
-                    "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": false,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "xpViewPA",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "${xpPA}$",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "xpPA",
+                        "cssClass": "",
+                        "role": "3",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": true,
+                    "title": "",
+                    "titleStyle": "default"
                   }
                 ],
                 [
@@ -3225,17 +3526,17 @@
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
+                    "type": "label",
                     "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": true,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "icon": "",
+                    "value": "${magieES}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
                   },
                   {
                     "key": "",
@@ -3293,23 +3594,59 @@
                     "titleStyle": "default"
                   },
                   {
-                    "key": "xpES",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
-                    "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": false,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "xpViewES",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "${xpES}$",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "xpES",
+                        "cssClass": "",
+                        "role": "3",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": true,
+                    "title": "",
+                    "titleStyle": "default"
                   }
                 ],
                 [
@@ -3415,17 +3752,17 @@
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
+                    "type": "label",
                     "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": true,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "icon": "",
+                    "value": "",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
                   },
                   {
                     "key": "totalTIR",
@@ -3447,23 +3784,59 @@
                     "style": "bold"
                   },
                   {
-                    "key": "xpTIR",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
                     "tooltip": "",
                     "visibilityFormula": "",
-                    "type": "numberField",
-                    "label": "",
-                    "defaultValue": "0",
-                    "size": "small",
-                    "allowDecimal": false,
-                    "minVal": "0",
-                    "maxVal": "",
-                    "allowRelative": false,
-                    "showControls": false,
-                    "controlsStyle": "hover",
-                    "inputStyle": "text"
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "xpViewTIR",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "${xpTIR}$",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "xpTIR",
+                        "cssClass": "",
+                        "role": "3",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    "flow": "vertical",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": true,
+                    "title": "",
+                    "titleStyle": "default"
                   }
                 ]
               ],
@@ -3731,7 +4104,7 @@
                   "$deletionDisabled": true
                 },
                 {
-                  "$deleted": false,
+                  "$deleted": true,
                   "code": "ArtisanatBatranoban",
                   "bonus": "0",
                   "xp": "0",
@@ -4141,7 +4514,7 @@
                     "defaultValue": "0",
                     "size": "small",
                     "allowDecimal": false,
-                    "minVal": "0",
+                    "minVal": "",
                     "maxVal": "",
                     "allowRelative": false,
                     "showControls": false,
@@ -4158,7 +4531,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${magiePrestige}$",
+                    "value": "${magieDesirPrestige}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4177,7 +4550,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${basePrestige + bonusPrestige + magiePrestige}$",
+                    "value": "${basePrestige + bonusPrestige + magieDesirPrestige}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4252,7 +4625,7 @@
                     "defaultValue": "0",
                     "size": "small",
                     "allowDecimal": false,
-                    "minVal": "0",
+                    "minVal": "",
                     "maxVal": "",
                     "allowRelative": false,
                     "showControls": false,
@@ -4260,7 +4633,7 @@
                     "inputStyle": "text"
                   },
                   {
-                    "key": "",
+                    "key": "magieRichesse",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
@@ -4269,7 +4642,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${magieRichesse}$",
+                    "value": "${magieDesirRichesse}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4288,7 +4661,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${baseRichesse + bonusRichesse + magieRichesse}$",
+                    "value": "${baseRichesse + bonusRichesse + magieDesirRichesse}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4363,7 +4736,7 @@
                     "defaultValue": "0",
                     "size": "small",
                     "allowDecimal": false,
-                    "minVal": "0",
+                    "minVal": "",
                     "maxVal": "",
                     "allowRelative": false,
                     "showControls": false,
@@ -4371,7 +4744,7 @@
                     "inputStyle": "text"
                   },
                   {
-                    "key": "",
+                    "key": "magieSexe",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
@@ -4380,7 +4753,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${magieSexe}$",
+                    "value": "${magieDesirSexe}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4399,7 +4772,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${baseSexe + bonusSexe + magieSexe}$",
+                    "value": "${baseSexe + bonusSexe + magieDesirSexe}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4474,7 +4847,7 @@
                     "defaultValue": "0",
                     "size": "small",
                     "allowDecimal": false,
-                    "minVal": "0",
+                    "minVal": "",
                     "maxVal": "",
                     "allowRelative": false,
                     "showControls": false,
@@ -4491,7 +4864,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${magieViolence}$",
+                    "value": "${magieDesirViolence}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4510,7 +4883,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${baseViolence + bonusViolence + magieViolence}$",
+                    "value": "${baseViolence + bonusViolence + magieDesirViolence}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4585,7 +4958,7 @@
                     "defaultValue": "0",
                     "size": "small",
                     "allowDecimal": false,
-                    "minVal": "0",
+                    "minVal": "",
                     "maxVal": "",
                     "allowRelative": false,
                     "showControls": false,
@@ -4602,7 +4975,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${magieReputation}$",
+                    "value": "${magieDesirReputation}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4621,7 +4994,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${baseReputation + bonusReputation + magieReputation}$",
+                    "value": "${baseReputation + bonusReputation + magieDesirReputation}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -4699,7 +5072,7 @@
     "template": "1BPuXHlQoRz23e3Z",
     "props": {
       "name": "Arlweg normal",
-      "magieAN": "0",
+      "magieAN": "${fetchFromUuid(armeDieuUuid, 'magieAN",
       "magieAR": "0",
       "magieFE": "0",
       "magiePA": "0",
@@ -4736,7 +5109,7 @@
       "bonusES": "0",
       "xpES": "0",
       "bonusTIR": "0",
-      "magieTIR": "0",
+      "magieTIR": "",
       "xpTIR": "0",
       "bonusPrestige": "0",
       "bonusRichesse": "0",
@@ -4783,7 +5156,7 @@
       "totalAB": "10",
       "baseAN": "10",
       "modAN": "0",
-      "totalAN": "10",
+      "totalAN": "ERROR",
       "baseAR": "10",
       "modAR": "0",
       "totalAR": "10",
@@ -4818,19 +5191,9 @@
       "magieInitiative": "0",
       "initiative": "10",
       "magieAB": "0",
-      "magiePrestige": "0",
       "magieRichesse": "0",
       "magieSexe": "0",
-      "magieViolence": "0",
-      "magieReputation": "0",
       "magieControle": "0",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactFE": "FE",
-      "tactPA": "PA",
-      "tactES": "ES",
       "comp": {
         "0": {
           "$deleted": false,
@@ -4840,7 +5203,12 @@
           "car": "AG",
           "code": "Acrobatie",
           "bonus": "0",
-          "xp": "0"
+          "xp": "0",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "10",
+          "modificateur": "0",
+          "total": "10"
         },
         "1": {
           "$deleted": false,
@@ -4848,7 +5216,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 4,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat batranoban (torture rafinée)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "2": {
           "$deleted": false,
@@ -4856,7 +5231,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 6,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat batranoban (torture rafinée)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "3": {
           "$deleted": false,
@@ -4864,7 +5246,14 @@
           "bonus": "0",
           "$predefinedIdx": 3,
           "$deletionDisabled": true,
-          "xp": "0"
+          "xp": "0",
+          "nom": "Course",
+          "car": "RA",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "15",
+          "modificateur": "0",
+          "total": "15"
         },
         "4": {
           "$deleted": false,
@@ -4872,16 +5261,29 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 5,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Séduction",
+          "car": "FO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "10",
+          "modificateur": "0",
+          "total": "10"
         },
         "5": {
           "$deleted": false,
           "code": "LireEcrire",
-          "car": "",
+          "car": "VO",
           "$predefinedIdx": 2,
           "$deletionDisabled": true,
           "bonus": "0",
-          "xp": "0"
+          "xp": "0",
+          "nom": "Lire et Ecrire",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "6": {
           "$deleted": false,
@@ -4889,7 +5291,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 7,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat derigion (art)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "7": {
           "$deleted": false,
@@ -4897,7 +5306,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 8,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat Gadhar (peintures de guerre)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "8": {
           "$deleted": false,
@@ -4905,7 +5321,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 9,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat piorad (tatouages)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "9": {
           "$deleted": false,
@@ -4913,7 +5336,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 10,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat Sekeker (chirurgie primitive)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "10": {
           "$deleted": false,
@@ -4921,7 +5351,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 11,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat thunk (cicatrices rituelles)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "11": {
           "$deleted": false,
@@ -4929,7 +5366,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 12,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Artisanat Vorozion (maçonnerie et ferronerie)",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "12": {
           "$deleted": false,
@@ -4937,7 +5381,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 13,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Astronomie",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "10",
+          "modificateur": "0",
+          "total": "10"
         },
         "13": {
           "$deleted": false,
@@ -4945,7 +5396,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 14,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Commandement",
+          "car": "FO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "10",
+          "modificateur": "0",
+          "total": "10"
         },
         "14": {
           "$deleted": false,
@@ -4953,7 +5411,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 15,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Connaissance batranoban (culture des épices)",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "15": {
           "$deleted": false,
@@ -4961,7 +5426,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 16,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Connaissance derigion (histoire ancienne)",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "16": {
           "$deleted": false,
@@ -4969,7 +5441,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 17,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Connaissance gadhar (survie en milieu hostile chaud)",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "17": {
           "$deleted": false,
@@ -4977,7 +5456,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 18,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Connaissance piorad (géographie)",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "18": {
           "$deleted": false,
@@ -4985,7 +5471,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 19,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Connaissance sekeker (climat et précipitations)",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "19": {
           "$deleted": false,
@@ -4993,7 +5486,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 20,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Connaissance thunk (survie en milieu hostile froid)",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "20": {
           "$deleted": false,
@@ -5001,7 +5501,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 21,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Connaissance vorozion (gouvernement non militariste",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "0",
+          "modificateur": "0",
+          "total": "0"
         },
         "21": {
           "$deleted": false,
@@ -5009,7 +5516,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 22,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Discrétion",
+          "car": "AG",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "30",
+          "modificateur": "0",
+          "total": "30"
         },
         "22": {
           "$deleted": false,
@@ -5017,7 +5531,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 23,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Equitation",
+          "car": "AG",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "5",
+          "modificateur": "0",
+          "total": "5"
         },
         "23": {
           "$deleted": false,
@@ -5025,7 +5546,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 24,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Marchandage",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "10",
+          "modificateur": "0",
+          "total": "10"
         },
         "24": {
           "$deleted": false,
@@ -5033,7 +5561,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 25,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Médecine",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "5",
+          "modificateur": "0",
+          "total": "5"
         },
         "25": {
           "$deleted": false,
@@ -5041,7 +5576,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 26,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Nage",
+          "car": "EN",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "10",
+          "modificateur": "0",
+          "total": "10"
         },
         "26": {
           "$deleted": false,
@@ -5049,7 +5591,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 27,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Repérage",
+          "car": "PE",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "30",
+          "modificateur": "0",
+          "total": "30"
         },
         "27": {
           "$deleted": false,
@@ -5057,7 +5606,14 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 28,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Stratégie",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "10",
+          "modificateur": "0",
+          "total": "10"
         },
         "28": {
           "$deleted": false,
@@ -5065,11 +5621,38 @@
           "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 29,
-          "$deletionDisabled": true
+          "$deletionDisabled": true,
+          "nom": "Tactique",
+          "car": "VO",
+          "magie": "modMagie",
+          "xpView": "0",
+          "base": "5",
+          "modificateur": "0",
+          "total": "5"
         }
-      }
+      },
+      "xpViewAB": "0",
+      "xpViewAN": "0",
+      "xpViewAR": "0",
+      "xpViewFE": "0",
+      "xpViewPA": "0",
+      "xpViewES": "0",
+      "xpViewTIR": "0",
+      "magieDesirPrestige": "0",
+      "magieDesirRichesse": "0",
+      "magieDesirSexe": "0",
+      "magieDesirViolence": "0",
+      "magieDesirReputation": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactFE": "FE",
+      "tactPA": "PA",
+      "tactES": "ES",
+      "armeDieuUuid": ""
     },
-    "templateSystemUniqueVersion": 631651328
+    "templateSystemUniqueVersion": 4253523929
   },
   "prototypeToken": {
     "name": "Arlweg normal",
@@ -7151,7 +7734,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1741512248851,
-    "modifiedTime": 1741646064257,
+    "modifiedTime": 1743337638265,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,

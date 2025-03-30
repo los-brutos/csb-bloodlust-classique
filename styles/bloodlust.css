@@ -8,9 +8,9 @@
  */
 .bl-dropdown .bl-dropdown-content {
   position: absolute;
-  /**/
+  /*
   transform: translate(-50px);
-  /**/
+  */
   background: white;
   z-index: 9999;
   padding: 8px;
@@ -25,8 +25,21 @@
 }
 
 /**
- * Résultats
+ * roll messages
  */
+.chat-message ul, .chat-message ul li {
+    list-style-type: none;
+}
+.bl-roll-image {
+  border: 0;
+  padding: 2px 6px 2px 2px;
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+  width: 50%;
+}
 .bl-result {
   padding: 2px;
   text-align: center;

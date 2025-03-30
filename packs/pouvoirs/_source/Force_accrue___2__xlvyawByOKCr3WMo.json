@@ -1,8 +1,7 @@
 {
   "folder": null,
-  "name": "Absorption : Agilité",
+  "name": "Force accrue (+2)",
   "type": "equippableItem",
-  "_id": "nm0JD3uvxvYHlmhU",
   "img": "icons/svg/daze.svg",
   "system": {
     "hidden": [
@@ -2066,19 +2065,19 @@
     },
     "template": "XWNo6MNTLb2qSIvj",
     "props": {
-      "name": "Absorption : Agilité",
-      "type": "5",
-      "cout": "30",
-      "coutTotal": "30",
+      "name": "Force accrue (+2)",
+      "type": "2",
+      "cout": "20",
+      "coutTotal": "20",
       "coutCondition": "0",
       "utilisation": "Permanent",
       "portee": "Contact",
-      "manifestation": "<p>La partie métallique de l'arme est parcourue en tous sens par ce qui ressemble à de grosses veines dans lesquelles coule du sang jaune qui lui donne un aspect particulièrement étrange et repoussant. Plus le nombre de points pompés est important, plus le sang est vif.</p>",
-      "duree": "1 min.",
-      "effets": "<p>Lorsqu'un être vivant est touché (c'est-à-dire qu'il subit au moins un point de dommage une fois l'armure traversée) par une arme possédant ce pouvoir, il voit son Agilité baisser immédiatement de (RU/2) points. Dans ce cas précis, le RU est celui du jet de toucher de l'arme. Ces points ainsi \"pompés\" sont offerts par l'arme à son porteur (si elle le souhaite). Les bonus dus aux caractéristiques devront être recalculés immédiatement aussi bien pour le porteur que pour la victime.</p><p>Si cette dernière voit son Agilité tombée en dessous de 1, elle s'écroule au sol incapable d'agir physiquement pendant RU minutes.</p><p>Les points ainsi transférés ne le sont que pour une minute (passé ce délai, les points d'Agilité sont enlevés au porteur et récupérés par l'innocente victime). </p><p>Dans tous les cas, un personnage bénéficiant de ce pouvoir ne pourra pas voir son Agilité dépassée 40.</p>",
-      "reussiteCritique": "<p>En cas de réussite critique, l'arme ne pompe pas seulement 5 points d'Agilité mais tous ceux que possède encore sa victime, déclenchant un évanouissement immédiat (pour une minute)</p>",
-      "echecCritique": "<p>C'est le porteur de l'arme qui perd 5 points d'Agilité. C'est l'arme qui choisit si elle l'offre ou non à son adversaire.</p>",
-      "resume": "RU/2 points pompés",
+      "manifestation": "<p>La lame semble particulièrement solide et aiguisée quelque soit la façon dont le porteur l'entretient.</p>",
+      "duree": "",
+      "effets": "<p>Le porteur voit sa caractéristique de Force augmenter de 2 points.</p>",
+      "reussiteCritique": "",
+      "echecCritique": "",
+      "resume": "Permanent ; FO+2",
       "modRA": "0",
       "modPE": "0",
       "modVO": "0",
@@ -2123,7 +2122,7 @@
     "modifiers": [],
     "unique": false,
     "container": null,
-    "uniqueId": "nm0JD3uvxvYHlmhU",
+    "uniqueId": "xlvyawByOKCr3WMo",
     "templateSystemUniqueVersion": 528153664
   },
   "effects": [],
@@ -2138,14 +2137,15 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1740663448180,
-    "modifiedTime": 1743337874399,
+    "createdTime": 1743337874487,
+    "modifiedTime": 1743337874487,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
+  "_id": "xlvyawByOKCr3WMo",
   "sort": 0,
   "ownership": {
     "default": 0,
-    "R7aN2sFWpDB1djYu": 3
+    "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!items!nm0JD3uvxvYHlmhU"
+  "_key": "!items!xlvyawByOKCr3WMo"
 }

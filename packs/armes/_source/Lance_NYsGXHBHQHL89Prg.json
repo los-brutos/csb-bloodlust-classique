@@ -1,6 +1,6 @@
 {
   "folder": null,
-  "name": "Sabre",
+  "name": "Lance",
   "type": "equippableItem",
   "img": "icons/svg/combat.svg",
   "system": {
@@ -615,19 +615,19 @@
     },
     "template": "k3pIjKakWR2g4lro",
     "props": {
-      "name": "Sabre",
+      "name": "Lance",
       "valeur": "0",
       "initiative": "0",
-      "dommages": "7",
-      "solidite": "20",
+      "dommages": "6",
+      "solidite": "25",
       "modCompetence": "0",
       "competence": "",
-      "mains": "1"
+      "mains": "2"
     },
     "modifiers": [],
     "unique": false,
     "container": null,
-    "uniqueId": "wTiOl7SfGkUM5bD8",
+    "uniqueId": "NYsGXHBHQHL89Prg",
     "templateSystemUniqueVersion": 2907010020
   },
   "effects": [],
@@ -642,15 +642,15 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1740663424908,
-    "modifiedTime": 1743337719062,
+    "createdTime": 1743337719176,
+    "modifiedTime": 1743337719176,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
-  "_id": "wTiOl7SfGkUM5bD8",
+  "_id": "NYsGXHBHQHL89Prg",
   "sort": 0,
   "ownership": {
     "default": 0,
-    "R7aN2sFWpDB1djYu": 3
+    "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!items!wTiOl7SfGkUM5bD8"
+  "_key": "!items!NYsGXHBHQHL89Prg"
 }
