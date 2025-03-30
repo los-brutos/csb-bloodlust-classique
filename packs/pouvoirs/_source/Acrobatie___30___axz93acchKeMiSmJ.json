@@ -1,8 +1,7 @@
 {
   "folder": null,
-  "name": "Absorption : Agilité",
+  "name": "Acrobatie (+30%)",
   "type": "equippableItem",
-  "_id": "nm0JD3uvxvYHlmhU",
   "img": "icons/svg/daze.svg",
   "system": {
     "hidden": [
@@ -2066,23 +2065,23 @@
     },
     "template": "XWNo6MNTLb2qSIvj",
     "props": {
-      "name": "Absorption : Agilité",
-      "type": "5",
-      "cout": "30",
-      "coutTotal": "30",
+      "name": "Acrobatie (+30%)",
+      "type": "1",
+      "cout": "10",
+      "coutTotal": "10",
       "coutCondition": "0",
       "utilisation": "Permanent",
-      "portee": "Contact",
-      "manifestation": "<p>La partie métallique de l'arme est parcourue en tous sens par ce qui ressemble à de grosses veines dans lesquelles coule du sang jaune qui lui donne un aspect particulièrement étrange et repoussant. Plus le nombre de points pompés est important, plus le sang est vif.</p>",
-      "duree": "1 min.",
-      "effets": "<p>Lorsqu'un être vivant est touché (c'est-à-dire qu'il subit au moins un point de dommage une fois l'armure traversée) par une arme possédant ce pouvoir, il voit son Agilité baisser immédiatement de (RU/2) points. Dans ce cas précis, le RU est celui du jet de toucher de l'arme. Ces points ainsi \"pompés\" sont offerts par l'arme à son porteur (si elle le souhaite). Les bonus dus aux caractéristiques devront être recalculés immédiatement aussi bien pour le porteur que pour la victime.</p><p>Si cette dernière voit son Agilité tombée en dessous de 1, elle s'écroule au sol incapable d'agir physiquement pendant RU minutes.</p><p>Les points ainsi transférés ne le sont que pour une minute (passé ce délai, les points d'Agilité sont enlevés au porteur et récupérés par l'innocente victime). </p><p>Dans tous les cas, un personnage bénéficiant de ce pouvoir ne pourra pas voir son Agilité dépassée 40.</p>",
-      "reussiteCritique": "<p>En cas de réussite critique, l'arme ne pompe pas seulement 5 points d'Agilité mais tous ceux que possède encore sa victime, déclenchant un évanouissement immédiat (pour une minute)</p>",
-      "echecCritique": "<p>C'est le porteur de l'arme qui perd 5 points d'Agilité. C'est l'arme qui choisit si elle l'offre ou non à son adversaire.</p>",
-      "resume": "RU/2 points pompés",
+      "portee": "Sur le porteur",
+      "manifestation": "<p>L'arme semble se trémousser lorsque le personnage la prend en main. Cela ne gène en aucun cas sa manipulation en combat mais incite le porteur à être toujours en mouvement.</p>",
+      "duree": "Permanent",
+      "effets": "<p>Le porteur de l'arme qui possède ce pouvoir voit sa compétence secondaire d'Acrobatie augmenter. Il peut ainsi espérer réussir plus facilement les actions dont la réussite dépend de cette compétence.</p>",
+      "reussiteCritique": "<p><em>Lors du jet d'Acrobatie</em></p><p>L'arme est tellement contente de sa réussite spectaculaire qu'elle sursaute de joie et oblige le personnage à tenter immédiatement une autre acrobatie (même s'il ne le désire pas).</p>",
+      "echecCritique": "<p><em>Lors du jet d'Acrobatie</em></p><p>Le personnage se blesse et perd 1d10 points de dommages (l'armure ne compte pas).</p>",
+      "resume": "Permanent ; Acrobatie +30%",
       "modRA": "0",
       "modPE": "0",
       "modVO": "0",
-      "modAcrobatie": "0",
+      "modAcrobatie": "30",
       "modAB": "0",
       "modAN": "0",
       "modAR": "0",
@@ -2116,7 +2115,7 @@
       "modSeduction": "0",
       "modStrategie": "0",
       "modTactique": "0",
-      "modFO": "0",
+      "modFO": "4",
       "modEN": "0",
       "modAG": "0",
       "actif": true
@@ -2124,7 +2123,7 @@
     "modifiers": [],
     "unique": false,
     "container": null,
-    "uniqueId": "nm0JD3uvxvYHlmhU",
+    "uniqueId": "axz93acchKeMiSmJ",
     "templateSystemUniqueVersion": 1716838390
   },
   "effects": [],
@@ -2139,14 +2138,15 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1740663448180,
-    "modifiedTime": 1743340365390,
+    "createdTime": 1743340365469,
+    "modifiedTime": 1743340365469,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
+  "_id": "axz93acchKeMiSmJ",
   "sort": 0,
   "ownership": {
     "default": 0,
-    "R7aN2sFWpDB1djYu": 3
+    "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!items!nm0JD3uvxvYHlmhU"
+  "_key": "!items!axz93acchKeMiSmJ"
 }

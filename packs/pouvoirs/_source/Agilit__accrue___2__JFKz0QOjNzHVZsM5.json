@@ -911,7 +911,7 @@
                         "type": "label",
                         "size": "full-size",
                         "icon": "",
-                        "value": "Acrobatie",
+                        "value": "${modAcrobatie==0 ? \"Acrobatie\" : \"<strong>Acrobatie</strong>\"}$",
                         "prefix": "",
                         "suffix": "",
                         "rollMessage": "",
@@ -951,7 +951,7 @@
                         "type": "label",
                         "size": "full-size",
                         "icon": "",
-                        "value": "Artisanat Batranoban",
+                        "value": "${modArtisanatBatranoban==0 ? \"Artisanat Batranoban\" : \"<strong>Artisanat Batranoban</strong>\"}$",
                         "prefix": "",
                         "suffix": "",
                         "rollMessage": "",
@@ -2117,13 +2117,14 @@
       "modTactique": "0",
       "modFO": "0",
       "modEN": "0",
-      "modAG": "0"
+      "modAG": "2",
+      "actif": true
     },
     "modifiers": [],
     "unique": false,
     "container": null,
     "uniqueId": "JFKz0QOjNzHVZsM5",
-    "templateSystemUniqueVersion": 528153664
+    "templateSystemUniqueVersion": 1716838390
   },
   "effects": [],
   "flags": {
@@ -2138,7 +2139,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1740663448180,
-    "modifiedTime": 1743337874399,
+    "modifiedTime": 1743340365390,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "JFKz0QOjNzHVZsM5",
