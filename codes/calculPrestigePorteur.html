@@ -1,0 +1,13 @@
+<!-- compétences de combat -->
+${(totalAB >= 75 ? 5 : totalAB >= 50 ? 2 : 0) + (totalAN >= 75 ? 5 : totalAN >= 50 ? 2 : 0) + (totalAR >= 75 ? 5 : totalAR >= 50 ? 2 : 0) + (totalFE >= 75 ? 5 : totalFE >= 50 ? 2 : 0) + (totalPA >= 75 ? 5 : totalPA >= 50 ? 2 : 0) + (totalES >= 75 ? 5 : totalES >= 50 ? 2 : 0) + (totalTIR >= 75 ? 5 : totalTIR >= 50 ? 2 : 0)}$
+
+<!-- prestige désirs -->
+${(or(totalPrestige >= 8, totalPrestige <= 3) ? 1 : 0) + (or(totalRichesse >= 8, totalRichesse <= 3) ? 1 : 0) + (or(totalSexe >= 8, totalSexe <= 3) ? 1 : 0) + (or(totalViolence >= 8, totalViolence <= 3) ? 1 : 0) + (or(totalReputation >= 8, totalReputation <= 3) ? 1 : 0)}$
+
+<!-- compétences secondaires -->
+${count(lookup('comp', 'total', 'total', 75, '>='))}$
+
+
+<!-- réputation du couple porteur / arme dieu -->
+${categorie:= prestigeArmeDieu <= 5 ? 1 : prestigeArmeDieu <= 10 ? 2 : prestigeArmeDieu <= 15 ? 3 : prestigeArmeDieu <= 20 ? 4 : prestigeArmeDieu <= 25 ? 5 : prestigeArmeDieu <= 30 ? 6 : prestigeArmeDieu <= 35 ? 7 : prestigeArmeDieu <= 40 ? 8 : prestigeArmeDieu <= 45 ? 9 : 10}$
+${prestige <= 10 ? switchCase(categorie,1,5,2,10,3,15,4,20,5,25,)}$
