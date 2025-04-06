@@ -33,6 +33,9 @@ echo.
 echo /// unpack compendium "pnj"
 call fvtt package unpack -c pnj
 echo.
+echo /// unpack compendium "animaux"
+call fvtt package unpack -c animaux
+echo.
 echo /// unpack compendium "scenarios"
 call fvtt package unpack -c scenarios
 echo.
