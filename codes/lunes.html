@@ -1,0 +1,30 @@
+<!-- influence des lunes sur les désirs -->
+
+<!-- prestige -->
+${or(type <= 5, and(type >= 11, type <= 15)) ? 1 : 0}$
+
+<!-- richesse -->
+0
+
+<!-- sexe -->
+${type <= 5 ? -1 : (type >= 11 ? 1 : 0)}$
+
+<!-- violence -->
+${type >= 16 ? -1 : switchCase(type, 1,1, 3,1 ,5,1, 11,1, 13,1, 15,1, 0)}$
+
+<!-- réputation -->
+${or(or(and(type%2 == 0, 14 >= type), type == 17), type == 19) ? 1 : 0}$
+
+<!-- Equitation -->
+${or(type==1, or(type==3, type==5)) ? -10 : 0}$
+
+<!-- Effets sur les animaux -->
+${or(type==1, or(type==3, type==5)) ? "Les animaux sont très agressif et attaquent sans préavis. Ceux en captivité sont très nerveux." : 
+or(type==2, type==4) ? "Les animaux sont très agressifs et attaquent sans préavis." :
+or(type==6, or(type==8, type==10)) ? "Les animaux changent de territoires ou entre en migration." : 
+or(type==7, type==9) ? "Les animaux réagissent tout à fait normalement." :
+or(type==11, or(type==13, type==15)) ? "Les mâles recherchent de nouvelles compagnes." : 
+or(type==12, type==14) ? "Les groupes d'animaux chassent ceux qui sont devenus trop vieux et/ou inutiles." :
+or(type==16, or(type==18, type==20)) ? "Les animaux conçoivent des petits." : 
+or(type==17, type==19) ? "Les animaux se regroupent en couples." :
+""}$

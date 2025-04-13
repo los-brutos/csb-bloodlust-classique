@@ -90,3 +90,14 @@
 .bl-roll-critical-info, .bl-roll-critical-success, .bl-roll-critical-fail {
   font-weight: bold;
 }
+
+/**
+ * Panneau à onglets
+ */
+.sheet-tabs .item {
+  font-weight: bold;
+}
+
+.sheet-tabs .active {
+  text-decoration: overline underline;
+}

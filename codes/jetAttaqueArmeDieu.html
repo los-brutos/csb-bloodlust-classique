@@ -7,7 +7,7 @@
 ${#concat(
 	?{diff:"Difficulté"|"0","Normal"|"50","Très facile"|"25","Facile"|"-25","Difficile"|"-50","Très difficile"},
 	?{mod:"Modificateur"[number]|0},
-  item.charge ? (?{charge:"Charge"[check]}) : ''
+  fetchFromUuid(armeDieuUuid, "charge") ? (?{charge:"Charge"[check]}) : ''
 )}$
 
 <!-- définition du seuil et du nom du jet-->
@@ -16,7 +16,7 @@ ${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA',
 ${#xpComp:= concat('xp', tactique)}$
 
 <!-- bonus de l'arme -->
-${#bonus:= fallback(recalculate(concat("$", "{item.bonus", tactique, "}", "$")), 0)}$
+${#bonus:= equalText(fetchFromUuid(armeDieuUuid, "competence", ""), tactique) ?  fetchFromUuid(armeDieuUuid, "modCompetence", 0) : 0}$
 
 <!-- tactique adverse -->
 ${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$
@@ -50,7 +50,7 @@ A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q
 1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
 -->
 <!-- en fonction des dégâts de l'arme -->
-${#dommage:= item.dommages}$
+${#dommage:= fetchFromUuid(armeDieuUuid, "dommages")}$
 <!-- en fonction de la réussite critique (ou pas) et de la tactique -->
 ${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$
 ${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$
@@ -114,17 +114,16 @@ ${#loc:= loc>90 ? "Jambe gauche" : loc>80 ? "Jambe droite" : loc>65 ? "Abdomen" 
   ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : "pas d'augmentation de la caractéristique"}$
   ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : "pas de remise à zéro de l'xp de la caractéristique"}$
 
-
 <!-- affichage -->
 <div>
   <table>
     <tbody>
       <tr>
         <td rowspan="2">
-            <div><img class="bl-roll-image" src="${!%{return linkedEntity.img}%}$"></img></div>
+            <div><img class="bl-roll-image" src="${!%{return fromUuidSync("${armeDieuUuid}$").img}%}$"></img></div>
         </td>
         <th>
-          <h3>${!item.name}$</h3>
+          <h3>${!fetchFromUuid(armeDieuUuid, "name", "Arme Dieu")}$</h3>
         </th>
       </tr>
       <tr>
@@ -153,7 +152,7 @@ ${#loc:= loc>90 ? "Jambe gauche" : loc>80 ? "Jambe droite" : loc>65 ? "Abdomen" 
           </div>
         </td>
       </tr>
-  ${!result>0 ? concat("<tr><th>Localisation</th><td>",loc, "</td></tr><tr><th>RU</th><td>",ru,"</td></tr>") : ''}$
+      ${!result>0 ? concat("<tr><th>Localisation</th><td>",loc, "</td></tr><tr><th>RU</th><td>",ru,"</td></tr>") : ''}$
       <tr>
         <td colspan="2">
           <p class="bl-result ${!result==1 ? "bl-roll-success\">Réussite" : result==2 ? "bl-roll-critical-success\">Réussite critique" : result==-1 ? "bl-roll-critical-fail\">Echec critique" : "bl-roll-fail\">Echec"}$</p>
