@@ -1,12 +1,67 @@
 {
-  "folder": null,
+  "folder": "mBH6qRQtFyz0AIK1",
   "name": "Coup de boule",
   "type": "equippableItem",
   "img": "icons/svg/combat.svg",
   "system": {
-    "hidden": [],
+    "hidden": [
+      {
+        "name": "bonusAB",
+        "value": "${competence == 1 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusAN",
+        "value": "${competence == 2 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusAR",
+        "value": "${competence == 3 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusFE",
+        "value": "${competence == 4 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusPA",
+        "value": "${competence == 5 ? modCompetence : 0}$"
+      },
+      {
+        "name": "notes",
+        "value": "${As ? 'As ' : ''}$\n${Am ? 'Am ' : ''}$\n${Cg ? 'Cg ' : ''}$\n${Ct ? 'Ct ' : ''}$\n${Pr ? 'Pr ' : ''}$\n${Pf ? 'Pf ' : ''}$"
+      }
+    ],
     "header": {
-      "contents": [],
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "equipee",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "checkbox",
+              "label": "Equipée ?",
+              "size": "full-size",
+              "defaultChecked": false
+            }
+          ],
+          "flow": "vertical",
+          "align": "right",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        }
+      ],
       "key": "custom_header",
       "cssClass": "",
       "role": 0,
@@ -628,13 +683,19 @@
       "Cg": false,
       "Ct": false,
       "Pr": false,
-      "Pf": false
+      "Pf": false,
+      "bonusAB": "5",
+      "bonusAN": "0",
+      "bonusAR": "0",
+      "bonusFE": "0",
+      "bonusPA": "0",
+      "notes": "As \nAm \n\n\n\n"
     },
     "modifiers": [],
     "unique": false,
     "container": null,
     "uniqueId": "YWvh8zYBgCQS4lku",
-    "templateSystemUniqueVersion": 2907010020
+    "templateSystemUniqueVersion": 3472477824
   },
   "effects": [],
   "flags": {
@@ -649,7 +710,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743337719176,
-    "modifiedTime": 1743337719176,
+    "modifiedTime": 1744667474574,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "YWvh8zYBgCQS4lku",

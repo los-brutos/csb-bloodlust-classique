@@ -92,12 +92,60 @@
 }
 
 /**
- * Panneau à onglets
+ * image de l'arme dieu sur la fiche Personnage
  */
-.sheet-tabs .item {
-  font-weight: bold;
+img.bl-arme-dieu-image {
+  border: none;
 }
 
-.sheet-tabs .active {
+/**
+ * Panneau à onglets
+ * en utilisant https://discord.com/channels/715943353409339425/960978076370632784/1303844677513908335
+ */
+.custom-system-actor .sheet-tabs .item {
+  font-weight: bold;
+}
+.custom-system-actor .sheet-tabs .active {
   text-decoration: overline underline;
 }
+/*
+.bl-data-panel .tabs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    position: absolute;
+    left: -35px;
+    top: 100px;
+    text-shadow: 2px 2px 0px white;
+    font-size: 2em;
+}
+.bl-data-panel .tabs span {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 30%;
+    width: 50px;
+    margin: 1px 1px 1px 1px;
+}
+.bl-data-panel .tabs > * {
+padding-left: 10px;
+}
+.custom-system-actor nav.sheet-tabs {
+border-top: 0px solid var(--color-border-light-primary);
+border-bottom: 0px solid var(--color-border-light-primary);
+}
+.sheet nav.sheet-tabs {
+border-top: 0px solid var(--color-border-light-primary);
+border-bottom: 0px solid var(--color-border-light-primary);
+}
+.custom-system-actor .profile-img-container {
+border:0px;
+}
+*/
+/* pour chaque onglet */
+/*
+.data-panel .tabs a.caracteristiques::before {
+font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f7d9";
+text-shadow: 2px 2px 0px white;
+}
+*/

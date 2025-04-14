@@ -1,0 +1,145 @@
+<!--
+  Jet de compétences à distance
+  
+  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] 
+-->
+<!-- saisie de la difficulté -->
+${#concat(
+	?{portee:"Portée"|"0","Moyenne"|"25","Proche (+25%)"|"-25","Longue (-25%)"|"-50","Maximale (-50%)"},
+  ?{cibleMobile:"Cible mobile"[check]},
+  ?{tireurMobile:"Tireur mobile"[check]},
+	?{mod:"Autres modificateur"[number]|0}
+)}$
+
+<!-- définition du seuil et du nom du jet-->
+${#competence:= totalTIR}$
+${#xpAttr:= 'xpPE'}$ 
+${#xpComp:= 'xpTIR'}$
+
+<!-- seuil à atteindre -->
+${#seuil:= max(competence + portee + mod + (cibleMobile ? -10 : 0) + (tireurMobile ? -10 : 0), 5)}$
+
+<!-- jet -->
+${#roll:= [1d100]}$
+${#ru:= roll%10}$
+${#result:= 0}$ 
+${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$
+${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->
+${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->
+${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$
+<!-- expérience -->
+${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$
+${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$
+
+<!-- dommage et blessures subies -->
+<!-- lecture de la table des dommages 
+A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q 
+1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17
+-->
+<!-- en fonction des dégâts de l'arme -->
+${#dommage:= item.dommages}$
+<!-- en fonction de la portée -->
+${#dommage:= portee==-25 ? dommage-1 : dommage}$
+${#dommage:= portee==-50 ? dommage-2 : dommage}$
+
+<!-- en fonction de la force -->
+${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$
+<!-- bordure des dommages -->
+${#dommage:= dommage<1 ? 1 : dommage}$
+${#dommage:= dommage>17 ? 17 : dommage}$
+
+
+${#blessures:= 0 }$
+${#blessures:= ru==0 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,10,6,15,7,20,8,25,9,30,10,35,11,40,12,45,13,50,14,55,15,60,16,65,17,70) : blessures}$
+${#blessures:= ru==1 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,1,6,2,7,2,8,3,9,3,10,4,11,4,12,5,13,5,14,6,15,6,16,7,17,7) : blessures}$
+${#blessures:= ru==2 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,2,6,3,7,4,8,5,9,6,10,7,11,8,12,9,13,10,14,11,15,12,16,13,17,14) : blessures}$
+${#blessures:= ru==3 ? switchCase(dommage,1,1,2,1,3,1,4,2,5,3,6,5,7,6,8,8,9,9,10,11,11,12,12,14,13,15,14,17,15,18,16,20,17,21) : blessures}$
+${#blessures:= ru==4 ? switchCase(dommage,1,1,2,1,3,2,4,2,5,4,6,6,7,8,8,10,9,12,10,14,11,16,12,18,13,20,14,22,15,24,16,26,17,28) : blessures}$
+${#blessures:= ru==5 ? switchCase(dommage,1,1,2,1,3,2,4,3,5,5,6,8,7,10,8,13,9,15,10,18,11,20,12,23,13,25,14,28,15,30,16,33,17,35) : blessures}$
+${#blessures:= ru==6 ? switchCase(dommage,1,1,2,2,3,2,4,3,5,6,6,9,7,12,8,15,9,18,10,21,11,24,12,27,13,30,14,33,15,36,16,39,17,42) : blessures}$
+${#blessures:= ru==7 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,7,6,11,7,14,8,18,9,21,10,25,11,28,12,32,13,35,14,39,15,42,16,46,17,49) : blessures}$
+${#blessures:= ru==8 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,8,6,12,7,16,8,20,9,24,10,28,11,32,12,36,13,40,14,44,15,18,16,52,17,56) : blessures}$
+${#blessures:= ru==9 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,9,6,14,7,18,8,23,9,27,10,32,11,36,12,41,13,45,14,50,15,54,16,59,17,63) : blessures}$
+
+
+<!-- @TODO prise en compte de l'armure adverse -->
+
+
+<!-- localisation -->
+${#dizaine:= floor(roll/10)}$
+${#dizaine:= dizaine == 10 ? 0 : dizaine}$
+${#loc:= ru*10+dizaine}$
+${#loc:= loc>90 ? "Jambe gauche" : loc>80 ? "Jambe droite" : loc>65 ? "Abdomen" : loc>50 ? "Bras gauche" : loc>35 ? "Bras droit" : loc>10 ? "Torse" : "Tête"}$
+
+<!-- expérience -->
+  <!-- compétence -->
+  ${#xpComp:=  'xpTIR'}$
+  ${#bonusComp:= 'bonusTIR'}$
+
+  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$
+  ${#augmentComp:= false}$
+  ${#augmentComp:= and(competence < 25,  newXp == 1) ? true : augmentComp}$
+  ${#augmentComp:= and(competence < 50,  newXp == 2) ? true : augmentComp}$
+  ${#augmentComp:= and(competence >= 50, newXp == 5) ? true : augmentComp}$ 
+  ${#augmentComp ? setPropertyInEntity('self', bonusComp, concat(bonusComp, '+5')) : "pas d'augmentation de la compétence"}$
+  ${#augmentComp ? setPropertyInEntity('self', xpComp, 0) : "pas de remise à zéro de l'xp de la compétence"}$
+
+  <!-- caractéristique liée -->
+  ${#xpCar:= 'xpPE'}$
+  ${#bonusCar:= 'bonusPE'}$
+  ${#totalCar:= recalculate(concat("$", "{totalPE}", "$"))}$
+
+  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : ''}$
+
+  ${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$
+  ${#augmentCar:= newXp == totalCar ? true : false}$
+  ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : "pas d'augmentation de la caractéristique"}$
+  ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : "pas de remise à zéro de l'xp de la caractéristique"}$
+
+
+<!-- affichage -->
+<div>
+  <table>
+    <tbody>
+      <tr>
+        <td rowspan="2">
+            <div><img class="bl-roll-image" src="${!%{return linkedEntity.img}%}$"></img></div>
+        </td>
+        <th>
+          <h3>${!item.name}$</h3>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          Tir (portée ${!switchCase(portee,"0","normale","25","courte","-25","longue","-50","maximale")}$)
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <table>
+    <tbody>
+      <tr>
+        <th style="width:50%;">
+          d100
+        </th>
+        <td>
+          <div class="bl-dropdown">
+            <p><strong>${!roll}$</strong> / ${!seuil}$</p>
+            <div class="bl-dropdown-content">
+              <p>Compétence : ${!competence}$</p>
+              <p>Portée  ${!switchCase(portee,"0","normale","25","courte","-25","longue","-50","maximale")}$ (${!portee%}$)</p>
+              <p>Modificateur : ${!mod}$</p>
+            </div>
+          </div>
+        </td>
+      </tr>
+  ${!result>0 ? concat("<tr><th>Localisation</th><td>",loc, "</td></tr><tr><th>RU</th><td>",ru,"</td></tr>") : ''}$
+      <tr>
+        <td colspan="2">
+          <p class="bl-result ${!result==1 ? "bl-roll-success\">Réussite" : result==2 ? "bl-roll-critical-success\">Réussite critique" : result==-1 ? "bl-roll-critical-fail\">Echec critique" : "bl-roll-fail\">Echec"}$</p>
+        </td>
+      </tr>
+  ${!result>0 ? concat("<tr><th>Blessures infligées", "</th><td>",blessures,"</td></tr>") : ''}$    </tbody>
+  </table>
+</div>

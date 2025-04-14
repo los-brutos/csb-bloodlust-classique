@@ -1,0 +1,390 @@
+{
+  "folder": "Zq19jkTRynDvaUIA",
+  "name": "Arbalète",
+  "type": "equippableItem",
+  "_id": "s4Nn723rrbo1zM8J",
+  "img": "icons/svg/target.svg",
+  "system": {
+    "hidden": [],
+    "header": {
+      "contents": [],
+      "key": "custom_header",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "body": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "table",
+          "contents": [
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Cadence",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              },
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Dommages",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              }
+            ],
+            [
+              {
+                "key": "cadence",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "textField",
+                "label": "",
+                "defaultValue": "",
+                "size": "medium",
+                "charList": "",
+                "autocomplete": ""
+              },
+              {
+                "key": "dommages",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "select",
+                "label": "",
+                "defaultValue": "1",
+                "size": "small",
+                "selectedOptionType": "custom",
+                "options": [
+                  {
+                    "key": "1",
+                    "value": "A"
+                  },
+                  {
+                    "key": "2",
+                    "value": "B"
+                  },
+                  {
+                    "key": "3",
+                    "value": "C"
+                  },
+                  {
+                    "key": "4",
+                    "value": "D"
+                  },
+                  {
+                    "key": "5",
+                    "value": "E"
+                  },
+                  {
+                    "key": "6",
+                    "value": "F"
+                  },
+                  {
+                    "key": "7",
+                    "value": "G"
+                  },
+                  {
+                    "key": "8",
+                    "value": "H"
+                  },
+                  {
+                    "key": "9",
+                    "value": "I"
+                  }
+                ]
+              }
+            ],
+            [
+              null
+            ],
+            [
+              null
+            ],
+            [
+              null
+            ],
+            [
+              null
+            ]
+          ],
+          "cols": 2,
+          "rows": 2,
+          "layout": "cc"
+        },
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "table",
+          "contents": [
+            [
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Portée courte (+25%)",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              },
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Portée moyenne (+00%)",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              },
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Portée longue (-25%)",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              },
+              {
+                "key": "",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "label",
+                "size": "full-size",
+                "icon": "",
+                "value": "Portée maximale (-50%)",
+                "prefix": "",
+                "suffix": "",
+                "rollMessage": "",
+                "altRollMessage": "",
+                "rollMessageToChat": true,
+                "altRollMessageToChat": true,
+                "style": "label"
+              }
+            ],
+            [
+              {
+                "key": "porteeCourte",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "numberField",
+                "label": "",
+                "defaultValue": "",
+                "size": "small",
+                "allowDecimal": false,
+                "minVal": "0",
+                "maxVal": "",
+                "allowRelative": false,
+                "showControls": false,
+                "controlsStyle": "hover",
+                "inputStyle": "text"
+              },
+              {
+                "key": "porteeMoyenne",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "numberField",
+                "label": "",
+                "defaultValue": "",
+                "size": "small",
+                "allowDecimal": false,
+                "minVal": "",
+                "maxVal": "",
+                "allowRelative": false,
+                "showControls": false,
+                "controlsStyle": "hover",
+                "inputStyle": "text"
+              },
+              {
+                "key": "porteeLongue",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "numberField",
+                "label": "",
+                "defaultValue": "",
+                "size": "small",
+                "allowDecimal": false,
+                "minVal": "",
+                "maxVal": "",
+                "allowRelative": false,
+                "showControls": false,
+                "controlsStyle": "hover",
+                "inputStyle": "text"
+              },
+              {
+                "key": "porteeMaximale",
+                "cssClass": "",
+                "role": "0",
+                "permission": "0",
+                "tooltip": "",
+                "visibilityFormula": "",
+                "type": "numberField",
+                "label": "",
+                "defaultValue": "",
+                "size": "small",
+                "allowDecimal": false,
+                "minVal": "",
+                "maxVal": "",
+                "allowRelative": false,
+                "showControls": false,
+                "controlsStyle": "hover",
+                "inputStyle": "text"
+              }
+            ]
+          ],
+          "cols": 4,
+          "rows": 2,
+          "layout": "cccc"
+        }
+      ],
+      "key": "custom_body",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "display": {
+      "width": "600",
+      "height": "600",
+      "fix_size": false,
+      "pp_width": "64",
+      "pp_height": "64"
+    },
+    "template": "tTnlARQzwU9LDmfF",
+    "props": {
+      "name": "Arbalète",
+      "dommages": "8",
+      "cadence": "0.3/t",
+      "porteeCourte": "10",
+      "porteeMoyenne": "30",
+      "porteeLongue": "60",
+      "porteeMaximale": "300"
+    },
+    "modifiers": [],
+    "unique": false,
+    "container": null,
+    "uniqueId": "s4Nn723rrbo1zM8J",
+    "templateSystemUniqueVersion": 355828542
+  },
+  "effects": [],
+  "flags": {
+    "custom-system-builder": {
+      "version": "4.4.2"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1744648311363,
+    "modifiedTime": 1744667474574,
+    "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
+  },
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "AjcbJ5lKJDk3HKUe": 3
+  },
+  "_key": "!items!s4Nn723rrbo1zM8J"
+}
