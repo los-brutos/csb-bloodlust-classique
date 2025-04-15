@@ -1,8 +1,7 @@
 {
   "folder": "Zq19jkTRynDvaUIA",
-  "name": "Arbalète",
+  "name": "Arc court",
   "type": "equippableItem",
-  "_id": "s4Nn723rrbo1zM8J",
   "img": "icons/svg/target.svg",
   "system": {
     "hidden": [],
@@ -352,17 +351,17 @@
     "template": "tTnlARQzwU9LDmfF",
     "props": {
       "name": "Arbalète",
-      "dommages": "8",
-      "cadence": "0.3/t",
-      "porteeCourte": "10",
-      "porteeMoyenne": "30",
-      "porteeLongue": "60",
-      "porteeMaximale": "300"
+      "dommages": "6",
+      "cadence": "1/t",
+      "porteeCourte": "6",
+      "porteeMoyenne": "15",
+      "porteeLongue": "30",
+      "porteeMaximale": "150"
     },
     "modifiers": [],
     "unique": false,
     "container": null,
-    "uniqueId": "s4Nn723rrbo1zM8J",
+    "uniqueId": "yZB8xJV3FwBWwsRk",
     "templateSystemUniqueVersion": 355828542
   },
   "effects": [],
@@ -377,14 +376,15 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1744648311363,
+    "createdTime": 1744715688731,
     "modifiedTime": 1744716503213,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
+  "_id": "yZB8xJV3FwBWwsRk",
   "sort": 0,
   "ownership": {
     "default": 0,
     "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!items!s4Nn723rrbo1zM8J"
+  "_key": "!items!yZB8xJV3FwBWwsRk"
 }

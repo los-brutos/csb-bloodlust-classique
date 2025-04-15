@@ -1,6 +1,6 @@
 {
   "folder": "mBH6qRQtFyz0AIK1",
-  "name": "Maillet",
+  "name": "Pavois (Copy)",
   "type": "equippableItem",
   "img": "icons/svg/combat.svg",
   "system": {
@@ -679,32 +679,32 @@
     },
     "template": "k3pIjKakWR2g4lro",
     "props": {
-      "name": "Maillet",
-      "valeur": "10",
-      "initiative": "-5",
+      "name": "Pavois (Copy)",
+      "valeur": "20",
+      "initiative": "-25",
       "dommages": "5",
-      "solidite": "25",
-      "modCompetence": "5",
-      "competence": "1",
+      "solidite": "70",
+      "modCompetence": "30",
+      "competence": "5",
       "mains": "1",
-      "bonusAB": "5",
-      "bonusAN": "0",
-      "bonusAR": "0",
-      "bonusFE": "0",
-      "bonusPA": "0",
-      "equipee": false,
-      "As": true,
+      "As": false,
       "Am": false,
       "Cg": false,
       "Ct": false,
-      "Pr": false,
+      "Pr": true,
       "Pf": false,
-      "notes": "As \n\n\n\n\n"
+      "bonusAB": "0",
+      "bonusAN": "0",
+      "bonusAR": "0",
+      "bonusFE": "0",
+      "bonusPA": "30",
+      "notes": "\n\n\n\nPr \n",
+      "equipee": false
     },
     "modifiers": [],
     "unique": false,
     "container": null,
-    "uniqueId": "OPQNT16hzJTbfGQi",
+    "uniqueId": "hTYW3lORJaS4SCJp",
     "templateSystemUniqueVersion": 2842943233
   },
   "effects": [],
@@ -719,15 +719,15 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1740663424908,
+    "createdTime": 1744715688731,
     "modifiedTime": 1744716503213,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
-  "_id": "OPQNT16hzJTbfGQi",
+  "_id": "hTYW3lORJaS4SCJp",
   "sort": 0,
   "ownership": {
     "default": 0,
-    "R7aN2sFWpDB1djYu": 3
+    "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!items!OPQNT16hzJTbfGQi"
+  "_key": "!items!hTYW3lORJaS4SCJp"
 }

@@ -113,327 +113,336 @@
               "permission": "0",
               "tooltip": "",
               "visibilityFormula": "",
-              "type": "panel",
+              "type": "table",
               "contents": [
-                {
-                  "key": "",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "label",
-                  "size": "full-size",
-                  "icon": "",
-                  "value": "Initiative",
-                  "prefix": "",
-                  "suffix": "",
-                  "rollMessage": "",
-                  "altRollMessage": "",
-                  "rollMessageToChat": true,
-                  "altRollMessageToChat": true,
-                  "style": "label"
-                },
-                {
-                  "key": "initiative",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "numberField",
-                  "label": "",
-                  "defaultValue": "0",
-                  "size": "small",
-                  "allowDecimal": false,
-                  "minVal": "",
-                  "maxVal": "",
-                  "allowRelative": true,
-                  "showControls": false,
-                  "controlsStyle": "hover",
-                  "inputStyle": "text"
-                },
-                {
-                  "key": "",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "label",
-                  "size": "full-size",
-                  "icon": "",
-                  "value": "Dommages",
-                  "prefix": "",
-                  "suffix": "",
-                  "rollMessage": "",
-                  "altRollMessage": "",
-                  "rollMessageToChat": true,
-                  "altRollMessageToChat": true,
-                  "style": "label"
-                },
-                {
-                  "key": "dommages",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "select",
-                  "label": "",
-                  "defaultValue": "1",
-                  "size": "small",
-                  "selectedOptionType": "custom",
-                  "options": [
-                    {
-                      "key": "1",
-                      "value": "A"
-                    },
-                    {
-                      "key": "2",
-                      "value": "B"
-                    },
-                    {
-                      "key": "3",
-                      "value": "C"
-                    },
-                    {
-                      "key": "4",
-                      "value": "D"
-                    },
-                    {
-                      "key": "5",
-                      "value": "E"
-                    },
-                    {
-                      "key": "6",
-                      "value": "F"
-                    },
-                    {
-                      "key": "7",
-                      "value": "G"
-                    },
-                    {
-                      "key": "8",
-                      "value": "H"
-                    },
-                    {
-                      "key": "9",
-                      "value": "I"
-                    }
-                  ]
-                },
-                {
-                  "key": "",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "label",
-                  "size": "full-size",
-                  "icon": "",
-                  "value": "Solidité",
-                  "prefix": "",
-                  "suffix": "",
-                  "rollMessage": "",
-                  "altRollMessage": "",
-                  "rollMessageToChat": true,
-                  "altRollMessageToChat": true,
-                  "style": "label"
-                },
-                {
-                  "key": "solidite",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "numberField",
-                  "label": "",
-                  "defaultValue": "0",
-                  "size": "small",
-                  "allowDecimal": false,
-                  "minVal": "",
-                  "maxVal": "",
-                  "allowRelative": true,
-                  "showControls": false,
-                  "controlsStyle": "hover",
-                  "inputStyle": "text"
-                },
-                {
-                  "key": "competence",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "select",
-                  "label": "",
-                  "defaultValue": "",
-                  "size": "full-size",
-                  "selectedOptionType": "custom",
-                  "options": [
-                    {
-                      "key": "1",
-                      "value": "Attaque brutale"
-                    },
-                    {
-                      "key": "2",
-                      "value": "Attaque normale"
-                    },
-                    {
-                      "key": "3",
-                      "value": "Attaque rapide"
-                    },
-                    {
-                      "key": "5",
-                      "value": "Parade"
-                    }
-                  ]
-                },
-                {
-                  "key": "",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "panel",
-                  "contents": [
-                    {
-                      "key": "modCompetence",
-                      "cssClass": "",
-                      "role": "0",
-                      "permission": "0",
-                      "tooltip": "",
-                      "visibilityFormula": "",
-                      "type": "numberField",
-                      "label": "",
-                      "defaultValue": "0",
-                      "size": "small",
-                      "allowDecimal": false,
-                      "minVal": "0",
-                      "maxVal": "",
-                      "allowRelative": false,
-                      "showControls": false,
-                      "controlsStyle": "hover",
-                      "inputStyle": "text"
-                    },
-                    {
-                      "key": "",
-                      "cssClass": "",
-                      "role": "0",
-                      "permission": "0",
-                      "tooltip": "",
-                      "visibilityFormula": "",
-                      "type": "label",
-                      "size": "full-size",
-                      "icon": "",
-                      "value": "%",
-                      "prefix": "",
-                      "suffix": "",
-                      "rollMessage": "",
-                      "altRollMessage": "",
-                      "rollMessageToChat": true,
-                      "altRollMessageToChat": true,
-                      "style": "label"
-                    }
-                  ],
-                  "flow": "horizontal",
-                  "align": "left",
-                  "collapsible": false,
-                  "defaultCollapsed": false,
-                  "title": "",
-                  "titleStyle": "default"
-                },
-                {
-                  "key": "",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "label",
-                  "size": "full-size",
-                  "icon": "",
-                  "value": "Manipulation",
-                  "prefix": "",
-                  "suffix": "",
-                  "rollMessage": "",
-                  "altRollMessage": "",
-                  "rollMessageToChat": true,
-                  "altRollMessageToChat": true,
-                  "style": "label"
-                },
-                {
-                  "key": "mains",
-                  "cssClass": "",
-                  "role": "0",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "select",
-                  "label": "",
-                  "defaultValue": "1",
-                  "size": "full-size",
-                  "selectedOptionType": "custom",
-                  "options": [
-                    {
-                      "key": "1",
-                      "value": "une main"
-                    },
-                    {
-                      "key": "2",
-                      "value": "deux mains"
-                    }
-                  ]
-                },
-                {
-                  "key": "",
-                  "cssClass": "",
-                  "role": "3",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "label",
-                  "size": "full-size",
-                  "icon": "",
-                  "value": "Valeur",
-                  "prefix": "",
-                  "suffix": "",
-                  "rollMessage": "",
-                  "altRollMessage": "",
-                  "rollMessageToChat": true,
-                  "altRollMessageToChat": true,
-                  "style": "label"
-                },
-                {
-                  "key": "valeur",
-                  "cssClass": "",
-                  "role": "3",
-                  "permission": "0",
-                  "tooltip": "",
-                  "visibilityFormula": "",
-                  "type": "numberField",
-                  "label": "",
-                  "defaultValue": "0",
-                  "size": "small",
-                  "allowDecimal": false,
-                  "minVal": "",
-                  "maxVal": "",
-                  "allowRelative": true,
-                  "showControls": false,
-                  "controlsStyle": "hover",
-                  "inputStyle": "text"
-                }
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Initiative",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "initiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Dommages",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "dommages",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "select",
+                    "label": "",
+                    "defaultValue": "1",
+                    "size": "small",
+                    "selectedOptionType": "custom",
+                    "options": [
+                      {
+                        "key": "1",
+                        "value": "A"
+                      },
+                      {
+                        "key": "2",
+                        "value": "B"
+                      },
+                      {
+                        "key": "3",
+                        "value": "C"
+                      },
+                      {
+                        "key": "4",
+                        "value": "D"
+                      },
+                      {
+                        "key": "5",
+                        "value": "E"
+                      },
+                      {
+                        "key": "6",
+                        "value": "F"
+                      },
+                      {
+                        "key": "7",
+                        "value": "G"
+                      },
+                      {
+                        "key": "8",
+                        "value": "H"
+                      },
+                      {
+                        "key": "9",
+                        "value": "I"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Solidité",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "solidite",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ],
+                [
+                  {
+                    "key": "competence",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "select",
+                    "label": "",
+                    "defaultValue": "",
+                    "size": "full-size",
+                    "selectedOptionType": "custom",
+                    "options": [
+                      {
+                        "key": "1",
+                        "value": "Attaque brutale"
+                      },
+                      {
+                        "key": "2",
+                        "value": "Attaque normale"
+                      },
+                      {
+                        "key": "3",
+                        "value": "Attaque rapide"
+                      },
+                      {
+                        "key": "5",
+                        "value": "Parade"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "modCompetence",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "x-small",
+                        "icon": "",
+                        "value": "%",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      }
+                    ],
+                    "flow": "horizontal",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": false,
+                    "title": "",
+                    "titleStyle": "default"
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Manipulation",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "mains",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "select",
+                    "label": "",
+                    "defaultValue": "1",
+                    "size": "m-small",
+                    "selectedOptionType": "custom",
+                    "options": [
+                      {
+                        "key": "1",
+                        "value": "une main"
+                      },
+                      {
+                        "key": "2",
+                        "value": "deux mains"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "3",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Valeur",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "valeur",
+                    "cssClass": "",
+                    "role": "3",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ]
               ],
-              "flow": "grid-2",
-              "align": "left",
-              "collapsible": false,
-              "defaultCollapsed": false,
-              "title": "Statistiques",
-              "titleStyle": "title"
+              "cols": 2,
+              "rows": 6,
+              "layout": "lc"
             },
             {
               "key": "",
@@ -662,8 +671,8 @@
       "titleStyle": "default"
     },
     "display": {
-      "width": "600",
-      "height": "600",
+      "width": "400",
+      "height": "610",
       "fix_size": false,
       "pp_width": "64",
       "pp_height": "64"
@@ -671,8 +680,8 @@
     "template": "k3pIjKakWR2g4lro",
     "props": {
       "name": "Massue",
-      "valeur": "0",
-      "initiative": "0",
+      "valeur": "10",
+      "initiative": "-2",
       "dommages": "5",
       "solidite": "20",
       "modCompetence": "5",
@@ -682,13 +691,21 @@
       "bonusAN": "5",
       "bonusAR": "0",
       "bonusFE": "0",
-      "bonusPA": "0"
+      "bonusPA": "0",
+      "equipee": false,
+      "As": true,
+      "Am": false,
+      "Cg": false,
+      "Ct": false,
+      "Pr": false,
+      "Pf": false,
+      "notes": "As \n\n\n\n\n"
     },
     "modifiers": [],
     "unique": false,
     "container": null,
     "uniqueId": "ZAMKK4eYhpRl9RYU",
-    "templateSystemUniqueVersion": 3472477824
+    "templateSystemUniqueVersion": 2842943233
   },
   "effects": [],
   "flags": {
@@ -703,7 +720,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1740663424908,
-    "modifiedTime": 1744667474574,
+    "modifiedTime": 1744716503213,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "ZAMKK4eYhpRl9RYU",

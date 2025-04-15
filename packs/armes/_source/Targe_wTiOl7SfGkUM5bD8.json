@@ -1,6 +1,6 @@
 {
   "folder": "mBH6qRQtFyz0AIK1",
-  "name": "Maillet",
+  "name": "Targe",
   "type": "equippableItem",
   "img": "icons/svg/combat.svg",
   "system": {
@@ -679,32 +679,32 @@
     },
     "template": "k3pIjKakWR2g4lro",
     "props": {
-      "name": "Maillet",
-      "valeur": "10",
+      "name": "Targe",
+      "valeur": "15",
       "initiative": "-5",
-      "dommages": "5",
-      "solidite": "25",
-      "modCompetence": "5",
-      "competence": "1",
+      "dommages": "4",
+      "solidite": "30",
+      "modCompetence": "10",
+      "competence": "5",
       "mains": "1",
-      "bonusAB": "5",
+      "bonusAB": "0",
       "bonusAN": "0",
       "bonusAR": "0",
       "bonusFE": "0",
       "bonusPA": "0",
       "equipee": false,
-      "As": true,
+      "As": false,
       "Am": false,
       "Cg": false,
       "Ct": false,
-      "Pr": false,
+      "Pr": true,
       "Pf": false,
-      "notes": "As \n\n\n\n\n"
+      "notes": "\n\n\n\n\n"
     },
     "modifiers": [],
     "unique": false,
     "container": null,
-    "uniqueId": "OPQNT16hzJTbfGQi",
+    "uniqueId": "wTiOl7SfGkUM5bD8",
     "templateSystemUniqueVersion": 2842943233
   },
   "effects": [],
@@ -719,15 +719,15 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1740663424908,
+    "createdTime": 1744715688731,
     "modifiedTime": 1744716503213,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
-  "_id": "OPQNT16hzJTbfGQi",
+  "_id": "wTiOl7SfGkUM5bD8",
   "sort": 0,
   "ownership": {
     "default": 0,
-    "R7aN2sFWpDB1djYu": 3
+    "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!items!OPQNT16hzJTbfGQi"
+  "_key": "!items!wTiOl7SfGkUM5bD8"
 }
