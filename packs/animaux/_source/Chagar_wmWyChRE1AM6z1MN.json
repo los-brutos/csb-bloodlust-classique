@@ -3,7 +3,7 @@
   "name": "Chagar",
   "type": "character",
   "_id": "wmWyChRE1AM6z1MN",
-  "img": "icons/svg/mystery-man.svg",
+  "img": "icons/svg/mole.svg",
   "system": {
     "hidden": [
       {
@@ -2266,7 +2266,7 @@
       "totalAN": "10",
       "totalAR": "5",
       "totalES": "10",
-      "tactique": "AR",
+      "tactique": "AB",
       "comp": {
         "0": {
           "$deleted": false,
@@ -2343,7 +2343,7 @@
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 136141162
+    "templateSystemUniqueVersion": 1121899413
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2354,7 +2354,7 @@
     "width": 1,
     "height": 1,
     "texture": {
-      "src": "icons/svg/mystery-man.svg",
+      "src": "icons/svg/mole.svg",
       "anchorX": 0.5,
       "anchorY": 0.5,
       "offsetX": 0,
@@ -2447,7 +2447,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743931317347,
-    "modifiedTime": 1743933676382,
+    "modifiedTime": 1744840022412,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,
