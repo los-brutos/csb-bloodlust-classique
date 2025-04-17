@@ -48,6 +48,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -644,23 +648,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2244,7 +2284,7 @@
       "totalVO": "14",
       "vie": "24",
       "armure": "1",
-      "initiative": "5",
+      "initiative": "21",
       "dommages": "7",
       "baseAB": "15",
       "baseAN": "5",
@@ -2336,13 +2376,14 @@
       "description": "<p>Sous ce nom trompeur se cache une créature très dangereuse et heureusement très rare des plaines Vorozions. À mi-chemin entre la hyène et le glouton (peut-on imaginer ce croisement contre-nature?), ce carnivore pèse à peine 100 kilogrammes et se nourrit de tout être vivant qui passe à sa portée.</p>",
       "utilisation": "<p>Aucune, À part souhaiter à vos ennemis une rencontre avec une de ces créatures.</p><p>Les Vorozions utilisent aussi une expression qui représente pour eux la pire chose qui puisse arriver: “C'est comme une descente de nandi”.</p>",
       "comportement": "<p>Mus par on ne sait quel besoin, les ours nandis (qui vivent heureusement en solitaire) font régulièrement des descentes dans les villages Vorozions et même quelquefois dans les faubourgs de Pôle. Ils fouillent alors dans les poulaillers, les étables et même quelquefois dans les berceaux des enfants. Ils tuent tout ce qu'ils ne dévorent pas sur le champ. Violents et nerveux, ils n'hésitent pas à attaquer les humains qui se mettraient sur leur chemin. Dans la nature, la rencontre avec un ours nandi tient principalement de la chance (ou de la malchance) puisqu'il est très rare et uniquement nocturne, Les ours Nandi creusent de longs terriers où ils passent leurs journées à l'abri des regards indiscrets.</p>",
+      "bonusInitiative": "5",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2487,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "CfTvYFUVy1d1jGZM",

@@ -48,6 +48,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -644,23 +648,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2244,7 +2284,7 @@
       "totalVO": "8",
       "vie": "32",
       "armure": "0",
-      "initiative": "-2",
+      "initiative": "8",
       "dommages": "4",
       "baseAB": "10",
       "baseAN": "10",
@@ -2336,13 +2376,14 @@
       "description": "<p>Les chevaux de Tanæphis ressemblent aux chevaux terrestres. C’est plus leur mentalité qui est différente: Ils sont plus violents, plus méchants et plus résistants (surtout) que ceux que nous connaissons.</p>",
       "utilisation": "<p>La plupart des peuplades de Bloodlust utilisent les chevaux comme montures bien que seuls les Vorozions savent exactement comment les élever pour obtenir les meilleurs animaux. La cavalerie Vorozion est donc beaucoup plus performante que celles des autres peuples (sauf celle des Piorads bien entendu).</p><p>En combat, les chevaux Vorozions sont dotés d’armures à mi chemin entre le cuir clouté et la cotte de maille qui les protègent efficacement (protection : 6).</p>",
       "comportement": "<p>Il ne reste que très peu de chevaux en liberté, La plupart vivent dans des réserves créées spécialement pour eux par les Vorozions. Il arrive néanmoins que certains groupes se forment dans la nature. Ils ne sont, pour la plupart, pas assez nombreux pour résister longtemps aux attaques des prédateurs.</p>",
+      "bonusInitiative": "-2",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2487,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "8gxWl9K4qtRbcfHu",

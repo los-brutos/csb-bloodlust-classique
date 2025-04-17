@@ -48,6 +48,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -644,23 +648,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2244,7 +2284,7 @@
       "totalVO": "10",
       "vie": "60",
       "armure": "8",
-      "initiative": "-5",
+      "initiative": "7",
       "dommages": "5",
       "baseAB": "20",
       "baseAN": "5",
@@ -2336,13 +2376,14 @@
       "description": "<p>Le glyptodon ressemble à un énorme tatou de plusieurs centaines de kilogrammes. || possède en plus une queue cuirassée dont il se sert pour frapper ses adversaires.</p>",
       "utilisation": "<p>Il n'existe aucune utilisation connue de glyptodons vivants. Sa carapace permet néanmoins de créer de superbes armures ouvragées dont le potentiel de protection est loin d'être négligeable (protection : 6) et qui donnent un “look” barbare à l'ensemble. Seules les tribus Gadhars et Sekekers utilisent ce type d'armure de façon régulière.</p>",
       "comportement": "<p>Le glyptodon est un herbivore pacifique mais qui a horreur d'être dérangé. Il vit en regroupement de plusieurs dizaines d'individus et possède une terrible tactique d'attaque de groupe. La seule chance que peuvent avoir les prédateurs qui voudraient en tuer un serait de le séparer du reste de sa tribu.</p>",
+      "bonusInitiative": "-5",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2487,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "f6xOb6BwugX8R0GP",

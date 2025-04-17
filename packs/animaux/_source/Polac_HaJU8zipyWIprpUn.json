@@ -48,6 +48,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -644,23 +648,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2244,7 +2284,7 @@
       "totalVO": "4",
       "vie": "60",
       "armure": "0",
-      "initiative": "-3",
+      "initiative": "1",
       "dommages": "4",
       "baseAB": "5",
       "baseAN": "5",
@@ -2336,13 +2376,14 @@
       "description": "<p>Herbivore universel du continent de Tanæphis, le polac ressemble à un gros boeuf idiot et lent qui ne dépasse pas 1m70 au garrot mais qui pèse quelquefois plusieurs tonnes. Les polacs existent en plusieurs couleurs bien que le marron foncé soit la plus commune.</p>",
       "utilisation": "<p>L'élevage des polacs est vraiment à la portée de tout le monde et de n'importe quel paysan. Cet élevage est cependant très mal vu de ceux qui préfèrent les animaux plus durs à entretenir mais dont la viande est beaucoup plus fine (vaches, moutons, porcs). D'où les célèbres insultes Vorozions: \"T'as été élevé comme un polac” ou, pour les guerriers peureux : ‘T'es lâche comme un polac”. Notez aussi qu'un polac représente une unité de distance qui représente environ 10 kilomètres (la distance que parcourt un polac en une journée).</p>",
       "comportement": "<p>Les polacs ont presque complètement disparus dans leur milieu naturel. Leur trop faible combativité et leur lâcheté maladive ne leur a pas permis de survivre dans le monde cruel de Bloodlust. Ils sont tous de même très communs dans les fermes Vorozions et Derigions.</p>",
+      "bonusInitiative": "-3",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2487,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "HaJU8zipyWIprpUn",

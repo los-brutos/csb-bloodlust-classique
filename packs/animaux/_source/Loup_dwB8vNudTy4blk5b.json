@@ -48,6 +48,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -644,23 +648,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2244,7 +2284,7 @@
       "totalVO": "10",
       "vie": "20",
       "armure": "0",
-      "initiative": "1",
+      "initiative": "15",
       "dommages": "6",
       "baseAB": "5",
       "baseAN": "10",
@@ -2336,13 +2376,14 @@
       "description": "<p>Les loups de Bloodiust sont des carnivores de grande taille (imaginez un loup terrestre de plus de 100 kilogrammes) qui vivent et chassent en meute. Ils ont les yeux rouges et un pelage qui varie selon les saisons (brun en été, marron au printemps et beige en hiver ou en automne).</p>",
       "utilisation": "<p>Certaines troupes d'élite Thunks les utilisent pour combattre les Piorads. Ce sont en effet les seuls animaux qui peuvent combattre des Chagars sans avoir trop peur. Elever un loup pour qu'il n'attaque pas l'homme est un procédé de longue haleine et les maîtres-loups Thunks sont tout de même très rares.</p>",
       "comportement": "<p>Les loups sont carnivores et préfèrent de loin chasser le cheval que l'humain. Ils n’ont pas peur du feu et la seule façon de les faire fuir est de tuer plus de la moitié de la meute. Ils vivent aussi bien au nord que dans les régions plus tempérées de Tanæphis.</p>",
+      "bonusInitiative": "1",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2487,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "dwB8vNudTy4blk5b",

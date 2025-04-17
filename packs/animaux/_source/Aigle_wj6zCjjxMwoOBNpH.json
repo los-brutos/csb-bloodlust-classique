@@ -48,6 +48,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -644,23 +648,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2244,7 +2284,7 @@
       "totalVO": "10",
       "vie": "20",
       "armure": "0",
-      "initiative": "2",
+      "initiative": "12",
       "dommages": "4",
       "baseAB": "5",
       "baseAN": "5",
@@ -2336,13 +2376,14 @@
       "description": "<p>Bien qu'il ressemble à l'aigle terrestre, celui de Tanæphis est beaucoup plus gros et bien plus musclé. Sa vue reste son point fort et il est capable de repérer une proie à plus de 200 mètres (même une victime aussi petite qu'un rat). Un aigle adulte fait à peu près 2,5 mètres d'envergure.</p>",
       "utilisation": "<p>Le monde de Bloodlust étant très rude, il est normal que les personnes voulant envoyer rapidement des messages utilisent non pas des pigeons mais bien de grands aigles. La vitesse de cette créature est bien moins importante que celle des pigeons mais lorsque le seul critère est l’arrivée coûte que coûte du message, il vaut mieux choisir un aigle.</p>",
       "comportement": "<p>Les aigles, dans leur milieu naturel, vivent dans les plus hautes branches des arbres ou au sommet des plus hautes montagnes. Ils sont carnivores mais ne prennent pas pour cible une créature plus grande qu'un agneau. Ils n’attaquent que très rarement les êtres humains (seulement si ceux-ci en veulent à leur nid et à leurs oeufs).-</p>",
+      "bonusInitiative": "2",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2487,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "wj6zCjjxMwoOBNpH",

@@ -48,6 +48,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -644,23 +648,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2244,7 +2284,7 @@
       "totalVO": "10",
       "vie": "24",
       "armure": "0",
-      "initiative": "1",
+      "initiative": "15",
       "dommages": "6",
       "baseAB": "10",
       "baseAN": "10",
@@ -2336,13 +2376,14 @@
       "description": "<p>Ce gros oiseau aptère ressemble à un croisement entre une autruche très musclée et un aigle royal. C'est un prédateur très dangereux des savanes de Tanæphis. Un oiseau mâle pèse environ 350 kilogrammes et mesure 2m50 au garrot.</p>",
       "utilisation": "<p>Quelques tribus de Sekekers ont tenté de les apprivoiser mais jusqu'à présent sans succès. Restez quand même sur vos gardes. Si ces terribles guerrières arrivaient enfin à utiliser ces oiseaux comme montures, elles possèderaient un potentiel offensif encore plus terrifiant.</p>",
       "comportement": "<p>Ces animaux vivent presque tout le temps en solitaire sauf durant la période des amours qui dure à peine 15 jours et où les mâles adultes sont de très mauvais caractère (on les comprend, il n'y a jamais assez de femelles pour tout le monde). À part durant cette période de l'année, les diatrimas sont quand même de terribles prédateurs mais qui hésitent à attaquer les êtres humains, sauf lorsqu'ils sont seuls.</p>",
+      "bonusInitiative": "1",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2487,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "PKydYqzN4q6HHGQu",

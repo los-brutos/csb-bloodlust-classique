@@ -49,6 +49,10 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${bonusInitiative + totalRA}$"
       }
     ],
     "header": {
@@ -645,23 +649,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2245,7 +2285,7 @@
       "totalVO": "12",
       "vie": "36",
       "armure": "2",
-      "initiative": "2",
+      "initiative": "12",
       "dommages": "8",
       "baseAB": "15",
       "baseAN": "10",
@@ -2337,13 +2377,14 @@
       "description": "<p>Les chagars ressemblent de loin à de lourds chevaux de guerre mais possèdent en plus une mâchoire couverte de dents puissantes. Ce sont en effet des créatures carnivores qui en plus de leurs puissants modes d'attaque possèdent une carapace composée principalement de poils tassés à force de se rouler dans les mares de boues.</p>",
       "utilisation": "<p>Les chagars sont des montures privilégiées des Piorades. Aucune autre tace de Tanaephis ne possède la compétence nécessaire pour en diriger un. Certains porteurs d'armes sont l'exception qui confirme cette règles.</p>",
       "comportement": "<p>Les chagars, à la différence d'autres prédateurs, vivent en solitaires et chassent à l'affût. Cette tactique peut paraître assez ridicule pour un cheval carnivore mais la puissance pure de cet animal en fait un prédateur impitoyable. Les chagars ne se réunissent en couples que durant certaines phases de lunes. Ils ne se reproduisent pas en captivité et un Piorad qui perd son chagar  doit immédiatement partir seul dans les coins les plus reculés de Tanaephis pour en attraper un autre. Si le Piorad s'y refuse, il est immédiatement exécuté par les autres guerriers de la tribu et dévoré par les chagars. </p>",
+      "bonusInitiative": "2",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
       "tactAR": "AR",
       "tactES": "ES"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2447,7 +2488,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743931317347,
-    "modifiedTime": 1744840022412,
+    "modifiedTime": 1744876790540,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,
