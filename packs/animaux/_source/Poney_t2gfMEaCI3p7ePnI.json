@@ -48,6 +48,14 @@
       {
         "name": "totalES",
         "value": "${baseES + modES}$"
+      },
+      {
+        "name": "initiative",
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -644,23 +652,59 @@
                 "inputStyle": "text"
               },
               {
-                "key": "initiative",
+                "key": "",
                 "cssClass": "",
                 "role": "0",
                 "permission": "0",
                 "tooltip": "",
                 "visibilityFormula": "",
-                "type": "numberField",
-                "label": "",
-                "defaultValue": "0",
-                "size": "small",
-                "allowDecimal": false,
-                "minVal": "",
-                "maxVal": "",
-                "allowRelative": false,
-                "showControls": false,
-                "controlsStyle": "hover",
-                "inputStyle": "text"
+                "type": "panel",
+                "contents": [
+                  {
+                    "key": "bonusInitiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "${initiative}$",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "bold"
+                  }
+                ],
+                "flow": "vertical",
+                "align": "center",
+                "collapsible": false,
+                "defaultCollapsed": true,
+                "title": "",
+                "titleStyle": "default"
               },
               {
                 "key": "dommages",
@@ -2336,13 +2380,9 @@
       "description": "<p>Le poney de Tanæphis est un petit cheval robuste, rapide et qui supporte très bien le froid grâce à son pelage important et épais. Il est le plus souvent de couleur beige bien que certains individus noirs et/ou blancs aient été aperçus.</p>",
       "utilisation": "<p>Les poneys ne vivent que très rarement en liberté, les plus grandes meutes étant surveillées par les Thunks qui les protègent contre les incursions toujours très meurtrières des Chagars et des loups. Ils sont herbivores et leur seule tactique de combat reste la fuite.</p>",
       "comportement": "<p>Les Thunks utilisent ces créatures pour se déplacer et esquiver les attaques des Piorads. Néanmoins, en combat, il faut vraiment que le poney se sente menacé pour qu'il sélectionne une action de combat autre qu'une esquive.</p>",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "0"
     },
-    "templateSystemUniqueVersion": 1121899413
+    "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
     "name": "Chagar",
@@ -2446,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "t2gfMEaCI3p7ePnI",

@@ -51,7 +51,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2376,12 +2380,7 @@
       "description": "<p>Le rhinocéros laineux n'est pas aussi laineux qu'il n'y parait, Il est très poilu pour résister au froid et cette dite fourrure lui permet aussi de résister très efficacement aux coups.</p>",
       "utilisation": "<p>Les rhinocéros sont encore plus difficiles à apprivoiser et encore plus difficiles à utiliser en combat que les mammouths. Leur seul intérêt est donc la viande qu'ils peuvent fournir aux humains qui les chassent.</p>",
       "comportement": "<p>D'un caractère lunatique, le rhinocéros laineux est un adversaire très dangereux surtout lorsqu'il est en danger (il l'est heureusement très rarement). Les rhinocéros vivent en groupes de 3 ou 4 individus et sont nomades durant une grande partie de l'année. Ils ne restent longtemps à un seul endroit que lorsque les femelles mettent bas et élèvent leurs petits durant les 2 ou 3 premiers mois de leur existence, Ils vivent dans tout le nord de Tanæphis.</p>",
-      "bonusInitiative": "-3",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "-3"
     },
     "templateSystemUniqueVersion": 1064832910
   },
@@ -2487,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "2NAOf87bom3U6itp",

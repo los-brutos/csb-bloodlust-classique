@@ -51,7 +51,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2376,12 +2380,7 @@
       "description": "<p>Les chevaux de Tanæphis ressemblent aux chevaux terrestres. C’est plus leur mentalité qui est différente: Ils sont plus violents, plus méchants et plus résistants (surtout) que ceux que nous connaissons.</p>",
       "utilisation": "<p>La plupart des peuplades de Bloodlust utilisent les chevaux comme montures bien que seuls les Vorozions savent exactement comment les élever pour obtenir les meilleurs animaux. La cavalerie Vorozion est donc beaucoup plus performante que celles des autres peuples (sauf celle des Piorads bien entendu).</p><p>En combat, les chevaux Vorozions sont dotés d’armures à mi chemin entre le cuir clouté et la cotte de maille qui les protègent efficacement (protection : 6).</p>",
       "comportement": "<p>Il ne reste que très peu de chevaux en liberté, La plupart vivent dans des réserves créées spécialement pour eux par les Vorozions. Il arrive néanmoins que certains groupes se forment dans la nature. Ils ne sont, pour la plupart, pas assez nombreux pour résister longtemps aux attaques des prédateurs.</p>",
-      "bonusInitiative": "-2",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "-2"
     },
     "templateSystemUniqueVersion": 1064832910
   },
@@ -2487,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "8gxWl9K4qtRbcfHu",

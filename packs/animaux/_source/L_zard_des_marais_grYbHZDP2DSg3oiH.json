@@ -51,7 +51,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2376,12 +2380,7 @@
       "description": "<p>Le lézard des marais se présente sous la forme d'un gros lézard vert de la taille d'un alligator (4 à 6 mètres). Il dispose d'une mâchoire couverte de petites dents acérées et d'une longue queue qui lui permet de se déplacer dans l'eau avec aisance, Court sur patte, il préfère de loin combattre dans l'eau que sur terre.</p>",
       "utilisation": "<p>Il arrive que certaines tribus Gadhars utilisent ces créatures pour la guerre. Elles sont tout de même très lunatiques et causent souvent autant de dommages dans les rangs adverses que dans ceux qui tentent de les diriger.</p>",
       "comportement": "<p>Le lézard des marais est un prédateur très célèbre du sud de  Tanæphis. Il vit non seulement dans les marais (d'où le nom) mais aussi au bord de tous les cours d'eau de la région. Il est principalement solitaire bien que son taux de natalité important fait qu'il n'est pas rare d'en rencontrer un tous les 100 mètres dans une région où il n'est pas chassé assez souvent. Il chasse principalement (à l'affût) les poissons ou tous autres animaux qui font l'erreur d'entrer dans l’eau non loin de son repère. Lors de phases de lunes particulièrement critiques, il peut s'engager à l'intérieur des terres et attaquer les villages Gadhars.</p>",
-      "bonusInitiative": "-3",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "-3"
     },
     "templateSystemUniqueVersion": 1064832910
   },
@@ -2487,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "grYbHZDP2DSg3oiH",

@@ -51,7 +51,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2376,12 +2380,7 @@
       "description": "<p>Les chiens de guerre se présentent sous là forme de gros molosses à mi-chemin entre le berger allemand et le bas-rouge. Côté mentalité, on est tout de même plus proche du pit-bull que du caniche.</p>",
       "utilisation": "<p>De nombreuses peuplades, et en particulier les Piorads, utilisent des chiens de guerre après les avoir dotés d'une armure de cuir clouté à leurs mensurations (protection : 5).</p>",
       "comportement": "<p>Race relativement jeune, les chiens de guerre sont les descendants des chiens de compagnie Derigions qui ont dégénéré aussi vite que leurs maîtres durant la chute de cet empire. Alors que la plupart des Derigions dédaignaient leurs animaux de compagnie à poils pour se tourner de plus en plus vers les oiseaux qui correspondaient déjà plus à leur mode de vie décadent, les chiens se retrouvèrent nombreux à la rue, devant se battre pour survivre, 95% de ces animaux moururent sous les coups des loups ou des Chagars mais les 5% qui restent sont devenus de vraies bêtes de combat qui n'ont rien à envier à la férocité des animaux sus-cités.</p>",
-      "bonusInitiative": "0",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "0"
     },
     "templateSystemUniqueVersion": 1064832910
   },
@@ -2487,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "eJ32XEufROIoIR9h",

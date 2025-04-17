@@ -52,7 +52,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -30696,7 +30700,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743892864528,
-    "modifiedTime": 1744876785458,
+    "modifiedTime": 1744883930670,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,

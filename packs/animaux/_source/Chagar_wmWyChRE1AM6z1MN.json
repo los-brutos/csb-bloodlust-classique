@@ -52,7 +52,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2306,7 +2310,7 @@
       "totalAN": "10",
       "totalAR": "5",
       "totalES": "10",
-      "tactique": "AB",
+      "tactique": "Aucune",
       "comp": {
         "0": {
           "$deleted": false,
@@ -2378,6 +2382,7 @@
       "utilisation": "<p>Les chagars sont des montures privilégiées des Piorades. Aucune autre tace de Tanaephis ne possède la compétence nécessaire pour en diriger un. Certains porteurs d'armes sont l'exception qui confirme cette règles.</p>",
       "comportement": "<p>Les chagars, à la différence d'autres prédateurs, vivent en solitaires et chassent à l'affût. Cette tactique peut paraître assez ridicule pour un cheval carnivore mais la puissance pure de cet animal en fait un prédateur impitoyable. Les chagars ne se réunissent en couples que durant certaines phases de lunes. Ils ne se reproduisent pas en captivité et un Piorad qui perd son chagar  doit immédiatement partir seul dans les coins les plus reculés de Tanaephis pour en attraper un autre. Si le Piorad s'y refuse, il est immédiatement exécuté par les autres guerriers de la tribu et dévoré par les chagars. </p>",
       "bonusInitiative": "2",
+      "initTactique": "0",
       "tactAucune": "Aucune",
       "tactAB": "AB",
       "tactAN": "AN",
@@ -2488,7 +2493,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743931317347,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,

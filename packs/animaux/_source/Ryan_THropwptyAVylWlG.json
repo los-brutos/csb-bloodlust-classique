@@ -51,7 +51,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2376,12 +2380,7 @@
       "description": "<p>Un des rares primates de Tanæphis de taille supérieure à celle d'un humain, ces grands singes sont paradoxalement assez intelligents. Ils sont le plus souvent couverts d'une fourrure marron mais les individus noirs et/ou blancs existent. Ils utilisent même des armes rudimentaires et des outils.</p>",
       "utilisation": "<p>Toutes les tentatives d'élevage de cet animal dans un but guerrier se sont toujours soldées par des échecs. Utiliser ces créatures dans une bataille rangée n'est ni efficace ni très intelligent.</p>",
       "comportement": "<p>Ces singes vivent en communauté d'une trentaine d'individus. Ils sont omnivores mais refusent de prendre des risques pour chasser. Ils consomment donc plutôt des fruits et de petits animaux faciles à attraper. Ils sont assez pacifiques et sont toujours prêts à fuir plutôt que de combattre. Néanmoins, lorsque la violence est la seule solution, ils sont loin d'être manchots (ou pingouins).</p>",
-      "bonusInitiative": "1",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "1"
     },
     "templateSystemUniqueVersion": 1064832910
   },
@@ -2487,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "THropwptyAVylWlG",

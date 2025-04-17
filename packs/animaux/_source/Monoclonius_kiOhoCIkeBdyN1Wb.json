@@ -51,7 +51,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2376,12 +2380,7 @@
       "description": "<p>Le glyptodon ressemble à un énorme tatou de plusieurs centaines de kilogrammes. || possède en plus une queue cuirassée dont il se sert pour frapper ses adversaires.</p>",
       "utilisation": "<p>Même s'il serait en effet très intéressant pour les Gadhars d'utiliser ces créatures en combat, elles sont trop rares et trop blindées pour pouvoir être emprisonnées en vue de leur utilisation future. Les Vorozions pourraient surement créer des armures à l'aide de la peau et des os de telles créatures mais ces animaux sont trop rares pour que des artisans de ce peuple arrivent à obtenir une carcasse utilisable.</p>",
       "comportement": "<p>Le Monoclonius est une des plus rares créatures de la jungle Gadhar. Elle est réellement terrifiante en combat mais elle reste heureusement calme là plupart du temps. Lors de la période des amours, il ne faut cependant pas déranger les jeunes couples qui se forment (et qui se séparent une fois la ponte effectuée).</p>",
-      "bonusInitiative": "-5",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "-5"
     },
     "templateSystemUniqueVersion": 1064832910
   },
@@ -2487,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "kiOhoCIkeBdyN1Wb",

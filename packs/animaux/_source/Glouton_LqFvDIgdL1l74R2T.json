@@ -51,7 +51,11 @@
       },
       {
         "name": "initiative",
-        "value": "${bonusInitiative + totalRA}$"
+        "value": "${totalRA + bonusInitiative + initTactique}$"
+      },
+      {
+        "name": "initTactique",
+        "value": "${switchCase(tactique, 'AB',-5, 'AR',+5, 0)}$"
       }
     ],
     "header": {
@@ -2376,12 +2380,7 @@
       "description": "<p>Moins méchants que les ours nandis, les gloutons font irrésistiblement penser à des blaireaux géants. Un glouton adulte pèse 50 kilogrammes (uniquement des nerfs et du muscle). Ils sont la plupart du temps noirs et possèdent de grandes bandes blanches qui les font vraiment ressembler à des blaireaux.</p>",
       "utilisation": "<p>Aucune utilisation connue.</p>",
       "comportement": "<p>Ils sont voraces, omnivores et passent leur temps à chercher de la nourriture. Ils sont nocturnes et passent leurs journées à dormir dans des terriers qu'ils prennent le temps de creuser dans un terrain particulièrement meuble. À la différence des ours nandis, les gloutons détestent la proximité des humains et n'entrent jamais dans un de leur village. Ils ont quand même un très sale caractère et ne refuseront pas un combat avec un être humain ou quelque autre créature que ce soit.</p>",
-      "bonusInitiative": "2",
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactES": "ES"
+      "bonusInitiative": "2"
     },
     "templateSystemUniqueVersion": 1064832910
   },
@@ -2487,7 +2486,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744876790540,
+    "modifiedTime": 1744883937828,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "LqFvDIgdL1l74R2T",
