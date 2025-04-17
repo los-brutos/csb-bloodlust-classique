@@ -2380,13 +2380,19 @@
       "description": "<p>Le deinonychus est une sorte de version naine du tyrannosaure terrestre. Il est particulièrement musclé, fin et très rapide. Il pèse à peine 50 kilogrammes pour une taille qui atteint quelquefois 1m70 au garrot.</p>",
       "utilisation": "<p>Toutes les tentatives d'utilisation de ces créatures en combat se sont soldées par des échecs. Les deinonychus sont trop hyper-actifs et violents pour être apprivoisés.</p>",
       "comportement": "<p>C'est un carnivore violent et cruel dont le seul passe-temps semble être la chasse. Il vit en groupes de 20 à 30 individus qui chassent ensemble et qui, une fois la proie tuée, n'hésitent pas à se battre pour obtenir les meilleurs morceaux. Lors d'une rencontre avec un tel groupe, le seul salut est le combat car leur rapidité est bien plus importante que celle de n'importe quel être humain.</p>",
-      "bonusInitiative": "2"
+      "bonusInitiative": "2",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Deinonychus",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "HbGlTmSyhzo4omdf",

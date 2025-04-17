@@ -2380,13 +2380,19 @@
       "description": "<p>Ce gros oiseau aptère ressemble à un croisement entre une autruche très musclée et un aigle royal. C'est un prédateur très dangereux des savanes de Tanæphis. Un oiseau mâle pèse environ 350 kilogrammes et mesure 2m50 au garrot.</p>",
       "utilisation": "<p>Quelques tribus de Sekekers ont tenté de les apprivoiser mais jusqu'à présent sans succès. Restez quand même sur vos gardes. Si ces terribles guerrières arrivaient enfin à utiliser ces oiseaux comme montures, elles possèderaient un potentiel offensif encore plus terrifiant.</p>",
       "comportement": "<p>Ces animaux vivent presque tout le temps en solitaire sauf durant la période des amours qui dure à peine 15 jours et où les mâles adultes sont de très mauvais caractère (on les comprend, il n'y a jamais assez de femelles pour tout le monde). À part durant cette période de l'année, les diatrimas sont quand même de terribles prédateurs mais qui hésitent à attaquer les êtres humains, sauf lorsqu'ils sont seuls.</p>",
-      "bonusInitiative": "1"
+      "bonusInitiative": "1",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Diatrima",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "PKydYqzN4q6HHGQu",

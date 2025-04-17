@@ -2380,13 +2380,19 @@
       "description": "<p>Cet animal d'assez faible taille (malgré toutes les rumeurs, les mammouths n'ont jamais été plus gros que des éléphants) est néanmoins une créature avec qui il ne faut pas discuter ou tout du moins pas sans être un porteur d'arme.</p>",
       "utilisation": "<p>Quelques rares peuplades utilisent les mammouths comme bêtes de trait et éventuellement comme des créatures de combat (bien que leur force soit considérable, les mammouths sont très difficiles à contrôler et prennent peur très facilement) ce qui limite leur utilisation effective. C'est aussi la principale source de nourriture des Gadhars (ceux qui ne vivent pas trop près de la jungle).</p>",
       "comportement": "<p>Herbivores pacifistes lorsqu'ils ne sont pas attaqués ou gênés par des êtres humains ou par leurs prédateurs naturels (le plus souvent des tigres aux dents de sabre), les mammouths vivent en groupes d'une dizaine d'individus. Ils sont plutôt sédentaires et se contentent d'émigrer lorsqu'ils ne trouvent plus de nourriture.</p>",
-      "bonusInitiative": "-5"
+      "bonusInitiative": "-5",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Mammouth",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "ScVAOwS8vhPy5cLx",

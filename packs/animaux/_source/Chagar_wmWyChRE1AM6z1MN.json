@@ -2393,7 +2393,7 @@
   },
   "prototypeToken": {
     "name": "Chagar",
-    "displayName": 0,
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2470,7 +2470,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2493,7 +2493,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743931317347,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,

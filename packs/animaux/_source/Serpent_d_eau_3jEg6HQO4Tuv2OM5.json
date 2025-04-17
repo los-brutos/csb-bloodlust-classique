@@ -2380,13 +2380,19 @@
       "description": "<p>Les serpents géants qui vivent dans les régions chaudes de Tanæphis sont presque tous aquatiques. Leur grande taille (quelquefois plus de 20 mètres) serait un trop gros handicap sur terre.</p>",
       "utilisation": "<p>Certaines arènes de Pôle utilisent régulièrement des serpents géants, et il est très rare qu'ils servent à autre chose à part, une fois morts, à fabriquer de superbes vêtements avec leur peau.</p>",
       "comportement": "<p>Ils chassent à l'affût et ne sont que très rarement venimeux (si c'est le cas, la puissance du poison sera égale à l'endurance du serpent et il affectera toute victime mordue ayant subi au moins un point de dommage une fois l'armure traversée). Un serpent géant vit environ 100 ans et ne se nourrit qu'à peu près une fois par mois.</p>",
-      "bonusInitiative": "2"
+      "bonusInitiative": "2",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Serpent d'eau",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "3jEg6HQO4Tuv2OM5",

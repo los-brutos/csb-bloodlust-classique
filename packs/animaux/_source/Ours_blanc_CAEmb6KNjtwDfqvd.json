@@ -2380,13 +2380,19 @@
       "description": "<p>L'ours blanc de Tanæphis est très proche de sa version terrienne. Il est simplement un tout petit peu plus gros (quelques dizaines de kilogrammes de plus) et vit dans des groupes plus importants (une vingtaine d'individus), donc plus dangereux.</p>",
       "utilisation": "<p>Les Thunks utilisent surtout les os et là fourrure des ours blancs pour leurs vêtements et leurs armes. Certaines troupes d'élite utilisent des traîneaux de combat tirés par des ours avec une efficacité toute relative (le seul individu ayant réellement réussi à apprivoiser des ours était un Alweg {mi-Thunk, mi-Vorozion), se faisait appeler “l'homme aux ours” et qui est mort en 452 lors d'une bataille contre des Piorads.</p>",
       "comportement": "<p>Les ours blancs vivent dans toute la moitié nord de Tanæphis. Ce sont les seuls prédateurs capables de tuer un Chagar en combat singulier. Ces derniers sont d'ailleurs une source de nourriture importante (ils consomment aussi de très grandes quantités de poissons qu'ils pêchent dans les cours d'eau de faible taille). Un ours blanc vit environ 20 ans s'il ne meurt pas avant cela lors d'un combat contre un Chagar.</p>",
-      "bonusInitiative": "-2"
+      "bonusInitiative": "-2",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Ours blanc",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "CAEmb6KNjtwDfqvd",

@@ -2380,13 +2380,19 @@
       "description": "<p>Cet animal, de la taille d'un lion, ressemble à s'y méprendre à un croisement entre une panthère et un lion. Il est de plus doté d'immenses canines acérées qui lui servent à taillader les animaux qu'il attaque et dont il se nourrit.</p>",
       "utilisation": "<p>Aucun tigre à dents de sabre n'a jamais été apprivoisé. Des rumeurs courent sur leur utilisation dans des arènes clandestines à Pôle mais aucune preuve n’est venue étayer cette affirmation.</p>",
       "comportement": "<p>Cet animal chasse à courre tous les herbivores qu'il est capable de rattraper à la course et plus particulièrement les antilopes et les polacs. Lorsque les tigres chassent en groupe, ils réussissent même à tuer des mammouths et des rhinocéros. On trouve des tigres aux dents de sabre sur tout le continent (mais de moins en moins dans les régions pacifiées par les Vorozions).</p>",
-      "bonusInitiative": "2"
+      "bonusInitiative": "2",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Tigre aux dents de sabre",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "mHyfa4x66ztKBC8a",

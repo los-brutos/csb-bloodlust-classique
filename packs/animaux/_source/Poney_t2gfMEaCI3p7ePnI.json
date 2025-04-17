@@ -2288,7 +2288,7 @@
       "totalVO": "10",
       "vie": "24",
       "armure": "0",
-      "initiative": "0",
+      "initiative": "14",
       "dommages": "4",
       "baseAB": "5",
       "baseAN": "5",
@@ -2380,13 +2380,19 @@
       "description": "<p>Le poney de Tanæphis est un petit cheval robuste, rapide et qui supporte très bien le froid grâce à son pelage important et épais. Il est le plus souvent de couleur beige bien que certains individus noirs et/ou blancs aient été aperçus.</p>",
       "utilisation": "<p>Les poneys ne vivent que très rarement en liberté, les plus grandes meutes étant surveillées par les Thunks qui les protègent contre les incursions toujours très meurtrières des Chagars et des loups. Ils sont herbivores et leur seule tactique de combat reste la fuite.</p>",
       "comportement": "<p>Les Thunks utilisent ces créatures pour se déplacer et esquiver les attaques des Piorads. Néanmoins, en combat, il faut vraiment que le poney se sente menacé pour qu'il sélectionne une action de combat autre qu'une esquive.</p>",
-      "bonusInitiative": "0"
+      "bonusInitiative": "0",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Poney",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "t2gfMEaCI3p7ePnI",

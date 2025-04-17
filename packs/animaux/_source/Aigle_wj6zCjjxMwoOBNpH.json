@@ -2380,13 +2380,19 @@
       "description": "<p>Bien qu'il ressemble à l'aigle terrestre, celui de Tanæphis est beaucoup plus gros et bien plus musclé. Sa vue reste son point fort et il est capable de repérer une proie à plus de 200 mètres (même une victime aussi petite qu'un rat). Un aigle adulte fait à peu près 2,5 mètres d'envergure.</p>",
       "utilisation": "<p>Le monde de Bloodlust étant très rude, il est normal que les personnes voulant envoyer rapidement des messages utilisent non pas des pigeons mais bien de grands aigles. La vitesse de cette créature est bien moins importante que celle des pigeons mais lorsque le seul critère est l’arrivée coûte que coûte du message, il vaut mieux choisir un aigle.</p>",
       "comportement": "<p>Les aigles, dans leur milieu naturel, vivent dans les plus hautes branches des arbres ou au sommet des plus hautes montagnes. Ils sont carnivores mais ne prennent pas pour cible une créature plus grande qu'un agneau. Ils n’attaquent que très rarement les êtres humains (seulement si ceux-ci en veulent à leur nid et à leurs oeufs).-</p>",
-      "bonusInitiative": "2"
+      "bonusInitiative": "2",
+      "initTactique": "0",
+      "tactAucune": "Aucune",
+      "tactAB": "AB",
+      "tactAN": "AN",
+      "tactAR": "AR",
+      "tactES": "ES"
     },
     "templateSystemUniqueVersion": 1064832910
   },
   "prototypeToken": {
-    "name": "Chagar",
-    "displayName": 0,
+    "name": "Aigle",
+    "displayName": 50,
     "actorLink": false,
     "appendNumber": false,
     "prependAdjective": false,
@@ -2463,7 +2469,7 @@
         "ring": null,
         "background": null
       },
-      "effects": 1,
+      "effects": 0,
       "subject": {
         "scale": 1,
         "texture": null
@@ -2486,7 +2492,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744833506483,
-    "modifiedTime": 1744883937828,
+    "modifiedTime": 1744885921144,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "wj6zCjjxMwoOBNpH",
