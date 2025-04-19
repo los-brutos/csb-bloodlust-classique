@@ -350,7 +350,7 @@
     },
     "template": "tTnlARQzwU9LDmfF",
     "props": {
-      "name": "Arbalète",
+      "name": "Arc long",
       "dommages": "7",
       "cadence": "1/t",
       "porteeCourte": "10",
@@ -377,7 +377,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744715688731,
-    "modifiedTime": 1744840044111,
+    "modifiedTime": 1745089838946,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "xnZkgZPUAAZqfMJS",

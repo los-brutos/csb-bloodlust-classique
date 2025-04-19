@@ -691,7 +691,7 @@
       "bonusAN": "0",
       "bonusAR": "0",
       "bonusFE": "0",
-      "bonusPA": "0",
+      "bonusPA": "10",
       "equipee": false,
       "As": false,
       "Am": false,
@@ -699,7 +699,7 @@
       "Ct": false,
       "Pr": true,
       "Pf": false,
-      "notes": "\n\n\n\n\n"
+      "notes": "\n\n\n\nPr \n"
     },
     "modifiers": [],
     "unique": false,
@@ -720,7 +720,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744715688731,
-    "modifiedTime": 1744840044111,
+    "modifiedTime": 1745089838946,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "wTiOl7SfGkUM5bD8",

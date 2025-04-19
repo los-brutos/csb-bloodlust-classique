@@ -38,7 +38,7 @@ ${#ru:= roll%10}$
 ${#result:= 0}$ 
 ${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$
 ${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->
-${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->
+${#result:=(and(result==1, or(ru==0, and(ru==9, critique9))) ?  2 : result)}$ <!-- réussite critique -->
 ${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$
 <!-- expérience -->
 ${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$

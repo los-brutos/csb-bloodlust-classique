@@ -1,7 +1,8 @@
 {
   "folder": null,
-  "name": "Alweg vétéran",
+  "name": "Piorad  normal",
   "type": "character",
+  "_id": "IEnTc84GlZnnImTH",
   "img": "icons/svg/mystery-man.svg",
   "system": {
     "hidden": [
@@ -274,8 +275,24 @@
         "value": "${fetchFromUuid(lunesUuid, 'reputation', 0)}$"
       },
       {
-        "name": "armure",
+        "name": "protection",
         "value": "${0}$"
+      },
+      {
+        "name": "totalReputation",
+        "value": "${baseReputation + bonusReputation + magieDesirReputation}$"
+      },
+      {
+        "name": "magieArmure",
+        "value": "${equalText(armeDieuUuid, '') ? 0 : 5 + fetchFromUuid(armeDieuUuid, 'magieProtection', 0)}$"
+      },
+      {
+        "name": "armure",
+        "value": "${protection + magieArmure}$"
+      },
+      {
+        "name": "critique9",
+        "value": "${fetchFromUuid(armeDieuUuid, 'critique9', false)}$"
       }
     ],
     "header": {
@@ -595,7 +612,7 @@
                               "value": "",
                               "prefix": "",
                               "suffix": "",
-                              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0},\n  fetchFromUuid(armeDieuUuid, \"charge\") ? (?{charge:\"Charge\"[check]}) : ''\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- bonus de l'arme -->\n${#bonus:= equalText(fetchFromUuid(armeDieuUuid, \"competence\", \"\"), tactique) ?  fetchFromUuid(armeDieuUuid, \"modCompetence\", 0) : 0}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + bonus + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= fetchFromUuid(armeDieuUuid, \"dommages\")}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n<!-- gestion de la charge -->\n${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${#dommage:= dommage>17 ? 17 : dommage}$\n\n\n${#blessures:= 0 }$\n${#blessures:= ru==0 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,10,6,15,7,20,8,25,9,30,10,35,11,40,12,45,13,50,14,55,15,60,16,65,17,70) : blessures}$\n${#blessures:= ru==1 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,1,6,2,7,2,8,3,9,3,10,4,11,4,12,5,13,5,14,6,15,6,16,7,17,7) : blessures}$\n${#blessures:= ru==2 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,2,6,3,7,4,8,5,9,6,10,7,11,8,12,9,13,10,14,11,15,12,16,13,17,14) : blessures}$\n${#blessures:= ru==3 ? switchCase(dommage,1,1,2,1,3,1,4,2,5,3,6,5,7,6,8,8,9,9,10,11,11,12,12,14,13,15,14,17,15,18,16,20,17,21) : blessures}$\n${#blessures:= ru==4 ? switchCase(dommage,1,1,2,1,3,2,4,2,5,4,6,6,7,8,8,10,9,12,10,14,11,16,12,18,13,20,14,22,15,24,16,26,17,28) : blessures}$\n${#blessures:= ru==5 ? switchCase(dommage,1,1,2,1,3,2,4,3,5,5,6,8,7,10,8,13,9,15,10,18,11,20,12,23,13,25,14,28,15,30,16,33,17,35) : blessures}$\n${#blessures:= ru==6 ? switchCase(dommage,1,1,2,2,3,2,4,3,5,6,6,9,7,12,8,15,9,18,10,21,11,24,12,27,13,30,14,33,15,36,16,39,17,42) : blessures}$\n${#blessures:= ru==7 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,7,6,11,7,14,8,18,9,21,10,25,11,28,12,32,13,35,14,39,15,42,16,46,17,49) : blessures}$\n${#blessures:= ru==8 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,8,6,12,7,16,8,20,9,24,10,28,11,32,12,36,13,40,14,44,15,18,16,52,17,56) : blessures}$\n${#blessures:= ru==9 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,9,6,14,7,18,8,23,9,27,10,32,11,36,12,41,13,45,14,50,15,54,16,59,17,63) : blessures}$\n\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n\n<!-- expérience -->\n  <!-- compétence -->\n  ${#xpComp:=  concat('xp', tactique)}$\n  ${#bonusComp:= concat('bonus', tactique)}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n  ${#augmentComp:= false}$\n  ${#augmentComp:= and(competence < 25,  newXp == 1) ? true : augmentComp}$\n  ${#augmentComp:= and(competence < 50,  newXp == 2) ? true : augmentComp}$\n  ${#augmentComp:= and(competence >= 50, newXp == 5) ? true : augmentComp}$ \n  ${#augmentComp ? setPropertyInEntity('self', bonusComp, concat(bonusComp, '+5')) : \"pas d'augmentation de la compétence\"}$\n  ${#augmentComp ? setPropertyInEntity('self', xpComp, 0) : \"pas de remise à zéro de l'xp de la compétence\"}$\n\n  <!-- caractéristique liée -->\n  ${#xpCar:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA','xpRA','ES','xpRA')}$\n  ${#bonusCar:= replace(xpCar, 'xp', 'bonus')}$\n  ${#totalCar:= replace(xpCar, 'xp', 'total')}$\n  ${#totalCar:= recalculate(concat(\"$\", \"{\", totalCar, \"}\", \"$\"))}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : ''}$\n\n  ${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$\n  ${#augmentCar:= newXp == totalCar ? true : false}$\n  ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : \"pas d'augmentation de la caractéristique\"}$\n  ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : \"pas de remise à zéro de l'xp de la caractéristique\"}$\n\n<!-- affichage -->\n<div>\n  <table>\n    <tbody>\n      <tr>\n        <td rowspan=\"2\">\n            <div><img class=\"bl-roll-image\" src=\"${!%{return fromUuidSync(\"${armeDieuUuid}$\").img}%}$\"></img></div>\n        </td>\n        <th>\n          <h3>${!fetchFromUuid(armeDieuUuid, \"name\", \"Arme Dieu\")}$</h3>\n        </th>\n      </tr>\n      <tr>\n        <td>\n          ${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  \n  <table>\n    <tbody>\n      <tr>\n        <th style=\"width:50%;\">\n          d100\n        </th>\n        <td>\n          <div class=\"bl-dropdown\">\n            <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n            <div class=\"bl-dropdown-content\">\n              <p>Compétence : ${!competence}$</p>\n              <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n              <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n              <p>Modificateur : ${!mod}$</p>\n            </div>\n          </div>\n        </td>\n      </tr>\n      ${!result>0 ? concat(\"<tr><th>Localisation</th><td>\",loc, \"</td></tr><tr><th>RU</th><td>\",ru,\"</td></tr>\") : ''}$\n      <tr>\n        <td colspan=\"2\">\n          <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Blessures infligées\",(charge ? \" (charge)\" : ''),\"</th><td>\",blessures,\"</td></tr>\") : ''}$\n    </tbody>\n  </table>\n</div>",
+                              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0},\n  fetchFromUuid(armeDieuUuid, \"charge\") ? (?{charge:\"Charge\"[check]}) : ''\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- bonus de l'arme -->\n${#bonus:= equalText(fetchFromUuid(armeDieuUuid, \"competence\", \"\"), tactique) ?  fetchFromUuid(armeDieuUuid, \"modCompetence\", 0) : 0}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + bonus + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, or(ru==0, and(critique9==1, ru==9))) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= fetchFromUuid(armeDieuUuid, \"dommages\")}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n<!-- gestion de la charge -->\n${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${#dommage:= dommage>17 ? 17 : dommage}$\n\n\n${#blessures:= 0 }$\n${#blessures:= ru==0 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,10,6,15,7,20,8,25,9,30,10,35,11,40,12,45,13,50,14,55,15,60,16,65,17,70) : blessures}$\n${#blessures:= ru==1 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,1,6,2,7,2,8,3,9,3,10,4,11,4,12,5,13,5,14,6,15,6,16,7,17,7) : blessures}$\n${#blessures:= ru==2 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,2,6,3,7,4,8,5,9,6,10,7,11,8,12,9,13,10,14,11,15,12,16,13,17,14) : blessures}$\n${#blessures:= ru==3 ? switchCase(dommage,1,1,2,1,3,1,4,2,5,3,6,5,7,6,8,8,9,9,10,11,11,12,12,14,13,15,14,17,15,18,16,20,17,21) : blessures}$\n${#blessures:= ru==4 ? switchCase(dommage,1,1,2,1,3,2,4,2,5,4,6,6,7,8,8,10,9,12,10,14,11,16,12,18,13,20,14,22,15,24,16,26,17,28) : blessures}$\n${#blessures:= ru==5 ? switchCase(dommage,1,1,2,1,3,2,4,3,5,5,6,8,7,10,8,13,9,15,10,18,11,20,12,23,13,25,14,28,15,30,16,33,17,35) : blessures}$\n${#blessures:= ru==6 ? switchCase(dommage,1,1,2,2,3,2,4,3,5,6,6,9,7,12,8,15,9,18,10,21,11,24,12,27,13,30,14,33,15,36,16,39,17,42) : blessures}$\n${#blessures:= ru==7 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,7,6,11,7,14,8,18,9,21,10,25,11,28,12,32,13,35,14,39,15,42,16,46,17,49) : blessures}$\n${#blessures:= ru==8 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,8,6,12,7,16,8,20,9,24,10,28,11,32,12,36,13,40,14,44,15,18,16,52,17,56) : blessures}$\n${#blessures:= ru==9 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,9,6,14,7,18,8,23,9,27,10,32,11,36,12,41,13,45,14,50,15,54,16,59,17,63) : blessures}$\n\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n\n<!-- expérience -->\n  <!-- compétence -->\n  ${#xpComp:=  concat('xp', tactique)}$\n  ${#bonusComp:= concat('bonus', tactique)}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n  ${#augmentComp:= false}$\n  ${#augmentComp:= and(competence < 25,  newXp == 1) ? true : augmentComp}$\n  ${#augmentComp:= and(competence < 50,  newXp == 2) ? true : augmentComp}$\n  ${#augmentComp:= and(competence >= 50, newXp == 5) ? true : augmentComp}$ \n  ${#augmentComp ? setPropertyInEntity('self', bonusComp, concat(bonusComp, '+5')) : \"pas d'augmentation de la compétence\"}$\n  ${#augmentComp ? setPropertyInEntity('self', xpComp, 0) : \"pas de remise à zéro de l'xp de la compétence\"}$\n\n  <!-- caractéristique liée -->\n  ${#xpCar:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA','xpRA','ES','xpRA')}$\n  ${#bonusCar:= replace(xpCar, 'xp', 'bonus')}$\n  ${#totalCar:= replace(xpCar, 'xp', 'total')}$\n  ${#totalCar:= recalculate(concat(\"$\", \"{\", totalCar, \"}\", \"$\"))}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : ''}$\n\n  ${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$\n  ${#augmentCar:= newXp == totalCar ? true : false}$\n  ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : \"pas d'augmentation de la caractéristique\"}$\n  ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : \"pas de remise à zéro de l'xp de la caractéristique\"}$\n\n<!-- affichage -->\n<div>\n  <table>\n    <tbody>\n      <tr>\n        <td rowspan=\"2\">\n            <div><img class=\"bl-roll-image\" src=\"${!%{return fromUuidSync(\"${armeDieuUuid}$\").img}%}$\"></img></div>\n        </td>\n        <th>\n          <h3>${!fetchFromUuid(armeDieuUuid, \"name\", \"Arme Dieu\")}$</h3>\n        </th>\n      </tr>\n      <tr>\n        <td>\n          ${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  \n  <table>\n    <tbody>\n      <tr>\n        <th style=\"width:50%;\">\n          d100\n        </th>\n        <td>\n          <div class=\"bl-dropdown\">\n            <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n            <div class=\"bl-dropdown-content\">\n              <p>Compétence : ${!competence}$</p>\n              <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n              <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n              <p>Modificateur : ${!mod}$</p>\n            </div>\n          </div>\n        </td>\n      </tr>\n      ${!result>0 ? concat(\"<tr><th>Localisation</th><td>\",loc, \"</td></tr><tr><th>RU</th><td>\",ru,\"</td></tr>\") : ''}$\n      <tr>\n        <td colspan=\"2\">\n          <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Blessures infligées\",(charge ? \" (charge)\" : ''),\"</th><td>\",blessures,\"</td></tr>\") : ''}$\n    </tbody>\n  </table>\n</div>",
                               "altRollMessage": "",
                               "rollMessageToChat": true,
                               "altRollMessageToChat": true,
@@ -2051,7 +2068,7 @@
                     "style": "label"
                   },
                   {
-                    "key": "totalReputation",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
@@ -2060,7 +2077,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${baseReputation + bonusReputation + magieDesirReputation + lunesReputation}$",
+                    "value": "${totalReputation + lunesReputation}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -5885,7 +5902,7 @@
                   "head": true,
                   "deleteWarning": true,
                   "title": "<strong>Armure</strong>",
-                  "hideEmpty": false,
+                  "hideEmpty": true,
                   "sortOption": "manual",
                   "headDisplay": true,
                   "showDelete": true,
@@ -5895,7 +5912,7 @@
                   "templateFilter": [
                     "wSoOEcwALS5ruZRM"
                   ],
-                  "itemFilterFormula": "    \n    \n    \n    \n    \n    ",
+                  "itemFilterFormula": "    \n    \n    \n    \n    \n    \n    ",
                   "sortPredicates": []
                 }
               ],
@@ -6553,20 +6570,20 @@
     "activeConditionalModifierGroups": [],
     "template": "1BPuXHlQoRz23e3Z",
     "props": {
-      "name": "Alweg vétéran",
+      "name": "Piorad  normal",
       "magieAN": "0",
       "magieAR": "0",
       "magieFE": "0",
       "magiePA": "0",
       "magieES": "0",
-      "vie": "26",
+      "vie": "24",
       "bonusFO": "0",
       "magieFO": "0",
       "xpFO": "0",
-      "bonusEN": "1",
+      "bonusEN": "0",
       "magieEN": "0",
       "xpEN": "0",
-      "bonusAG": "1",
+      "bonusAG": "0",
       "magieAG": "0",
       "xpAG": "0",
       "bonusRA": "0",
@@ -6580,7 +6597,7 @@
       "xpVO": "0",
       "bonusAB": "0",
       "xpAB": "0",
-      "bonusAN": "10",
+      "bonusAN": "0",
       "xpAN": "0",
       "bonusAR": "0",
       "xpRA": "0",
@@ -6613,67 +6630,79 @@
       "noteViolence": "",
       "noteReputation": "",
       "peuple": {
-        "X0tIzDb5VGCXKM70": {
-          "name": "Alweg",
-          "id": "X0tIzDb5VGCXKM70",
-          "uuid": "Actor.YFc9MuSLDFzsKSf8.Item.X0tIzDb5VGCXKM70"
+        "BEYoAO89dkmiNKEZ": {
+          "name": "Piorad",
+          "id": "BEYoAO89dkmiNKEZ",
+          "uuid": "Actor.IEnTc84GlZnnImTH.Item.BEYoAO89dkmiNKEZ"
         }
       },
-      "baseControle": "50",
-      "baseFO": "10",
-      "totalFO": "10",
+      "baseControle": "60",
+      "baseFO": "14",
+      "totalFO": "14",
       "baseEN": "12",
-      "totalEN": "13",
-      "baseAG": "12",
-      "totalAG": "13",
-      "baseRA": "10",
-      "totalRA": "10",
+      "totalEN": "12",
+      "baseAG": "8",
+      "totalAG": "8",
+      "baseRA": "8",
+      "totalRA": "8",
       "basePE": "10",
       "totalPE": "10",
-      "baseVO": "10",
-      "totalVO": "10",
-      "baseAB": "10",
-      "modAB": "0",
-      "totalAB": "10",
-      "baseAN": "10",
-      "modAN": "5",
-      "totalAN": "25",
-      "baseAR": "10",
-      "modAR": "0",
-      "totalAR": "10",
-      "baseFE": "20",
+      "baseVO": "12",
+      "totalVO": "12",
+      "baseAB": "20",
+      "modAB": "5",
+      "totalAB": "25",
+      "baseAN": "15",
+      "modAN": "-5",
+      "totalAN": "10",
+      "baseAR": "5",
+      "modAR": "-5",
+      "totalAR": "0",
+      "baseFE": "10",
       "modFE": "0",
-      "totalFE": "20",
-      "basePA": "10",
-      "modPA": "0",
-      "totalPA": "10",
-      "baseES": "10",
-      "modES": "0",
-      "totalES": "10",
-      "baseTIR": "10",
+      "totalFE": "10",
+      "basePA": "20",
+      "modPA": "-5",
+      "totalPA": "15",
+      "baseES": "5",
+      "modES": "-5",
+      "totalES": "0",
+      "baseTIR": "5",
       "modTIR": "0",
-      "totalTIR": "10",
-      "basePrestige": "4",
-      "baseRichesse": "6",
-      "totalRichesse": "6",
-      "baseSexe": "6",
-      "totalSexe": "6",
-      "baseViolence": "5",
-      "totalViolence": "5",
-      "baseReputation": "4",
-      "totalReputation": "5",
-      "modFO": "0",
-      "modEN": "5",
-      "modAG": "5",
-      "modRA": "0",
+      "totalTIR": "5",
+      "basePrestige": "7",
+      "baseRichesse": "7",
+      "totalRichesse": "7",
+      "baseSexe": "7",
+      "totalSexe": "7",
+      "baseViolence": "7",
+      "totalViolence": "7",
+      "baseReputation": "7",
+      "totalReputation": "7",
+      "modFO": "5",
+      "modEN": "0",
+      "modAG": "-5",
+      "modRA": "-5",
       "modPE": "0",
       "modVO": "0",
       "magieInitiative": "0",
-      "initiative": "10",
+      "initiative": "8",
       "magieAB": "0",
       "magieRichesse": "0",
       "magieSexe": "0",
       "magieControle": "0",
+      "xpViewAB": "0",
+      "xpViewAN": "0",
+      "xpViewAR": "0",
+      "xpViewFE": "0",
+      "xpViewPA": "0",
+      "xpViewES": "0",
+      "xpViewTIR": "0",
+      "magieDesirPrestige": "0",
+      "magieDesirRichesse": "0",
+      "magieDesirSexe": "0",
+      "magieDesirViolence": "0",
+      "magieDesirReputation": "0",
       "comp": {
         "0": {
           "$deleted": false,
@@ -6686,9 +6715,9 @@
           "xp": "0",
           "magie": "0",
           "xpView": "0",
-          "base": "10",
-          "modificateur": "5",
-          "total": " 15"
+          "base": "5",
+          "modificateur": "-5",
+          "total": " 0"
         },
         "1": {
           "$deleted": false,
@@ -6707,21 +6736,6 @@
         },
         "2": {
           "$deleted": false,
-          "code": "ArtisanatBatranoban",
-          "bonus": "0",
-          "xp": "0",
-          "$predefinedIdx": 6,
-          "$deletionDisabled": true,
-          "nom": "Artisanat batranoban (torture rafinée)",
-          "car": "PE",
-          "magie": "0",
-          "xpView": "0",
-          "base": "0",
-          "modificateur": "0",
-          "total": " 0"
-        },
-        "3": {
-          "$deleted": false,
           "code": "Course",
           "bonus": "0",
           "$predefinedIdx": 3,
@@ -6731,11 +6745,11 @@
           "car": "EN",
           "magie": "0",
           "xpView": "0",
-          "base": "15",
-          "modificateur": "5",
-          "total": " 20"
+          "base": "5",
+          "modificateur": "0",
+          "total": " 5"
         },
-        "4": {
+        "3": {
           "$deleted": false,
           "code": "Seduction",
           "bonus": "0",
@@ -6747,10 +6761,10 @@
           "magie": "0",
           "xpView": "0",
           "base": "10",
-          "modificateur": "0",
-          "total": " 10"
+          "modificateur": "5",
+          "total": " 15"
         },
-        "5": {
+        "4": {
           "$deleted": false,
           "code": "LireEcrire",
           "car": "VO",
@@ -6761,11 +6775,11 @@
           "nom": "Lire et Ecrire",
           "magie": "0",
           "xpView": "0",
-          "base": "0",
+          "base": "10",
           "modificateur": "0",
-          "total": " 0"
+          "total": " 10"
         },
-        "6": {
+        "5": {
           "$deleted": false,
           "code": "ArtisanatDerigion",
           "bonus": "0",
@@ -6780,7 +6794,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "7": {
+        "6": {
           "$deleted": false,
           "code": "ArtisanatGadhar",
           "bonus": "0",
@@ -6795,7 +6809,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "8": {
+        "7": {
           "$deleted": false,
           "code": "ArtisanatPiorad",
           "bonus": "0",
@@ -6806,11 +6820,11 @@
           "car": "PE",
           "magie": "0",
           "xpView": "0",
-          "base": "0",
+          "base": "5",
           "modificateur": "0",
-          "total": " 0"
+          "total": " 5"
         },
-        "9": {
+        "8": {
           "$deleted": false,
           "code": "ArtisanatSekeker",
           "bonus": "0",
@@ -6825,7 +6839,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "10": {
+        "9": {
           "$deleted": false,
           "code": "ArtisanatThunk",
           "bonus": "0",
@@ -6840,7 +6854,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "11": {
+        "10": {
           "$deleted": false,
           "code": "ArtisanatVorozion",
           "bonus": "0",
@@ -6855,7 +6869,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "12": {
+        "11": {
           "$deleted": false,
           "code": "Astronomie",
           "bonus": "0",
@@ -6866,11 +6880,11 @@
           "car": "PE",
           "magie": "0",
           "xpView": "0",
-          "base": "10",
+          "base": "5",
           "modificateur": "0",
-          "total": " 10"
+          "total": " 5"
         },
-        "13": {
+        "12": {
           "$deleted": false,
           "code": "Commandement",
           "bonus": "0",
@@ -6881,11 +6895,11 @@
           "car": "FO",
           "magie": "0",
           "xpView": "0",
-          "base": "10",
-          "modificateur": "0",
-          "total": " 10"
+          "base": "25",
+          "modificateur": "5",
+          "total": " 30"
         },
-        "14": {
+        "13": {
           "$deleted": false,
           "code": "ConnaissanceBatranoban",
           "bonus": "0",
@@ -6900,7 +6914,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "15": {
+        "14": {
           "$deleted": false,
           "code": "ConnaissanceDerigion",
           "bonus": "0",
@@ -6915,7 +6929,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "16": {
+        "15": {
           "$deleted": false,
           "code": "ConnaissanceGadhar",
           "bonus": "0",
@@ -6930,7 +6944,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "17": {
+        "16": {
           "$deleted": false,
           "code": "ConnaissancePiorad",
           "bonus": "0",
@@ -6941,11 +6955,11 @@
           "car": "VO",
           "magie": "0",
           "xpView": "0",
-          "base": "0",
+          "base": "5",
           "modificateur": "0",
-          "total": " 0"
+          "total": " 5"
         },
-        "18": {
+        "17": {
           "$deleted": false,
           "code": "ConnaissanceSekeker",
           "bonus": "0",
@@ -6960,7 +6974,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "19": {
+        "18": {
           "$deleted": false,
           "code": "ConnaissanceThunk",
           "bonus": "0",
@@ -6975,7 +6989,7 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "20": {
+        "19": {
           "$deleted": false,
           "code": "ConnaissanceVorozion",
           "bonus": "0",
@@ -6990,10 +7004,10 @@
           "modificateur": "0",
           "total": " 0"
         },
-        "21": {
+        "20": {
           "$deleted": false,
           "code": "Discretion",
-          "bonus": "10",
+          "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 22,
           "$deletionDisabled": true,
@@ -7001,11 +7015,11 @@
           "car": "AG",
           "magie": "0",
           "xpView": "0",
-          "base": "30",
-          "modificateur": "5",
-          "total": " 45"
+          "base": "5",
+          "modificateur": "-5",
+          "total": " 0"
         },
-        "22": {
+        "21": {
           "$deleted": false,
           "code": "Equitation",
           "bonus": "0",
@@ -7016,11 +7030,11 @@
           "car": "AG",
           "magie": "0",
           "xpView": "0",
-          "base": "5",
-          "modificateur": "5",
-          "total": " 10"
+          "base": "25",
+          "modificateur": "-5",
+          "total": " 20"
         },
-        "23": {
+        "22": {
           "$deleted": false,
           "code": "Marchandage",
           "bonus": "0",
@@ -7031,11 +7045,11 @@
           "car": "PE",
           "magie": "0",
           "xpView": "0",
-          "base": "10",
+          "base": "5",
           "modificateur": "0",
-          "total": " 10"
+          "total": " 5"
         },
-        "24": {
+        "23": {
           "$deleted": false,
           "code": "Medecine",
           "bonus": "0",
@@ -7050,7 +7064,7 @@
           "modificateur": "0",
           "total": " 5"
         },
-        "25": {
+        "24": {
           "$deleted": false,
           "code": "Nage",
           "bonus": "0",
@@ -7061,14 +7075,14 @@
           "car": "EN",
           "magie": "0",
           "xpView": "0",
-          "base": "10",
-          "modificateur": "5",
-          "total": " 15"
+          "base": "0",
+          "modificateur": "0",
+          "total": " 0"
         },
-        "26": {
+        "25": {
           "$deleted": false,
           "code": "Reperage",
-          "bonus": "10",
+          "bonus": "0",
           "xp": "0",
           "$predefinedIdx": 27,
           "$deletionDisabled": true,
@@ -7076,11 +7090,11 @@
           "car": "PE",
           "magie": "0",
           "xpView": "0",
-          "base": "30",
+          "base": "15",
           "modificateur": "0",
-          "total": " 40"
+          "total": " 15"
         },
-        "27": {
+        "26": {
           "$deleted": false,
           "code": "Strategie",
           "bonus": "0",
@@ -7091,11 +7105,11 @@
           "car": "VO",
           "magie": "0",
           "xpView": "0",
-          "base": "10",
+          "base": "15",
           "modificateur": "0",
-          "total": " 10"
+          "total": " 15"
         },
-        "28": {
+        "27": {
           "$deleted": false,
           "code": "Tactique",
           "bonus": "0",
@@ -7106,23 +7120,11 @@
           "car": "VO",
           "magie": "0",
           "xpView": "0",
-          "base": "5",
+          "base": "20",
           "modificateur": "0",
-          "total": " 5"
+          "total": " 20"
         }
       },
-      "xpViewAB": "0",
-      "xpViewAN": "0",
-      "xpViewAR": "0",
-      "xpViewFE": "0",
-      "xpViewPA": "0",
-      "xpViewES": "0",
-      "xpViewTIR": "0",
-      "magieDesirPrestige": "0",
-      "magieDesirRichesse": "0",
-      "magieDesirSexe": "0",
-      "magieDesirViolence": "0",
-      "magieDesirReputation": "0",
       "armeDieuUuid": "",
       "magieAcrobatie": "0",
       "magieArtisanatBatranoban": "0",
@@ -7152,7 +7154,7 @@
       "magieMedecine": "0",
       "magieDiscretion": "0",
       "magieTactique": "0",
-      "totalPrestige": "4",
+      "totalPrestige": "7",
       "prestigeCompCombat": "0",
       "prestigeDesirs": "0",
       "prestigeCompSecondaires": "0",
@@ -7160,26 +7162,22 @@
       "prestigeTotal": "0",
       "prestigePorteur": "0",
       "prestigeArmeDieu": "0",
-      "controle": "50",
-      "vieMax": "26",
+      "controle": "60",
+      "vieMax": "24",
       "lunesPrestige": "0",
       "lunesSexe": "0",
       "lunesViolence": "0",
       "lunesReputation": "1",
       "lunesUuid": "Actor.8HBWYAISWQwTeU1p",
-      "armure": 3,
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactFE": "FE",
-      "tactPA": "PA",
-      "tactES": "ES"
+      "armure": "5",
+      "magieArmure": "0",
+      "protection": 5,
+      "critique9": "false"
     },
-    "templateSystemUniqueVersion": 2929605978
+    "templateSystemUniqueVersion": 3000717277
   },
   "prototypeToken": {
-    "name": "Alweg vétéran",
+    "name": "Piorad Normal",
     "displayName": 40,
     "actorLink": false,
     "appendNumber": false,
@@ -7269,9 +7267,8 @@
   "items": [
     {
       "folder": "81IUYZlJsgTHV0wS",
-      "name": "Alweg",
+      "name": "Piorad",
       "type": "equippableItem",
-      "_id": "X0tIzDb5VGCXKM70",
       "img": "icons/svg/aura.svg",
       "system": {
         "hidden": [],
@@ -9167,50 +9164,50 @@
         },
         "template": "pDOuju9fifYiekvg",
         "props": {
-          "name": "Alweg",
-          "baseAB": "10",
-          "baseFO": "10",
+          "name": "Piorad",
+          "baseAB": "20",
+          "baseFO": "14",
           "baseEN": "12",
-          "baseAG": "12",
-          "baseRA": "10",
+          "baseAG": "8",
+          "baseRA": "8",
           "basePE": "10",
-          "baseVO": "10",
-          "baseAN": "10",
-          "baseAR": "10",
-          "baseFE": "20",
-          "baseES": "10",
-          "basePA": "10",
-          "baseAcrobatie": "10",
-          "baseAstronomie": "10",
-          "baseTIR": "10",
-          "baseCommandement": "10",
-          "baseCourse": "15",
-          "baseDiscretion": "30",
-          "baseEquitation": "5",
-          "baseLireEcrire": "0",
-          "baseMarchandage": "10",
+          "baseVO": "12",
+          "baseAN": "15",
+          "baseAR": "5",
+          "baseFE": "10",
+          "baseES": "5",
+          "basePA": "20",
+          "baseAcrobatie": "5",
+          "baseAstronomie": "5",
+          "baseTIR": "5",
+          "baseCommandement": "25",
+          "baseCourse": "5",
+          "baseDiscretion": "5",
+          "baseEquitation": "25",
+          "baseLireEcrire": "10",
+          "baseMarchandage": "5",
           "baseMedecine": "5",
-          "baseNage": "10",
-          "baseReperage": "30",
+          "baseNage": "0",
+          "baseReperage": "15",
           "baseSeduction": "10",
-          "baseStrategie": "10",
-          "baseTactique": "5",
-          "basePrestige": "4",
-          "baseRichesse": "6",
-          "baseSexe": "6",
-          "baseViolence": "5",
-          "baseReputation": "4",
+          "baseStrategie": "15",
+          "baseTactique": "20",
+          "basePrestige": "7",
+          "baseRichesse": "7",
+          "baseSexe": "7",
+          "baseViolence": "7",
+          "baseReputation": "7",
           "baseArtisanatBatranoban": "0",
           "baseArtisanatDerigion": "0",
           "baseArtisanatGadhar": "0",
-          "baseArtisanatPiorad": "0",
+          "baseArtisanatPiorad": "5",
           "baseArtisanatSekeker": "0",
           "baseArtisanatThunk": "0",
           "baseArtisanatVorozion": "0",
           "baseConnaissanceBatranoban": "0",
           "baseConnaissanceDerigion": "0",
           "baseConnaissanceGadhar": "0",
-          "baseConnaissancePiorad": "0",
+          "baseConnaissancePiorad": "5",
           "baseConnaissanceSekeker": "0",
           "baseConnaissanceThunk": "0",
           "baseConnaissanceVorozion": "0"
@@ -9218,7 +9215,7 @@
         "modifiers": [],
         "unique": true,
         "container": null,
-        "uniqueId": "SKUa4l8uFALqkWFK",
+        "uniqueId": "870nZG7OpFc7nr72",
         "templateSystemUniqueVersion": 670692650
       },
       "effects": [],
@@ -9228,7 +9225,7 @@
         }
       },
       "_stats": {
-        "compendiumSource": "Compendium.csb-bloodlust-classique.peuples.Item.SKUa4l8uFALqkWFK",
+        "compendiumSource": "Compendium.csb-bloodlust-classique.peuples.Item.870nZG7OpFc7nr72",
         "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "custom-system-builder",
@@ -9237,16 +9234,17 @@
         "modifiedTime": null,
         "lastModifiedBy": null
       },
+      "_id": "BEYoAO89dkmiNKEZ",
+      "sort": 0,
       "ownership": {
         "default": 0,
         "AjcbJ5lKJDk3HKUe": 3
       },
-      "sort": 0,
-      "_key": "!actors.items!YFc9MuSLDFzsKSf8.X0tIzDb5VGCXKM70"
+      "_key": "!actors.items!IEnTc84GlZnnImTH.BEYoAO89dkmiNKEZ"
     },
     {
       "folder": "81IUYZlJsgTHV0wS",
-      "name": "Cuir",
+      "name": "Cuir clouté",
       "type": "equippableItem",
       "img": "icons/svg/statue.svg",
       "system": {
@@ -9545,33 +9543,28 @@
         },
         "template": "wSoOEcwALS5ruZRM",
         "props": {
-          "name": "Cuir",
-          "armure": "3",
+          "name": "Cuir clouté",
+          "armure": "5",
           "bonus": "0",
           "equipee": true,
-          "maximum": "0",
+          "maximum": "5",
           "minimum": "0"
         },
         "modifiers": [],
         "unique": true,
         "container": null,
-        "uniqueId": "HXpOBlilIfOfO4Ye",
+        "uniqueId": "ao1TtGVXJPjSZbmn",
         "templateSystemUniqueVersion": 2005807828
       },
       "effects": [],
-      "sort": 0,
-      "ownership": {
-        "default": 0,
-        "AjcbJ5lKJDk3HKUe": 3
-      },
       "flags": {
         "custom-system-builder": {
           "version": "4.4.2"
         }
       },
       "_stats": {
-        "compendiumSource": "Item.HXpOBlilIfOfO4Ye",
-        "duplicateSource": "Item.UapP3bcNpnIZKwmW",
+        "compendiumSource": "Compendium.csb-bloodlust-classique.armures-et-protections.Item.ao1TtGVXJPjSZbmn",
+        "duplicateSource": null,
         "coreVersion": "12.331",
         "systemId": "custom-system-builder",
         "systemVersion": "4.4.2",
@@ -9579,8 +9572,13 @@
         "modifiedTime": null,
         "lastModifiedBy": null
       },
-      "_id": "xEMwV7TrtVZmSMQX",
-      "_key": "!actors.items!YFc9MuSLDFzsKSf8.xEMwV7TrtVZmSMQX"
+      "_id": "SXLS4sSknTYeJcDO",
+      "sort": 0,
+      "ownership": {
+        "default": 0,
+        "AjcbJ5lKJDk3HKUe": 3
+      },
+      "_key": "!actors.items!IEnTc84GlZnnImTH.SXLS4sSknTYeJcDO"
     }
   ],
   "effects": [],
@@ -9595,15 +9593,14 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1744716474985,
-    "modifiedTime": 1744840029236,
+    "createdTime": 1745089796593,
+    "modifiedTime": 1745089796593,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
-  "_id": "YFc9MuSLDFzsKSf8",
   "sort": 0,
   "ownership": {
     "default": 0,
     "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!actors!YFc9MuSLDFzsKSf8"
+  "_key": "!actors!IEnTc84GlZnnImTH"
 }

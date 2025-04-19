@@ -1897,7 +1897,7 @@
     },
     "template": "pDOuju9fifYiekvg",
     "props": {
-      "name": "Alweg",
+      "name": "Batranoban",
       "baseAB": "5",
       "baseFO": "10",
       "baseEN": "10",
@@ -1919,7 +1919,7 @@
       "baseEquitation": "10",
       "baseLireEcrire": "5",
       "baseMarchandage": "20",
-      "baseMedecine": "15",
+      "baseMedecine": "20",
       "baseNage": "0",
       "baseReperage": "10",
       "baseSeduction": "10",
@@ -1964,7 +1964,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743344624630,
-    "modifiedTime": 1744840057076,
+    "modifiedTime": 1745089852152,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "EelNeUMtfwYkuBQN",

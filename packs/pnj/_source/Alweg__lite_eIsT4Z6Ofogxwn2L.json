@@ -274,8 +274,24 @@
         "value": "${fetchFromUuid(lunesUuid, 'reputation', 0)}$"
       },
       {
-        "name": "armure",
+        "name": "protection",
         "value": "${0}$"
+      },
+      {
+        "name": "totalReputation",
+        "value": "${baseReputation + bonusReputation + magieDesirReputation}$"
+      },
+      {
+        "name": "magieArmure",
+        "value": "${equalText(armeDieuUuid, '') ? 0 : 5 + fetchFromUuid(armeDieuUuid, 'magieProtection', 0)}$"
+      },
+      {
+        "name": "armure",
+        "value": "${protection + magieArmure}$"
+      },
+      {
+        "name": "critique9",
+        "value": "${fetchFromUuid(armeDieuUuid, 'critique9', false)}$"
       }
     ],
     "header": {
@@ -595,7 +611,7 @@
                               "value": "",
                               "prefix": "",
                               "suffix": "",
-                              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0},\n  fetchFromUuid(armeDieuUuid, \"charge\") ? (?{charge:\"Charge\"[check]}) : ''\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- bonus de l'arme -->\n${#bonus:= equalText(fetchFromUuid(armeDieuUuid, \"competence\", \"\"), tactique) ?  fetchFromUuid(armeDieuUuid, \"modCompetence\", 0) : 0}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + bonus + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, ru==0) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= fetchFromUuid(armeDieuUuid, \"dommages\")}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n<!-- gestion de la charge -->\n${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${#dommage:= dommage>17 ? 17 : dommage}$\n\n\n${#blessures:= 0 }$\n${#blessures:= ru==0 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,10,6,15,7,20,8,25,9,30,10,35,11,40,12,45,13,50,14,55,15,60,16,65,17,70) : blessures}$\n${#blessures:= ru==1 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,1,6,2,7,2,8,3,9,3,10,4,11,4,12,5,13,5,14,6,15,6,16,7,17,7) : blessures}$\n${#blessures:= ru==2 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,2,6,3,7,4,8,5,9,6,10,7,11,8,12,9,13,10,14,11,15,12,16,13,17,14) : blessures}$\n${#blessures:= ru==3 ? switchCase(dommage,1,1,2,1,3,1,4,2,5,3,6,5,7,6,8,8,9,9,10,11,11,12,12,14,13,15,14,17,15,18,16,20,17,21) : blessures}$\n${#blessures:= ru==4 ? switchCase(dommage,1,1,2,1,3,2,4,2,5,4,6,6,7,8,8,10,9,12,10,14,11,16,12,18,13,20,14,22,15,24,16,26,17,28) : blessures}$\n${#blessures:= ru==5 ? switchCase(dommage,1,1,2,1,3,2,4,3,5,5,6,8,7,10,8,13,9,15,10,18,11,20,12,23,13,25,14,28,15,30,16,33,17,35) : blessures}$\n${#blessures:= ru==6 ? switchCase(dommage,1,1,2,2,3,2,4,3,5,6,6,9,7,12,8,15,9,18,10,21,11,24,12,27,13,30,14,33,15,36,16,39,17,42) : blessures}$\n${#blessures:= ru==7 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,7,6,11,7,14,8,18,9,21,10,25,11,28,12,32,13,35,14,39,15,42,16,46,17,49) : blessures}$\n${#blessures:= ru==8 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,8,6,12,7,16,8,20,9,24,10,28,11,32,12,36,13,40,14,44,15,18,16,52,17,56) : blessures}$\n${#blessures:= ru==9 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,9,6,14,7,18,8,23,9,27,10,32,11,36,12,41,13,45,14,50,15,54,16,59,17,63) : blessures}$\n\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n\n<!-- expérience -->\n  <!-- compétence -->\n  ${#xpComp:=  concat('xp', tactique)}$\n  ${#bonusComp:= concat('bonus', tactique)}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n  ${#augmentComp:= false}$\n  ${#augmentComp:= and(competence < 25,  newXp == 1) ? true : augmentComp}$\n  ${#augmentComp:= and(competence < 50,  newXp == 2) ? true : augmentComp}$\n  ${#augmentComp:= and(competence >= 50, newXp == 5) ? true : augmentComp}$ \n  ${#augmentComp ? setPropertyInEntity('self', bonusComp, concat(bonusComp, '+5')) : \"pas d'augmentation de la compétence\"}$\n  ${#augmentComp ? setPropertyInEntity('self', xpComp, 0) : \"pas de remise à zéro de l'xp de la compétence\"}$\n\n  <!-- caractéristique liée -->\n  ${#xpCar:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA','xpRA','ES','xpRA')}$\n  ${#bonusCar:= replace(xpCar, 'xp', 'bonus')}$\n  ${#totalCar:= replace(xpCar, 'xp', 'total')}$\n  ${#totalCar:= recalculate(concat(\"$\", \"{\", totalCar, \"}\", \"$\"))}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : ''}$\n\n  ${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$\n  ${#augmentCar:= newXp == totalCar ? true : false}$\n  ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : \"pas d'augmentation de la caractéristique\"}$\n  ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : \"pas de remise à zéro de l'xp de la caractéristique\"}$\n\n<!-- affichage -->\n<div>\n  <table>\n    <tbody>\n      <tr>\n        <td rowspan=\"2\">\n            <div><img class=\"bl-roll-image\" src=\"${!%{return fromUuidSync(\"${armeDieuUuid}$\").img}%}$\"></img></div>\n        </td>\n        <th>\n          <h3>${!fetchFromUuid(armeDieuUuid, \"name\", \"Arme Dieu\")}$</h3>\n        </th>\n      </tr>\n      <tr>\n        <td>\n          ${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  \n  <table>\n    <tbody>\n      <tr>\n        <th style=\"width:50%;\">\n          d100\n        </th>\n        <td>\n          <div class=\"bl-dropdown\">\n            <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n            <div class=\"bl-dropdown-content\">\n              <p>Compétence : ${!competence}$</p>\n              <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n              <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n              <p>Modificateur : ${!mod}$</p>\n            </div>\n          </div>\n        </td>\n      </tr>\n      ${!result>0 ? concat(\"<tr><th>Localisation</th><td>\",loc, \"</td></tr><tr><th>RU</th><td>\",ru,\"</td></tr>\") : ''}$\n      <tr>\n        <td colspan=\"2\">\n          <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Blessures infligées\",(charge ? \" (charge)\" : ''),\"</th><td>\",blessures,\"</td></tr>\") : ''}$\n    </tbody>\n  </table>\n</div>",
+                              "rollMessage": "<!--\n  Jet de compétences de combat\n  \n  Valeur pour result in [echecCritique: -1, echec: 0, reussite: 1, reussiteCritique: 2] \n-->\n<!-- saisie de la difficulté -->\n${#concat(\n\t?{diff:\"Difficulté\"|\"0\",\"Normal\"|\"50\",\"Très facile\"|\"25\",\"Facile\"|\"-25\",\"Difficile\"|\"-50\",\"Très difficile\"},\n\t?{mod:\"Modificateur\"[number]|0},\n  fetchFromUuid(armeDieuUuid, \"charge\") ? (?{charge:\"Charge\"[check]}) : ''\n)}$\n\n<!-- définition du seuil et du nom du jet-->\n${#competence:= switchCase(tactique,'AB',totalAB,'AN',totalAN,'AR',totalAR,'FE',totalFE,'PA',totalPA,'ES',totalES)}$\n${#xpAttr:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA',totalPA,'ES',totalES)}$\n${#xpComp:= concat('xp', tactique)}$\n\n<!-- bonus de l'arme -->\n${#bonus:= equalText(fetchFromUuid(armeDieuUuid, \"competence\", \"\"), tactique) ?  fetchFromUuid(armeDieuUuid, \"modCompetence\", 0) : 0}$\n\n<!-- tactique adverse -->\n${#tactiqueAdverse:= fallback(fetchFromActor('target', 'tactique'),'Aucune')}$\n${#tactMod:= 20}$ <!-- adversaire sans tactique -->\n\n${#tactMod:= and(equalText(tactique, 'AB'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AN'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'PA',10,'ES',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'AR'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AN',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'FE'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'FE',-20,'PA',10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'PA'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',20,'AN',10,'AR',-10,'FE',-10,0) : tactMod}$\n${#tactMod:= and(equalText(tactique, 'ES'), not(equalText(tactiqueAdverse, 'Aucune'))) ? switchCase(tactiqueAdverse,'AB',10,'AR',-10,'FE',-10,0) : tactMod}$\n\n<!-- seuil à atteindre -->\n${#seuil:= max(competence + diff + mod + bonus + tactMod, 5)}$\n\n<!-- jet -->\n${#roll:= [1d100]}$\n${#ru:= roll%10}$\n${#result:= 0}$ \n${#result:=(or(roll == 100, roll > seuil) ? 0 : 1)}$\n${#result:=(and(result==0, ru==1) ? -1 : result)}$ <!-- échec critique -->\n${#result:=(and(result==1, or(ru==0, and(critique9==1, ru==9))) ?  2 : result)}$ <!-- réussite critique -->\n${#switchCase(result,-1,'Echec critique',0,'Echec',1,'Réussite',2,'Réussite critique','autre')}$\n<!-- expérience -->\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpAttr, concat(xpAttr,'+1')) : ''}$\n${#or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n\n<!-- dommage et blessures subies -->\n<!-- lecture de la table des dommages \nA  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q \n1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17\n-->\n<!-- en fonction des dégâts de l'arme -->\n${#dommage:= fetchFromUuid(armeDieuUuid, \"dommages\")}$\n<!-- en fonction de la réussite critique (ou pas) et de la tactique -->\n${#dommage:= and(result == 2, equalText(tactique, 'AB')) ? dommage+2 : dommage}$\n${#dommage:= and(result == 2, or(or(equalText(tactique, 'AN'), equalText(tactique, 'FE')), equalText(tactique, 'PA'))) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AB')) ? dommage+1 : dommage}$\n${#dommage:= and(result == 1, equalText(tactique, 'AR')) ? dommage-1 : dommage}$\t\n<!-- gestion de la charge -->\n${#dommage:= charge ? (result == 2 ? dommage+2 : (result == 1 ? dommage+1 : dommage)) : dommage}$\n\n<!-- en fonction de la force -->\n${#dommage:= totalFO<=7 ? dommage-1 : and(totalFO>=15, totalFO<=20) ? dommage+1 : totalFO>=21 ? dommage+2 : dommage}$\n<!-- bordure des dommages -->\n${#dommage:= dommage<1 ? 1 : dommage}$\n${#dommage:= dommage>17 ? 17 : dommage}$\n\n\n${#blessures:= 0 }$\n${#blessures:= ru==0 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,10,6,15,7,20,8,25,9,30,10,35,11,40,12,45,13,50,14,55,15,60,16,65,17,70) : blessures}$\n${#blessures:= ru==1 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,1,6,2,7,2,8,3,9,3,10,4,11,4,12,5,13,5,14,6,15,6,16,7,17,7) : blessures}$\n${#blessures:= ru==2 ? switchCase(dommage,1,1,2,1,3,1,4,1,5,2,6,3,7,4,8,5,9,6,10,7,11,8,12,9,13,10,14,11,15,12,16,13,17,14) : blessures}$\n${#blessures:= ru==3 ? switchCase(dommage,1,1,2,1,3,1,4,2,5,3,6,5,7,6,8,8,9,9,10,11,11,12,12,14,13,15,14,17,15,18,16,20,17,21) : blessures}$\n${#blessures:= ru==4 ? switchCase(dommage,1,1,2,1,3,2,4,2,5,4,6,6,7,8,8,10,9,12,10,14,11,16,12,18,13,20,14,22,15,24,16,26,17,28) : blessures}$\n${#blessures:= ru==5 ? switchCase(dommage,1,1,2,1,3,2,4,3,5,5,6,8,7,10,8,13,9,15,10,18,11,20,12,23,13,25,14,28,15,30,16,33,17,35) : blessures}$\n${#blessures:= ru==6 ? switchCase(dommage,1,1,2,2,3,2,4,3,5,6,6,9,7,12,8,15,9,18,10,21,11,24,12,27,13,30,14,33,15,36,16,39,17,42) : blessures}$\n${#blessures:= ru==7 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,7,6,11,7,14,8,18,9,21,10,25,11,28,12,32,13,35,14,39,15,42,16,46,17,49) : blessures}$\n${#blessures:= ru==8 ? switchCase(dommage,1,1,2,2,3,3,4,4,5,8,6,12,7,16,8,20,9,24,10,28,11,32,12,36,13,40,14,44,15,18,16,52,17,56) : blessures}$\n${#blessures:= ru==9 ? switchCase(dommage,1,2,2,2,3,3,4,5,5,9,6,14,7,18,8,23,9,27,10,32,11,36,12,41,13,45,14,50,15,54,16,59,17,63) : blessures}$\n\n\n<!-- @TODO prise en compte de l'armure adverse (et de la capacité Point faible) -->\n\n\n<!-- localisation -->\n${#dizaine:= floor(roll/10)}$\n${#dizaine:= dizaine == 10 ? 0 : dizaine}$\n${#loc:= ru*10+dizaine}$\n${#loc:= loc>90 ? \"Jambe gauche\" : loc>80 ? \"Jambe droite\" : loc>65 ? \"Abdomen\" : loc>50 ? \"Bras gauche\" : loc>35 ? \"Bras droit\" : loc>10 ? \"Torse\" : \"Tête\"}$\n\n<!-- expérience -->\n  <!-- compétence -->\n  ${#xpComp:=  concat('xp', tactique)}$\n  ${#bonusComp:= concat('bonus', tactique)}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpComp, concat(xpComp,'+1')) : ''}$\n  ${#augmentComp:= false}$\n  ${#augmentComp:= and(competence < 25,  newXp == 1) ? true : augmentComp}$\n  ${#augmentComp:= and(competence < 50,  newXp == 2) ? true : augmentComp}$\n  ${#augmentComp:= and(competence >= 50, newXp == 5) ? true : augmentComp}$ \n  ${#augmentComp ? setPropertyInEntity('self', bonusComp, concat(bonusComp, '+5')) : \"pas d'augmentation de la compétence\"}$\n  ${#augmentComp ? setPropertyInEntity('self', xpComp, 0) : \"pas de remise à zéro de l'xp de la compétence\"}$\n\n  <!-- caractéristique liée -->\n  ${#xpCar:= switchCase(tactique,'AB','xpFO','AN','xpAG','AR','xpRA','FE','xpRA','PA','xpRA','ES','xpRA')}$\n  ${#bonusCar:= replace(xpCar, 'xp', 'bonus')}$\n  ${#totalCar:= replace(xpCar, 'xp', 'total')}$\n  ${#totalCar:= recalculate(concat(\"$\", \"{\", totalCar, \"}\", \"$\"))}$\n\n  ${#newXp:= or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : ''}$\n\n  ${#newXp:= (or(result == -1, result == 2) ? setPropertyInEntity('self', xpCar, concat(xpCar,'+1')) : 0)}$\n  ${#augmentCar:= newXp == totalCar ? true : false}$\n  ${#augmentCar ? setPropertyInEntity('self', bonusCar, concat(bonusCar,'+1')) : \"pas d'augmentation de la caractéristique\"}$\n  ${#augmentCar ? setPropertyInEntity('self', xpCar, 0) : \"pas de remise à zéro de l'xp de la caractéristique\"}$\n\n<!-- affichage -->\n<div>\n  <table>\n    <tbody>\n      <tr>\n        <td rowspan=\"2\">\n            <div><img class=\"bl-roll-image\" src=\"${!%{return fromUuidSync(\"${armeDieuUuid}$\").img}%}$\"></img></div>\n        </td>\n        <th>\n          <h3>${!fetchFromUuid(armeDieuUuid, \"name\", \"Arme Dieu\")}$</h3>\n        </th>\n      </tr>\n      <tr>\n        <td>\n          ${!switchCase(tactique,'AB','Attaque brutale','AN','Attaque normale','AR','Attaque rapide','FE','Feinte','PA','Parade','ES','Esquive','Aucune tactique')}$\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  \n  <table>\n    <tbody>\n      <tr>\n        <th style=\"width:50%;\">\n          d100\n        </th>\n        <td>\n          <div class=\"bl-dropdown\">\n            <p><strong>${!roll}$</strong> / ${!seuil}$</p>\n            <div class=\"bl-dropdown-content\">\n              <p>Compétence : ${!competence}$</p>\n              <p>Tactique adverse (${!tactiqueAdverse}$) : ${!tactMod}$</p>\n              <p>Difficulté : ${!switchCase(diff,\"0\",\"normale\",\"50\",\"très facile\",\"25\",\"facile\",\"-25\",\"difficile\",\"-50\",\"très difficile\")}$ (${!diff}$)</p>\n              <p>Modificateur : ${!mod}$</p>\n            </div>\n          </div>\n        </td>\n      </tr>\n      ${!result>0 ? concat(\"<tr><th>Localisation</th><td>\",loc, \"</td></tr><tr><th>RU</th><td>\",ru,\"</td></tr>\") : ''}$\n      <tr>\n        <td colspan=\"2\">\n          <p class=\"bl-result ${!result==1 ? \"bl-roll-success\\\">Réussite\" : result==2 ? \"bl-roll-critical-success\\\">Réussite critique\" : result==-1 ? \"bl-roll-critical-fail\\\">Echec critique\" : \"bl-roll-fail\\\">Echec\"}$</p>\n        </td>\n      </tr>\n  ${!result>0 ? concat(\"<tr><th>Blessures infligées\",(charge ? \" (charge)\" : ''),\"</th><td>\",blessures,\"</td></tr>\") : ''}$\n    </tbody>\n  </table>\n</div>",
                               "altRollMessage": "",
                               "rollMessageToChat": true,
                               "altRollMessageToChat": true,
@@ -2051,7 +2067,7 @@
                     "style": "label"
                   },
                   {
-                    "key": "totalReputation",
+                    "key": "",
                     "cssClass": "",
                     "role": "0",
                     "permission": "0",
@@ -2060,7 +2076,7 @@
                     "type": "label",
                     "size": "small",
                     "icon": "",
-                    "value": "${baseReputation + bonusReputation + magieDesirReputation + lunesReputation}$",
+                    "value": "${totalReputation + lunesReputation}$",
                     "prefix": "",
                     "suffix": "",
                     "rollMessage": "",
@@ -5885,7 +5901,7 @@
                   "head": true,
                   "deleteWarning": true,
                   "title": "<strong>Armure</strong>",
-                  "hideEmpty": false,
+                  "hideEmpty": true,
                   "sortOption": "manual",
                   "headDisplay": true,
                   "showDelete": true,
@@ -5895,7 +5911,7 @@
                   "templateFilter": [
                     "wSoOEcwALS5ruZRM"
                   ],
-                  "itemFilterFormula": "    \n    \n    \n    \n    \n    ",
+                  "itemFilterFormula": "    \n    \n    \n    \n    \n    \n    ",
                   "sortPredicates": []
                 }
               ],
@@ -6661,7 +6677,7 @@
       "baseViolence": "5",
       "totalViolence": "5",
       "baseReputation": "4",
-      "totalReputation": "5",
+      "totalReputation": "4",
       "modFO": "0",
       "modEN": "5",
       "modAG": "5",
@@ -6691,7 +6707,7 @@
           "total": " 15"
         },
         "1": {
-          "$deleted": false,
+          "$deleted": true,
           "code": "ArtisanatBatranoban",
           "bonus": "0",
           "xp": "0",
@@ -7167,16 +7183,12 @@
       "lunesViolence": "0",
       "lunesReputation": "1",
       "lunesUuid": "Actor.8HBWYAISWQwTeU1p",
-      "armure": 3,
-      "tactAucune": "Aucune",
-      "tactAB": "AB",
-      "tactAN": "AN",
-      "tactAR": "AR",
-      "tactFE": "FE",
-      "tactPA": "PA",
-      "tactES": "ES"
+      "armure": "3",
+      "magieArmure": "0",
+      "protection": 3,
+      "critique9": "false"
     },
-    "templateSystemUniqueVersion": 2929605978
+    "templateSystemUniqueVersion": 3000717277
   },
   "prototypeToken": {
     "name": "Alweg élite",
@@ -9549,7 +9561,7 @@
           "armure": "3",
           "bonus": "0",
           "equipee": true,
-          "maximum": "0",
+          "maximum": "3",
           "minimum": "0"
         },
         "modifiers": [],
@@ -9596,7 +9608,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744716474985,
-    "modifiedTime": 1744840029236,
+    "modifiedTime": 1745089795399,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "eIsT4Z6Ofogxwn2L",

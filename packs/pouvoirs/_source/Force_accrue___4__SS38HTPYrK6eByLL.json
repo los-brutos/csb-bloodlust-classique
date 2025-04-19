@@ -330,6 +330,154 @@
               "permission": "0",
               "tooltip": "",
               "visibilityFormula": "",
+              "type": "table",
+              "contents": [
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Dommages supplémentaires",
+                    "prefix": "",
+                    "suffix": "<br/>(en colonnes)",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "modDommages",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "medium",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": true,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Réussite critique sur un 9",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "critique9",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "checkbox",
+                    "label": "",
+                    "size": "full-size",
+                    "defaultChecked": false
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Protection accrue",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "modProtection",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "medium",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": true,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ],
+                [
+                  null,
+                  null
+                ]
+              ],
+              "cols": 2,
+              "rows": 4,
+              "layout": "lc"
+            }
+          ],
+          "flow": "vertical",
+          "align": "center",
+          "collapsible": true,
+          "defaultCollapsed": true,
+          "title": "Dommages et protections",
+          "titleStyle": "title"
+        },
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
               "type": "panel",
               "contents": [
                 {
@@ -2037,7 +2185,7 @@
           "flow": "grid-2",
           "align": "left",
           "collapsible": true,
-          "defaultCollapsed": false,
+          "defaultCollapsed": true,
           "title": "Modificateurs",
           "titleStyle": "title"
         }
@@ -2118,13 +2266,15 @@
       "modFO": "4",
       "modEN": "0",
       "modAG": "0",
-      "actif": true
+      "actif": true,
+      "modDommages": "0",
+      "modProtection": "0"
     },
     "modifiers": [],
     "unique": false,
     "container": null,
     "uniqueId": "SS38HTPYrK6eByLL",
-    "templateSystemUniqueVersion": 1273776082
+    "templateSystemUniqueVersion": 421801419
   },
   "effects": [],
   "flags": {
@@ -2139,7 +2289,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1743337874487,
-    "modifiedTime": 1744840069512,
+    "modifiedTime": 1745089857843,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "SS38HTPYrK6eByLL",

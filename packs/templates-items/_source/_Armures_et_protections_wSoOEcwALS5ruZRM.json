@@ -1,6 +1,6 @@
 {
   "folder": null,
-  "name": "_Armures",
+  "name": "_Armures et protections",
   "type": "_equippableItemTemplate",
   "_id": "wSoOEcwALS5ruZRM",
   "img": "icons/svg/statue.svg",
@@ -305,7 +305,7 @@
         "id": "ImZk8BQQIIFEGtDV",
         "conditionalGroup": "",
         "priority": 0,
-        "key": "armure",
+        "key": "protection",
         "operator": "add",
         "formula": "${not(equipee) ? 0 : bonus == 0 ? armure : bonus}$",
         "description": ""
@@ -5006,8 +5006,8 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1744707148201,
-    "modifiedTime": 1744840037030,
+    "createdTime": 1745089805036,
+    "modifiedTime": 1745089805036,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,
