@@ -30,6 +30,19 @@ echo "* ********************************* *"
 echo "  * configure environment"
 fvtt package workon csb-bloodlust-classique --type=Module
 
+echo "  * create compendiums templates"
+fvtt package pack templates-actors
+fvtt package pack templates-items
+
+echo "  * create compendiums items et actors"
+fvtt package pack armes
+fvtt package pack peuples
+fvtt package pack pouvoirs
+fvtt package pack pnj
+fvtt package pack animaux
+
+
+
 echo "  * create compendium scenarios"
 fvtt package pack scenarios
 

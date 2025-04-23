@@ -2,7 +2,7 @@
   "id": "csb-bloodlust-classique",
   "title": "CSB Bloodlust classique",
   "version": "1.0.0",
-  "description": "Implémentation du système Bloddlust classique avec Custom System Builder (CSB)",
+  "description": "Implémentation du système Bloodlust classique avec Custom System Builder (CSB)",
   "compatibility": {
     "minimum": "12",
     "verified": "12"
@@ -29,106 +29,106 @@
   ],
   "packs": [
     {
-      "name": "templates-actors",
-      "label": "_Templates acteurs (Bloodlust)",
-      "path": "packs/templates-actors",
-      "type": "Actor",
+      "name":   "templates-actors",
+      "label":  "_Templates acteurs (Bloodlust)",
+      "path":   "packs/templates-actors",
+      "type":   "Actor",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "templates-items",
-      "label": "_Templates objets (Bloodlust)",
-      "path": "packs/templates-items",
-      "type": "Item",
+      "name":   "templates-items",
+      "label":  "_Templates objets (Bloodlust)",
+      "path":   "packs/templates-items",
+      "type":   "Item",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "NONE",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "armes",
-      "label": "Armes (Bloodlust)",
-      "path": "packs/armes",
-      "type": "Item",
+      "name":   "armes",
+      "label":  "Armes (Bloodlust)",
+      "path":   "packs/armes",
+      "type":   "Item",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "pnj",
-      "label": "PNJ (Bloodlust)",
-      "path": "packs/pnj",
-      "type": "Actor",
+      "name":   "pnj",
+      "label":  "PNJ (Bloodlust)",
+      "path":   "packs/pnj",
+      "type":   "Actor",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "animaux",
-      "label": "Animaux (Bloodlust)",
-      "path": "packs/animaux",
-      "type": "Actor",
+      "name":   "animaux",
+      "label":  "Animaux (Bloodlust)",
+      "path":   "packs/animaux",
+      "type":   "Actor",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "armures-et-protections",
-      "label": "Armures et protections (Scales)",
-      "path": "packs/armures-et-protections",
-      "type": "Item",
+      "name":   "armures-et-protections",
+      "label":  "Armures et protections (Bloodlust)",
+      "path":   "packs/armures-et-protections",
+      "type":   "Item",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "peuples",
-      "label": "Peuples (Bloodlust)",
-      "path": "packs/peuples",
-      "type": "Item",
+      "name":   "peuples",
+      "label":  "Peuples (Bloodlust)",
+      "path":   "packs/peuples",
+      "type":   "Item",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "pouvoirs",
-      "label": "Pouvoirs (Bloodlust)",
-      "path": "packs/pouvoirs",
-      "type": "Item",
+      "name":   "pouvoirs",
+      "label":  "Pouvoirs (Bloodlust)",
+      "path":   "packs/pouvoirs",
+      "type":   "Item",
+      "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       },
-      "system": "custom-system-builder",
       "flags": {}
     },
     {
-      "name": "systeme-et-templates",
-      "label": "Système et templates",
-      "path": "packs/systeme-et-templates",
-      "type": "Adventure",
+      "name":   "systeme-et-templates",
+      "label":  "Système et templates",
+      "path":   "packs/systeme-et-templates",
+      "type":   "Adventure",
       "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "NONE",
@@ -136,10 +136,10 @@
       }
     },
     {
-      "name": "scenarios",
-      "label": "Scénarios",
-      "path": "packs/scenarios",
-      "type": "Adventure",
+      "name":   "scenarios",
+      "label":  "Scénarios",
+      "path":   "packs/scenarios",
+      "type":   "Adventure",
       "system": "custom-system-builder",
       "ownership": {
         "PLAYER": "NONE",
