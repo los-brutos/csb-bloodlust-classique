@@ -1,0 +1,22 @@
+{
+  "name": "Pouvoirs secondaires",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "BaBUwKSu75phf9dy",
+  "description": "",
+  "sort": 100000,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1745624010209,
+    "modifiedTime": 1745624043407,
+    "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
+  },
+  "_key": "!folders!BaBUwKSu75phf9dy"
+}

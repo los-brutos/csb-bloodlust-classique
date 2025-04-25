@@ -1,0 +1,22 @@
+{
+  "name": "Armes liées à un pouvoir",
+  "sorting": "a",
+  "folder": null,
+  "type": "Item",
+  "_id": "q4BGMSptg8RRRqGi",
+  "description": "",
+  "sort": 0,
+  "color": null,
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1745623990612,
+    "modifiedTime": 1745623990612,
+    "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
+  },
+  "_key": "!folders!q4BGMSptg8RRRqGi"
+}

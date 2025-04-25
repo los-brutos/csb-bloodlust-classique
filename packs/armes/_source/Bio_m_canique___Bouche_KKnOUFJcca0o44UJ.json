@@ -1,7 +1,8 @@
 {
-  "folder": "mBH6qRQtFyz0AIK1",
-  "name": "Pavois (Copy)",
+  "folder": "q4BGMSptg8RRRqGi",
+  "name": "Bio-mécanique : Bouche",
   "type": "equippableItem",
+  "_id": "KKnOUFJcca0o44UJ",
   "img": "icons/svg/combat.svg",
   "system": {
     "hidden": [
@@ -679,38 +680,32 @@
     },
     "template": "k3pIjKakWR2g4lro",
     "props": {
-      "name": "Pavois (Copy)",
-      "valeur": "20",
-      "initiative": "-25",
-      "dommages": "5",
-      "solidite": "70",
-      "modCompetence": "30",
-      "competence": "5",
+      "name": "Bio-mécanique : Bouche",
+      "initiative": "-2",
+      "dommages": "3",
+      "solidite": "0",
+      "modCompetence": "0",
       "mains": "1",
+      "valeur": "0",
+      "equipee": false,
+      "competence": "",
       "As": false,
       "Am": false,
       "Cg": false,
       "Ct": false,
-      "Pr": true,
-      "Pf": false,
-      "bonusAB": "0",
-      "bonusAN": "0",
-      "bonusAR": "0",
-      "bonusFE": "0",
-      "bonusPA": "30",
-      "notes": "\n\n\n\nPr \n",
-      "equipee": false
+      "Pr": false,
+      "Pf": false
     },
     "modifiers": [],
-    "unique": false,
+    "unique": true,
     "container": null,
-    "uniqueId": "hTYW3lORJaS4SCJp",
+    "uniqueId": "KKnOUFJcca0o44UJ",
     "templateSystemUniqueVersion": 2842943233
   },
   "effects": [],
   "flags": {
     "custom-system-builder": {
-      "version": "4.3.2"
+      "version": "4.4.2"
     }
   },
   "_stats": {
@@ -719,15 +714,14 @@
     "coreVersion": "12.331",
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
-    "createdTime": 1744715688731,
-    "modifiedTime": 1745089838946,
+    "createdTime": 1745623990780,
+    "modifiedTime": 1745623990780,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
-  "_id": "hTYW3lORJaS4SCJp",
   "sort": 0,
   "ownership": {
     "default": 0,
     "AjcbJ5lKJDk3HKUe": 3
   },
-  "_key": "!items!hTYW3lORJaS4SCJp"
+  "_key": "!items!KKnOUFJcca0o44UJ"
 }

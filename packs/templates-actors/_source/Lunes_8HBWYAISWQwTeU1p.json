@@ -78,7 +78,7 @@
                 "value": "",
                 "prefix": "",
                 "suffix": "",
-                "rollMessage": "${#month:= [1d20]}$\n${#setPropertyInEntity('self', 'type', month)}$\n<h2>${!name}$</h2>\nLe mois actuel est le <strong>mois ${!switchCase(month, 1,\"de la Désolation\", 2,\"de la Guerre\", 3,\"de la Désolation\", 4,\"de la Guerre\", 5,\"de la Désolation\", 6,\"des Croisades\", 7,\"du Repos\", 8,\"des Croisades\", 9,\"du Repos\", 10,\"des Croisades\", 11,\"des Conquêtes\", 12,\"des Séparations\", 13,\"des Conquêtes\", 14,\"des Séparations\", 15,\"des Conqêtes\", 16,\"du Bonheur\", 17,\"de la Tristesse\", 18,\"du Bonhueur\", 19,\"de la Tristesse\", 20,\"du Bonheur\")}$</strong>.\n",
+                "rollMessage": "${#month:= [1d20]}$\n${#setPropertyInEntity('self', 'type', month)}$\n<h2>${!name}$</h2>\nLe mois actuel est le <strong>mois ${!switchCase(month, 1,\"de la Désolation\", 2,\"de la Guerre\", 3,\"de la Désolation\", 4,\"de la Guerre\", 5,\"de la Désolation\", 6,\"des Croisades\", 7,\"du Repos\", 8,\"des Croisades\", 9,\"du Repos\", 10,\"des Croisades\", 11,\"des Conquêtes\", 12,\"des Séparations\", 13,\"des Conquêtes\", 14,\"des Séparations\", 15,\"des Conqêtes\", 16,\"du Bonheur\", 17,\"de la Tristesse\", 18,\"du Bonhueur\", 19,\"de la Tristesse\", 20,\"du Bonheur\")}$</strong> (${!month}$).",
                 "altRollMessage": "",
                 "rollMessageToChat": true,
                 "altRollMessageToChat": true,
@@ -1479,15 +1479,15 @@
     "props": {
       "name": "Lunes",
       "prestige": "1",
-      "type": 8,
+      "type": "20",
       "richesse": "0",
-      "sexe": "-1",
-      "violence": "0",
-      "reputation": "1",
+      "sexe": "1",
+      "violence": "1",
+      "reputation": "0",
       "equitation": "0",
-      "effetsAnimaux": "Les animaux sont très agressifs et attaquent sans préavis."
+      "effetsAnimaux": "Les mâles recherchent de nouvelles compagnes."
     },
-    "templateSystemUniqueVersion": 3160448206
+    "templateSystemUniqueVersion": 3939195606
   },
   "prototypeToken": {
     "name": "Lunes",
@@ -1592,7 +1592,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1744042686785,
-    "modifiedTime": 1745433795302,
+    "modifiedTime": 1745624091422,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "sort": 0,

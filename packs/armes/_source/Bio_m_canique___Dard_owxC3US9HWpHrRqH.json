@@ -1,0 +1,727 @@
+{
+  "folder": "q4BGMSptg8RRRqGi",
+  "name": "Bio-mécanique : Dard",
+  "type": "equippableItem",
+  "img": "icons/svg/combat.svg",
+  "system": {
+    "hidden": [
+      {
+        "name": "bonusAB",
+        "value": "${competence == 1 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusAN",
+        "value": "${competence == 2 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusAR",
+        "value": "${competence == 3 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusFE",
+        "value": "${competence == 4 ? modCompetence : 0}$"
+      },
+      {
+        "name": "bonusPA",
+        "value": "${competence == 5 ? modCompetence : 0}$"
+      },
+      {
+        "name": "notes",
+        "value": "${As ? 'As ' : ''}$\n${Am ? 'Am ' : ''}$\n${Cg ? 'Cg ' : ''}$\n${Ct ? 'Ct ' : ''}$\n${Pr ? 'Pr ' : ''}$\n${Pf ? 'Pf ' : ''}$"
+      }
+    ],
+    "header": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "equipee",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "checkbox",
+              "label": "Equipée ?",
+              "size": "full-size",
+              "defaultChecked": false
+            }
+          ],
+          "flow": "vertical",
+          "align": "right",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        }
+      ],
+      "key": "custom_header",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "body": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "label",
+              "size": "full-size",
+              "icon": "",
+              "value": "Statistiques",
+              "prefix": "",
+              "suffix": "",
+              "rollMessage": "",
+              "altRollMessage": "",
+              "rollMessageToChat": true,
+              "altRollMessageToChat": true,
+              "style": "title"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "table",
+              "contents": [
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Initiative",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "initiative",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Dommages",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "dommages",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "select",
+                    "label": "",
+                    "defaultValue": "1",
+                    "size": "small",
+                    "selectedOptionType": "custom",
+                    "options": [
+                      {
+                        "key": "1",
+                        "value": "A"
+                      },
+                      {
+                        "key": "2",
+                        "value": "B"
+                      },
+                      {
+                        "key": "3",
+                        "value": "C"
+                      },
+                      {
+                        "key": "4",
+                        "value": "D"
+                      },
+                      {
+                        "key": "5",
+                        "value": "E"
+                      },
+                      {
+                        "key": "6",
+                        "value": "F"
+                      },
+                      {
+                        "key": "7",
+                        "value": "G"
+                      },
+                      {
+                        "key": "8",
+                        "value": "H"
+                      },
+                      {
+                        "key": "9",
+                        "value": "I"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Solidité",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "solidite",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ],
+                [
+                  {
+                    "key": "competence",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "select",
+                    "label": "",
+                    "defaultValue": "",
+                    "size": "full-size",
+                    "selectedOptionType": "custom",
+                    "options": [
+                      {
+                        "key": "1",
+                        "value": "Attaque brutale"
+                      },
+                      {
+                        "key": "2",
+                        "value": "Attaque normale"
+                      },
+                      {
+                        "key": "3",
+                        "value": "Attaque rapide"
+                      },
+                      {
+                        "key": "5",
+                        "value": "Parade"
+                      }
+                    ]
+                  },
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "panel",
+                    "contents": [
+                      {
+                        "key": "modCompetence",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "0",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": false,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "x-small",
+                        "icon": "",
+                        "value": "%",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      }
+                    ],
+                    "flow": "horizontal",
+                    "align": "center",
+                    "collapsible": false,
+                    "defaultCollapsed": false,
+                    "title": "",
+                    "titleStyle": "default"
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Manipulation",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "mains",
+                    "cssClass": "",
+                    "role": "0",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "select",
+                    "label": "",
+                    "defaultValue": "1",
+                    "size": "m-small",
+                    "selectedOptionType": "custom",
+                    "options": [
+                      {
+                        "key": "1",
+                        "value": "une main"
+                      },
+                      {
+                        "key": "2",
+                        "value": "deux mains"
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "key": "",
+                    "cssClass": "",
+                    "role": "3",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "label",
+                    "size": "full-size",
+                    "icon": "",
+                    "value": "Valeur",
+                    "prefix": "",
+                    "suffix": "",
+                    "rollMessage": "",
+                    "altRollMessage": "",
+                    "rollMessageToChat": true,
+                    "altRollMessageToChat": true,
+                    "style": "label"
+                  },
+                  {
+                    "key": "valeur",
+                    "cssClass": "",
+                    "role": "3",
+                    "permission": "0",
+                    "tooltip": "",
+                    "visibilityFormula": "",
+                    "type": "numberField",
+                    "label": "",
+                    "defaultValue": "0",
+                    "size": "small",
+                    "allowDecimal": false,
+                    "minVal": "",
+                    "maxVal": "",
+                    "allowRelative": false,
+                    "showControls": false,
+                    "controlsStyle": "hover",
+                    "inputStyle": "text"
+                  }
+                ]
+              ],
+              "cols": 2,
+              "rows": 6,
+              "layout": "lc"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "label",
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "Assommer",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "rollMessageToChat": true,
+                  "altRollMessageToChat": true,
+                  "style": "label"
+                },
+                {
+                  "key": "As",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "checkbox",
+                  "label": "",
+                  "size": "full-size",
+                  "defaultChecked": false
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "label",
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "Attaque à mains nues",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "rollMessageToChat": true,
+                  "altRollMessageToChat": true,
+                  "style": "label"
+                },
+                {
+                  "key": "Am",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "checkbox",
+                  "label": "",
+                  "size": "full-size",
+                  "defaultChecked": false
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "label",
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "Charge",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "rollMessageToChat": true,
+                  "altRollMessageToChat": true,
+                  "style": "label"
+                },
+                {
+                  "key": "Cg",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "checkbox",
+                  "label": "",
+                  "size": "full-size",
+                  "defaultChecked": false
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "label",
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "Chute",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "rollMessageToChat": true,
+                  "altRollMessageToChat": true,
+                  "style": "label"
+                },
+                {
+                  "key": "Ct",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "checkbox",
+                  "label": "",
+                  "size": "full-size",
+                  "defaultChecked": false
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "label",
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "Parade",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "rollMessageToChat": true,
+                  "altRollMessageToChat": true,
+                  "style": "label"
+                },
+                {
+                  "key": "Pr",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "checkbox",
+                  "label": "",
+                  "size": "full-size",
+                  "defaultChecked": false
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "label",
+                  "size": "full-size",
+                  "icon": "",
+                  "value": "Point faible",
+                  "prefix": "",
+                  "suffix": "",
+                  "rollMessage": "",
+                  "altRollMessage": "",
+                  "rollMessageToChat": true,
+                  "altRollMessageToChat": true,
+                  "style": "label"
+                },
+                {
+                  "key": "Pf",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "checkbox",
+                  "label": "",
+                  "size": "full-size",
+                  "defaultChecked": false
+                }
+              ],
+              "flow": "grid-4",
+              "align": "left",
+              "collapsible": false,
+              "defaultCollapsed": false,
+              "title": "",
+              "titleStyle": "default"
+            }
+          ],
+          "flow": "vertical",
+          "align": "left",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        }
+      ],
+      "key": "custom_body",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "display": {
+      "width": "400",
+      "height": "610",
+      "fix_size": false,
+      "pp_width": "64",
+      "pp_height": "64"
+    },
+    "template": "k3pIjKakWR2g4lro",
+    "props": {
+      "name": "Bio-mécanique : Bouche",
+      "initiative": "2",
+      "dommages": "4",
+      "solidite": "0",
+      "modCompetence": "0",
+      "mains": "1",
+      "valeur": "0",
+      "equipee": false,
+      "competence": "",
+      "As": false,
+      "Am": false,
+      "Cg": false,
+      "Ct": false,
+      "Pr": false,
+      "Pf": false
+    },
+    "modifiers": [],
+    "unique": true,
+    "container": null,
+    "uniqueId": "owxC3US9HWpHrRqH",
+    "templateSystemUniqueVersion": 2842943233
+  },
+  "effects": [],
+  "flags": {
+    "custom-system-builder": {
+      "version": "4.4.2"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1745623990780,
+    "modifiedTime": 1745623990780,
+    "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
+  },
+  "_id": "owxC3US9HWpHrRqH",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "AjcbJ5lKJDk3HKUe": 3
+  },
+  "_key": "!items!owxC3US9HWpHrRqH"
+}
