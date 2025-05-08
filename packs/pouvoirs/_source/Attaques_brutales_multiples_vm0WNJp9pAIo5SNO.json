@@ -500,6 +500,47 @@
                         "type": "label",
                         "size": "full-size",
                         "icon": "",
+                        "value": "Bonus à l'initiative",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      null,
+                      {
+                        "key": "initiativeModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
                         "value": "Bonus à une caractéristique",
                         "prefix": "",
                         "suffix": "",
@@ -552,73 +593,8 @@
                           }
                         ]
                       },
-                      null
-                    ],
-                    [
                       {
-                        "key": "",
-                        "cssClass": "",
-                        "role": "0",
-                        "permission": "0",
-                        "tooltip": "",
-                        "visibilityFormula": "",
-                        "type": "label",
-                        "size": "full-size",
-                        "icon": "",
-                        "value": "Bonus à une compétence de combat",
-                        "prefix": "",
-                        "suffix": "",
-                        "rollMessage": "",
-                        "altRollMessage": "",
-                        "rollMessageToChat": true,
-                        "altRollMessageToChat": true,
-                        "style": "label"
-                      },
-                      {
-                        "key": "competenceCombatModifiee",
-                        "cssClass": "",
-                        "role": "0",
-                        "permission": "0",
-                        "tooltip": "",
-                        "visibilityFormula": "",
-                        "type": "select",
-                        "label": "",
-                        "defaultValue": "0",
-                        "size": "medium",
-                        "selectedOptionType": "custom",
-                        "options": [
-                          {
-                            "key": "0",
-                            "value": "-"
-                          },
-                          {
-                            "key": "1",
-                            "value": "Attaque brutale"
-                          },
-                          {
-                            "key": "2",
-                            "value": "Attaque normale"
-                          },
-                          {
-                            "key": "3",
-                            "value": "Attaque rapide"
-                          },
-                          {
-                            "key": "4",
-                            "value": "Feinte"
-                          },
-                          {
-                            "key": "5",
-                            "value": "Parade"
-                          },
-                          {
-                            "key": "6",
-                            "value": "Esquive"
-                          }
-                        ]
-                      },
-                      {
-                        "key": "competenceCombatModificateur",
+                        "key": "caracModificateur",
                         "cssClass": "",
                         "role": "0",
                         "permission": "0",
@@ -812,9 +788,257 @@
                   "cols": 3,
                   "rows": 3,
                   "layout": "lrc"
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque brutale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ABModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Feinte",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "FEModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque normale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ANModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Parade",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "PAModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque rapide",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ARModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Esquive",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ESModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ]
+                  ],
+                  "cols": 4,
+                  "rows": 3,
+                  "layout": "lclc"
                 }
               ],
-              "flow": "horizontal",
+              "flow": "vertical",
               "align": "left",
               "collapsible": true,
               "defaultCollapsed": true,
@@ -902,37 +1126,7 @@
                           }
                         ]
                       },
-                      {
-                        "key": "competenceCombatIncontroleeValeur",
-                        "cssClass": "",
-                        "role": "0",
-                        "permission": "0",
-                        "tooltip": "",
-                        "visibilityFormula": "",
-                        "type": "select",
-                        "label": "",
-                        "defaultValue": "0",
-                        "size": "m-small",
-                        "selectedOptionType": "custom",
-                        "options": [
-                          {
-                            "key": "0",
-                            "value": "-"
-                          },
-                          {
-                            "key": "50",
-                            "value": "50%"
-                          },
-                          {
-                            "key": "75",
-                            "value": "75%"
-                          },
-                          {
-                            "key": "100",
-                            "value": "100%"
-                          }
-                        ]
-                      },
+                      null,
                       {
                         "key": "",
                         "cssClass": "",
@@ -1164,6 +1358,478 @@
                   "cols": 4,
                   "rows": 2,
                   "layout": "lrcc"
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      null,
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation de valeurs propres à l'arme",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Arme",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation des valeurs du porteur",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Porteur",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      },
+                      null,
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation de valeurs propres à l'arme",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Arme",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation des valeurs du porteur",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Porteur",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque brutale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ABIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ABIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Feinte",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "FEIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "FEIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque normale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ANIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ANIncontroleePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Parade",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "PAIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "PAIncontroleePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque rapide",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ARIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ARIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Esquive",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ESIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ESIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ]
+                  ],
+                  "cols": 6,
+                  "rows": 4,
+                  "layout": "lcclcc"
                 }
               ],
               "flow": "vertical",
@@ -1202,7 +1868,7 @@
                         "type": "label",
                         "size": "full-size",
                         "icon": "",
-                        "value": "Compétence de combat",
+                        "value": "Attaque brutale",
                         "prefix": "",
                         "suffix": "",
                         "rollMessage": "",
@@ -1212,50 +1878,7 @@
                         "style": "label"
                       },
                       {
-                        "key": "competenceCombatCritique",
-                        "cssClass": "",
-                        "role": "0",
-                        "permission": "0",
-                        "tooltip": "",
-                        "visibilityFormula": "",
-                        "type": "select",
-                        "label": "",
-                        "defaultValue": "0",
-                        "size": "medium",
-                        "selectedOptionType": "custom",
-                        "options": [
-                          {
-                            "key": "0",
-                            "value": "-"
-                          },
-                          {
-                            "key": "AB",
-                            "value": "Attaque brutale"
-                          },
-                          {
-                            "key": "AN",
-                            "value": "Attaque normale"
-                          },
-                          {
-                            "key": "AR",
-                            "value": "Attaque rapide"
-                          },
-                          {
-                            "key": "FE",
-                            "value": "Feinte"
-                          },
-                          {
-                            "key": "PA",
-                            "value": "Parade"
-                          },
-                          {
-                            "key": "ES",
-                            "value": "Esquive"
-                          }
-                        ]
-                      },
-                      {
-                        "key": "competenceCombatCritiqueValeur",
+                        "key": "ABcritique",
                         "cssClass": "",
                         "role": "0",
                         "permission": "0",
@@ -1263,11 +1886,183 @@
                         "visibilityFormula": "",
                         "type": "checkbox",
                         "label": "",
-                        "size": "m-small",
+                        "size": "full-size",
                         "defaultChecked": false
                       },
-                      null
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Feinte",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "FEcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
                     ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque normale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ANcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Parade",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "PAcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque rapide",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ARcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Esquive",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "EScritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ]
+                  ],
+                  "cols": 4,
+                  "rows": 3,
+                  "layout": "lclc"
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
                     [
                       {
                         "key": "",
@@ -1436,11 +2231,17 @@
                     [
                       null,
                       null,
+                      null,
+                      null
+                    ],
+                    [
+                      null,
+                      null,
                       null
                     ]
                   ],
                   "cols": 3,
-                  "rows": 2,
+                  "rows": 1,
                   "layout": "lrc"
                 }
               ],
@@ -1740,29 +2541,38 @@
       "modProtection": "0",
       "critique9": false,
       "caracModifiee": "0",
-      "competenceCombatModifiee": "0",
-      "competenceCombatModificateur": "0",
       "competenceModifiee": "0",
       "competenceModificateur": "0",
       "competenceCombatIncontrolee": "0",
-      "competenceCombatIncontroleeValeur": "0",
       "competenceIncontrolee": "0",
       "competenceIncontroleeValeur": "0",
-      "competenceCombatCritique": "0",
       "competenceCritique": "0",
-      "competenceCombatCritiqueValeur": false,
       "competenceCritiqueValeur": false,
       "prestigeModificateur": "0",
       "richesseModificateur": "0",
       "sexeModificateur": "0",
       "violenceModificateur": "0",
-      "reputationModificateur": "0"
+      "reputationModificateur": "0",
+      "ABModificateur": "0",
+      "FEModificateur": "0",
+      "ANModificateur": "0",
+      "ESModificateur": "0",
+      "ARModificateur": "0",
+      "PAModificateur": "0",
+      "caracModificateur": "0",
+      "initiativeModificateur": "0",
+      "ABIncontroleeArme": "0",
+      "FEIncontroleeArme": "0",
+      "ANIncontroleeArme": "0",
+      "PAIncontroleeArme": "0",
+      "ARIncontroleeArme": "0",
+      "ESIncontroleeArme": "0"
     },
     "modifiers": [],
     "unique": true,
     "container": null,
     "uniqueId": "vm0WNJp9pAIo5SNO",
-    "templateSystemUniqueVersion": 1791265087
+    "templateSystemUniqueVersion": 3260234326
   },
   "effects": [],
   "flags": {
@@ -1777,7 +2587,7 @@
     "systemId": "custom-system-builder",
     "systemVersion": "4.4.2",
     "createdTime": 1745624010482,
-    "modifiedTime": 1745624010482,
+    "modifiedTime": 1746724427150,
     "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
   },
   "_id": "vm0WNJp9pAIo5SNO",

@@ -1,0 +1,2600 @@
+{
+  "folder": "cRQQSjeu2iGDxDFW",
+  "name": "Code de conduite",
+  "type": "equippableItem",
+  "img": "icons/svg/daze.svg",
+  "system": {
+    "hidden": [
+      {
+        "name": "coutCondition",
+        "value": "${0}$"
+      }
+    ],
+    "header": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "type",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "select",
+              "label": "Type",
+              "defaultValue": "",
+              "size": "medium",
+              "selectedOptionType": "custom",
+              "options": [
+                {
+                  "key": "2",
+                  "value": "Pouvoir primaire"
+                },
+                {
+                  "key": "1",
+                  "value": "Pouvoir secondaire"
+                },
+                {
+                  "key": "5",
+                  "value": "Pouvoir exotique"
+                },
+                {
+                  "key": "0",
+                  "value": "Limitation"
+                }
+              ]
+            },
+            {
+              "key": "cout",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "numberField",
+              "label": "Coût",
+              "defaultValue": "",
+              "size": "m-small",
+              "allowDecimal": false,
+              "minVal": "",
+              "maxVal": "",
+              "allowRelative": false,
+              "showControls": false,
+              "controlsStyle": "hover",
+              "inputStyle": "text"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "label",
+              "size": "full-size",
+              "icon": "",
+              "value": "",
+              "prefix": "",
+              "suffix": "",
+              "rollMessage": "",
+              "altRollMessage": "",
+              "rollMessageToChat": true,
+              "altRollMessageToChat": true,
+              "style": "label"
+            },
+            {
+              "key": "coutTotal",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "label",
+              "size": "full-size",
+              "icon": "",
+              "value": "${cout - coutCondition}$",
+              "prefix": "Coût total : ",
+              "suffix": "",
+              "rollMessage": "",
+              "altRollMessage": "",
+              "rollMessageToChat": true,
+              "altRollMessageToChat": true,
+              "style": "bold"
+            },
+            {
+              "key": "utilisation",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "textField",
+              "label": "Fréquence d'utilisation",
+              "defaultValue": "",
+              "size": "full-size",
+              "charList": "",
+              "autocomplete": ""
+            },
+            {
+              "key": "portee",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "textField",
+              "label": "Portée",
+              "defaultValue": "",
+              "size": "full-size",
+              "charList": "",
+              "autocomplete": ""
+            },
+            {
+              "key": "duree",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "textField",
+              "label": "Durée",
+              "defaultValue": "",
+              "size": "full-size",
+              "charList": "",
+              "autocomplete": ""
+            },
+            {
+              "key": "actif",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "checkbox",
+              "label": "Actif",
+              "size": "full-size",
+              "defaultChecked": true
+            }
+          ],
+          "flow": "grid-2",
+          "align": "left",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        },
+        {
+          "key": "resume",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "textField",
+          "label": "Résumé",
+          "defaultValue": "",
+          "size": "full-size",
+          "charList": "",
+          "autocomplete": ""
+        }
+      ],
+      "key": "custom_header",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "body": {
+      "contents": [
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "0",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "manifestation",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "textArea",
+              "label": "Manifestation",
+              "defaultValue": "",
+              "size": "full-size",
+              "style": "sheet"
+            },
+            {
+              "key": "effets",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "textArea",
+              "label": "Effets",
+              "defaultValue": "",
+              "size": "full-size",
+              "style": "sheet"
+            },
+            {
+              "key": "condition",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "itemContainer",
+              "contents": [],
+              "rowLayout": [],
+              "head": true,
+              "deleteWarning": true,
+              "title": "",
+              "hideEmpty": true,
+              "sortOption": "manual",
+              "headDisplay": true,
+              "showDelete": true,
+              "statusIcon": false,
+              "nameAlign": "left",
+              "nameLabel": "Condition",
+              "templateFilter": [
+                "RbSpUTvKeuimPaGg"
+              ],
+              "itemFilterFormula": "    \n    \n    \n    \n    ",
+              "sortPredicates": []
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "reussiteCritique",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "textArea",
+                  "label": "Réussite critique",
+                  "defaultValue": "",
+                  "size": "full-size",
+                  "style": "sheet"
+                },
+                {
+                  "key": "echecCritique",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "textArea",
+                  "label": "Echec critique",
+                  "defaultValue": "",
+                  "size": "full-size",
+                  "style": "sheet"
+                }
+              ],
+              "flow": "horizontal",
+              "align": "justify",
+              "collapsible": false,
+              "defaultCollapsed": false,
+              "title": "",
+              "titleStyle": "default"
+            }
+          ],
+          "flow": "vertical",
+          "align": "justify",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        },
+        {
+          "key": "",
+          "cssClass": "",
+          "role": "3",
+          "permission": "0",
+          "tooltip": "",
+          "visibilityFormula": "",
+          "type": "panel",
+          "contents": [
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Dommages supplémentaires",
+                        "prefix": "",
+                        "suffix": "<br/>(en colonnes)",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "modDommages",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "medium",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Réussite critique sur un 9",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "critique9",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Protection accrue",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "modProtection",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "medium",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      null,
+                      null
+                    ]
+                  ],
+                  "cols": 2,
+                  "rows": 4,
+                  "layout": "lc"
+                }
+              ],
+              "flow": "vertical",
+              "align": "center",
+              "collapsible": true,
+              "defaultCollapsed": true,
+              "title": "Dommages et protections",
+              "titleStyle": "title"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Bonus à l'initiative",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      null,
+                      {
+                        "key": "initiativeModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Bonus à une caractéristique",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "caracModifiee",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "medium",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "1",
+                            "value": "Force"
+                          },
+                          {
+                            "key": "2",
+                            "value": "Endurance"
+                          },
+                          {
+                            "key": "3",
+                            "value": "Agilité"
+                          },
+                          {
+                            "key": "4",
+                            "value": "Rapidité"
+                          },
+                          {
+                            "key": "5",
+                            "value": "Perception"
+                          },
+                          {
+                            "key": "6",
+                            "value": "Volonté"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "caracModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Bonus à une compétence",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "competenceModifiee",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "medium",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "1",
+                            "value": "Acrobatie"
+                          },
+                          {
+                            "key": "2",
+                            "value": "Artisanat Batranoban"
+                          },
+                          {
+                            "key": "3",
+                            "value": "Artisanat Derigion"
+                          },
+                          {
+                            "key": "4",
+                            "value": "Artisanat Gadhar"
+                          },
+                          {
+                            "key": "5",
+                            "value": "Artisanat Piorad"
+                          },
+                          {
+                            "key": "6",
+                            "value": "Artisanat Sekeker"
+                          },
+                          {
+                            "key": "7",
+                            "value": "Artisanat Thunk"
+                          },
+                          {
+                            "key": "8",
+                            "value": "Artisanat Vorozion"
+                          },
+                          {
+                            "key": "9",
+                            "value": "Astronomie"
+                          },
+                          {
+                            "key": "10",
+                            "value": "Commandement"
+                          },
+                          {
+                            "key": "11",
+                            "value": "Connaissance Batranoban"
+                          },
+                          {
+                            "key": "12",
+                            "value": "Connaissance Derigion"
+                          },
+                          {
+                            "key": "13",
+                            "value": "Connaissance Gadhar"
+                          },
+                          {
+                            "key": "14",
+                            "value": "Connaissance Piorad"
+                          },
+                          {
+                            "key": "15",
+                            "value": "Connaissance Sekeker"
+                          },
+                          {
+                            "key": "16",
+                            "value": "Connaissance Thunk"
+                          },
+                          {
+                            "key": "17",
+                            "value": "Connaissance Vorozion"
+                          },
+                          {
+                            "key": "18",
+                            "value": "Course"
+                          },
+                          {
+                            "key": "19",
+                            "value": "Discrétion"
+                          },
+                          {
+                            "key": "20",
+                            "value": "Equitation"
+                          },
+                          {
+                            "key": "21",
+                            "value": "Lire et Ecrire"
+                          },
+                          {
+                            "key": "22",
+                            "value": "Marchandage"
+                          },
+                          {
+                            "key": "23",
+                            "value": "Médecine"
+                          },
+                          {
+                            "key": "24",
+                            "value": "Nage"
+                          },
+                          {
+                            "key": "25",
+                            "value": "Repérage"
+                          },
+                          {
+                            "key": "26",
+                            "value": "Séduction"
+                          },
+                          {
+                            "key": "27",
+                            "value": "Stratégie"
+                          },
+                          {
+                            "key": "28",
+                            "value": "Tactique"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "competenceModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ]
+                  ],
+                  "cols": 3,
+                  "rows": 3,
+                  "layout": "lrc"
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque brutale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ABModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Feinte",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "FEModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque normale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ANModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Parade",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "PAModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque rapide",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ARModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Esquive",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ESModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ]
+                  ],
+                  "cols": 4,
+                  "rows": 3,
+                  "layout": "lclc"
+                }
+              ],
+              "flow": "vertical",
+              "align": "left",
+              "collapsible": true,
+              "defaultCollapsed": true,
+              "title": "Bonus",
+              "titleStyle": "title"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Compétence de combat incontrôlée",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "competenceCombatIncontrolee",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "medium",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "AB",
+                            "value": "Attaque brutale"
+                          },
+                          {
+                            "key": "AN",
+                            "value": "Attaque normale"
+                          },
+                          {
+                            "key": "AR",
+                            "value": "Attaque rapide"
+                          },
+                          {
+                            "key": "FE",
+                            "value": "Feinte"
+                          },
+                          {
+                            "key": "PA",
+                            "value": "Parade"
+                          },
+                          {
+                            "key": "ES",
+                            "value": "Esquive"
+                          }
+                        ]
+                      },
+                      null,
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "not(equalText(competenceCombatIncontrolee,'0'))",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "dice-d10",
+                        "value": "",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Compétence incontrôlée",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "competenceIncontrolee",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "medium",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "1",
+                            "value": "Acrobatie"
+                          },
+                          {
+                            "key": "2",
+                            "value": "Artisanat Batranoban"
+                          },
+                          {
+                            "key": "3",
+                            "value": "Artisanat Derigion"
+                          },
+                          {
+                            "key": "4",
+                            "value": "Artisanat Gadhar"
+                          },
+                          {
+                            "key": "5",
+                            "value": "Artisanat Piorad"
+                          },
+                          {
+                            "key": "6",
+                            "value": "Artisanat Sekeker"
+                          },
+                          {
+                            "key": "7",
+                            "value": "Artisanat Thunk"
+                          },
+                          {
+                            "key": "8",
+                            "value": "Artisanat Vorozion"
+                          },
+                          {
+                            "key": "9",
+                            "value": "Astronomie"
+                          },
+                          {
+                            "key": "10",
+                            "value": "Commandement"
+                          },
+                          {
+                            "key": "11",
+                            "value": "Connaissance Batranoban"
+                          },
+                          {
+                            "key": "12",
+                            "value": "Connaissance Derigion"
+                          },
+                          {
+                            "key": "13",
+                            "value": "Connaissance Gadhar"
+                          },
+                          {
+                            "key": "14",
+                            "value": "Connaissance Piorad"
+                          },
+                          {
+                            "key": "15",
+                            "value": "Connaissance Sekeker"
+                          },
+                          {
+                            "key": "16",
+                            "value": "Connaissance Thunk"
+                          },
+                          {
+                            "key": "17",
+                            "value": "Connaissance Vorozion"
+                          },
+                          {
+                            "key": "18",
+                            "value": "Course"
+                          },
+                          {
+                            "key": "19",
+                            "value": "Discrétion"
+                          },
+                          {
+                            "key": "20",
+                            "value": "Equitation"
+                          },
+                          {
+                            "key": "21",
+                            "value": "Lire et Ecrire"
+                          },
+                          {
+                            "key": "22",
+                            "value": "Marchandage"
+                          },
+                          {
+                            "key": "23",
+                            "value": "Médecine"
+                          },
+                          {
+                            "key": "24",
+                            "value": "Nage"
+                          },
+                          {
+                            "key": "25",
+                            "value": "Repérage"
+                          },
+                          {
+                            "key": "26",
+                            "value": "Séduction"
+                          },
+                          {
+                            "key": "27",
+                            "value": "Stratégie"
+                          },
+                          {
+                            "key": "28",
+                            "value": "Tactique"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "competenceIncontroleeValeur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "not(equalText(competenceIncontrolee,'0'))",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "dice-d10",
+                        "value": "",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      }
+                    ],
+                    [
+                      null,
+                      null,
+                      null
+                    ]
+                  ],
+                  "cols": 4,
+                  "rows": 2,
+                  "layout": "lrcc"
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      null,
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation de valeurs propres à l'arme",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Arme",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation des valeurs du porteur",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Porteur",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      },
+                      null,
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation de valeurs propres à l'arme",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Arme",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "Utilisation des valeurs du porteur",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Porteur",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "bold"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque brutale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ABIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ABIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Feinte",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "FEIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "FEIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque normale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ANIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ANIncontroleePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Parade",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "PAIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "PAIncontroleePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque rapide",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ARIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ARIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Esquive",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ESIncontroleeArme",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "m-small",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "50",
+                            "value": "50%"
+                          },
+                          {
+                            "key": "75",
+                            "value": "75%"
+                          },
+                          {
+                            "key": "100",
+                            "value": "100%"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "ESIncontrolePorteur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ]
+                  ],
+                  "cols": 6,
+                  "rows": 4,
+                  "layout": "lcclcc"
+                }
+              ],
+              "flow": "vertical",
+              "align": "left",
+              "collapsible": true,
+              "defaultCollapsed": true,
+              "title": "Talents incontrôlés",
+              "titleStyle": "title"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque brutale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ABcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Feinte",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "FEcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque normale",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ANcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Parade",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "PAcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Attaque rapide",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "ARcritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      },
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Esquive",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "EScritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "full-size",
+                        "defaultChecked": false
+                      }
+                    ]
+                  ],
+                  "cols": 4,
+                  "rows": 3,
+                  "layout": "lclc"
+                },
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Compétence secondaire",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "competenceCritique",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "select",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "medium",
+                        "selectedOptionType": "custom",
+                        "options": [
+                          {
+                            "key": "0",
+                            "value": "-"
+                          },
+                          {
+                            "key": "1",
+                            "value": "Acrobatie"
+                          },
+                          {
+                            "key": "2",
+                            "value": "Artisanat Batranoban"
+                          },
+                          {
+                            "key": "3",
+                            "value": "Artisanat Derigion"
+                          },
+                          {
+                            "key": "4",
+                            "value": "Artisanat Gadhar"
+                          },
+                          {
+                            "key": "5",
+                            "value": "Artisanat Piorad"
+                          },
+                          {
+                            "key": "6",
+                            "value": "Artisanat Sekeker"
+                          },
+                          {
+                            "key": "7",
+                            "value": "Artisanat Thunk"
+                          },
+                          {
+                            "key": "8",
+                            "value": "Artisanat Vorozion"
+                          },
+                          {
+                            "key": "9",
+                            "value": "Astronomie"
+                          },
+                          {
+                            "key": "10",
+                            "value": "Commandement"
+                          },
+                          {
+                            "key": "11",
+                            "value": "Connaissance Batranoban"
+                          },
+                          {
+                            "key": "12",
+                            "value": "Connaissance Derigion"
+                          },
+                          {
+                            "key": "13",
+                            "value": "Connaissance Gadhar"
+                          },
+                          {
+                            "key": "14",
+                            "value": "Connaissance Piorad"
+                          },
+                          {
+                            "key": "15",
+                            "value": "Connaissance Sekeker"
+                          },
+                          {
+                            "key": "16",
+                            "value": "Connaissance Thunk"
+                          },
+                          {
+                            "key": "17",
+                            "value": "Connaissance Vorozion"
+                          },
+                          {
+                            "key": "18",
+                            "value": "Course"
+                          },
+                          {
+                            "key": "19",
+                            "value": "Discrétion"
+                          },
+                          {
+                            "key": "20",
+                            "value": "Equitation"
+                          },
+                          {
+                            "key": "21",
+                            "value": "Lire et Ecrire"
+                          },
+                          {
+                            "key": "22",
+                            "value": "Marchandage"
+                          },
+                          {
+                            "key": "23",
+                            "value": "Médecine"
+                          },
+                          {
+                            "key": "24",
+                            "value": "Nage"
+                          },
+                          {
+                            "key": "25",
+                            "value": "Repérage"
+                          },
+                          {
+                            "key": "26",
+                            "value": "Séduction"
+                          },
+                          {
+                            "key": "27",
+                            "value": "Stratégie"
+                          },
+                          {
+                            "key": "28",
+                            "value": "Tactique"
+                          }
+                        ]
+                      },
+                      {
+                        "key": "competenceCritiqueValeur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "checkbox",
+                        "label": "",
+                        "size": "m-small",
+                        "defaultChecked": false
+                      },
+                      null
+                    ],
+                    [
+                      null,
+                      null,
+                      null,
+                      null
+                    ],
+                    [
+                      null,
+                      null,
+                      null
+                    ]
+                  ],
+                  "cols": 3,
+                  "rows": 1,
+                  "layout": "lrc"
+                }
+              ],
+              "flow": "vertical",
+              "align": "left",
+              "collapsible": true,
+              "defaultCollapsed": true,
+              "title": "Réussites critiques",
+              "titleStyle": "title"
+            },
+            {
+              "key": "",
+              "cssClass": "",
+              "role": "0",
+              "permission": "0",
+              "tooltip": "",
+              "visibilityFormula": "",
+              "type": "panel",
+              "contents": [
+                {
+                  "key": "",
+                  "cssClass": "",
+                  "role": "0",
+                  "permission": "0",
+                  "tooltip": "",
+                  "visibilityFormula": "",
+                  "type": "table",
+                  "contents": [
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Prestige",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "prestigeModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      null,
+                      null
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Richesse",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "richesseModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      null,
+                      null
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Sexe",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "sexeModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      },
+                      null
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Violence",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "violenceModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      {
+                        "key": "",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "label",
+                        "size": "full-size",
+                        "icon": "",
+                        "value": "Réputation",
+                        "prefix": "",
+                        "suffix": "",
+                        "rollMessage": "",
+                        "altRollMessage": "",
+                        "rollMessageToChat": true,
+                        "altRollMessageToChat": true,
+                        "style": "label"
+                      },
+                      {
+                        "key": "reputationModificateur",
+                        "cssClass": "",
+                        "role": "0",
+                        "permission": "0",
+                        "tooltip": "",
+                        "visibilityFormula": "",
+                        "type": "numberField",
+                        "label": "",
+                        "defaultValue": "0",
+                        "size": "small",
+                        "allowDecimal": false,
+                        "minVal": "",
+                        "maxVal": "",
+                        "allowRelative": false,
+                        "showControls": true,
+                        "controlsStyle": "hover",
+                        "inputStyle": "text"
+                      }
+                    ],
+                    [
+                      null
+                    ]
+                  ],
+                  "cols": 2,
+                  "rows": 5,
+                  "layout": "lc"
+                }
+              ],
+              "flow": "vertical",
+              "align": "left",
+              "collapsible": true,
+              "defaultCollapsed": true,
+              "title": "Modificateurs de désir",
+              "titleStyle": "title"
+            }
+          ],
+          "flow": "vertical",
+          "align": "left",
+          "collapsible": false,
+          "defaultCollapsed": false,
+          "title": "",
+          "titleStyle": "default"
+        }
+      ],
+      "key": "custom_body",
+      "cssClass": "",
+      "role": 0,
+      "permission": 0,
+      "tooltip": "",
+      "visibilityFormula": "",
+      "type": "panel",
+      "flow": "vertical",
+      "align": "",
+      "collapsible": false,
+      "defaultCollapsed": true,
+      "title": "",
+      "titleStyle": "default"
+    },
+    "display": {
+      "width": "600",
+      "height": "600",
+      "fix_size": false,
+      "pp_width": "64",
+      "pp_height": "64"
+    },
+    "template": "XWNo6MNTLb2qSIvj",
+    "props": {
+      "name": "Code de conduite",
+      "type": "0",
+      "cout": "-10",
+      "coutTotal": "-10",
+      "coutCondition": "0",
+      "utilisation": "Permanent",
+      "portee": "Sur le porteur",
+      "manifestation": "<p>L'arme est très autoritaire et communique presque en permanence avec le porteur pour lui faire respecter son code de conduite.</p>",
+      "duree": "Permanent",
+      "effets": "<p>Une arme qui possède cette limitation est dotée d'un code de conduite qui doit être défini par le maître de jeu une fois l'arme entièrement créée (pour bien faire coïncider ce code avec d'éventuels pouvoirs spéciaux). Le porteur devra obligatoirement respecter ce code sous peine de voir l'arme chercher à se débarrasser de lui à la première occasion. Le code peut être très simple (ne jamais épargner un adversaire qui se rend) ou très compliqué (comme celui de suivre les ordres d'une autre arme ou d’un certain personnage), au choix du maître de jeu.</p>",
+      "reussiteCritique": "<p>-</p>",
+      "echecCritique": "<p>-</p>",
+      "resume": "A toujours respecter !",
+      "actif": true,
+      "modDommages": "0",
+      "modProtection": "0",
+      "critique9": false,
+      "caracModifiee": "0",
+      "competenceModifiee": "0",
+      "competenceModificateur": "0",
+      "competenceCombatIncontrolee": "0",
+      "competenceIncontrolee": "0",
+      "competenceIncontroleeValeur": "0",
+      "competenceCritique": "0",
+      "prestigeModificateur": "0",
+      "richesseModificateur": "0",
+      "sexeModificateur": "0",
+      "violenceModificateur": "0",
+      "reputationModificateur": "0",
+      "competenceCritiqueValeur": false,
+      "ABModificateur": "0",
+      "FEModificateur": "0",
+      "ANModificateur": "0",
+      "ESModificateur": "0",
+      "ARModificateur": "0",
+      "PAModificateur": "0",
+      "caracModificateur": "0",
+      "initiativeModificateur": "0",
+      "ABIncontroleeArme": "0",
+      "FEIncontroleeArme": "0",
+      "ANIncontroleeArme": "0",
+      "PAIncontroleeArme": "0",
+      "ARIncontroleeArme": "0",
+      "ESIncontroleeArme": "0"
+    },
+    "modifiers": [],
+    "unique": false,
+    "container": null,
+    "uniqueId": "9JnB9Ojomysjic72",
+    "templateSystemUniqueVersion": 3260234326
+  },
+  "effects": [],
+  "flags": {
+    "custom-system-builder": {
+      "version": "4.3.2"
+    }
+  },
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "custom-system-builder",
+    "systemVersion": "4.4.2",
+    "createdTime": 1745703510582,
+    "modifiedTime": 1746724427150,
+    "lastModifiedBy": "AjcbJ5lKJDk3HKUe"
+  },
+  "_id": "9JnB9Ojomysjic72",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "AjcbJ5lKJDk3HKUe": 3
+  },
+  "_key": "!items!9JnB9Ojomysjic72"
+}
